@@ -1,0 +1,12 @@
+include ~blocks/icon-box/mixin
+
+mixin button-menu(data)
+	-
+		data = data || {};
+		data.tag = 'button'
+		data.class = [].concat(data.class, 'button-menu')
+	+icon-box(data)
+		.button-menu__icon
+			span.button-menu__line
+			span.button-menu__line
+			span.button-menu__line

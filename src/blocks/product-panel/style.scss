@@ -1,0 +1,71 @@
+@import "~common/styles/variables/fonts";
+
+.product-panel {
+  display: block;
+  position: relative;
+  background: #FFFFFF;
+  box-shadow: 0 0 2px rgba(160, 160, 160, 0.4);
+  border-radius: 6px;
+  padding: 40px 10px 10px 10px;
+  &__head {
+    margin-bottom: 5px;
+  }
+  &__footer {
+    margin-top: 8px;
+  }
+  &__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0;
+    line-height: 0;
+    height: 80px;
+    img {
+      max-height: 80px;
+    }
+  }
+  &__badges {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px;
+  }
+  &__badge {
+    flex: 0 0 auto;
+    margin: 0 5px 5px 0;
+  }
+  &__title {
+    color: #122351;
+    font-weight: $font-weight-semi-bold;
+    text-decoration: none;
+  }
+  &__prices {
+    margin-bottom: 5px;
+  }
+  &__price {
+    color: #000;
+    font-weight: $font-weight-bold;
+    margin-right: 5px;
+  }
+  &__price-old {
+    color: #A9A9A9;
+    font-weight: $font-weight-regular;
+    text-decoration: line-through;
+  }
+  &__reviews {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  &__rating {
+    flex: 0 0 auto;
+  }
+  &__reviews-count {
+    flex: 0 0 auto;
+    margin-left: 5px;
+  }
+}

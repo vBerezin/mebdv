@@ -1,0 +1,33 @@
+include ~blocks/badge/mixin
+include ~blocks/button/mixin
+include ~blocks/lazy-image/mixin
+include ~blocks/rating/mixin
+
+mixin product-panel(data)
+	- data = data || {};
+	.product-panel(
+		class=data.class
+		class=mods('product-panel', data.mods)
+	)&attributes(data.attributes)
+		.product-panel__head
+			.product-panel__badges
+				+badge({ class: 'product-panel__badge' }) -15%
+				+badge({ class: 'product-panel__badge', mods: 'red' }) HIT
+				+badge({ class: 'product-panel__badge', mods: 'yellow' }) NEW
+			a.product-panel__image(href="#")
+				+lazy-image({
+					src: '/images/product/panel-1.png',
+					srcset: {
+						'2x': '/images/product/panel-1@2x.png',
+					}
+				})
+			a.product-panel__title(href="#") Диван Еврокнижка Атлант с барной стойкой
+		.product-panel__body
+			.product-panel__prices
+				span.product-panel__price 20 090 ₽
+				span.product-panel__price-old 20 090 ₽
+			.product-panel__reviews
+				+rating({ value: 3, class: 'product-panel__rating' })
+				+badge({ mods: 'small', class: 'product-panel__reviews-count' }) 15
+		.product-panel__footer
+			+button({ mods: ['block', 'small'] }) В корзину

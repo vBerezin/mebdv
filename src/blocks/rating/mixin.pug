@@ -1,0 +1,13 @@
+include ~blocks/icon/mixin
+
+mixin rating(data)
+	- data = data || {};
+	.rating(
+		class=data.class
+		class=mods('rating', data.mods)
+	)&attributes(data.attributes)
+		+icon({ name: 'star', class: 'rating__item is-active' })
+		+icon({ name: 'star', class: 'rating__item is-active' })
+		+icon({ name: 'star', class: 'rating__item is-active' })
+		+icon({ name: 'star', class: 'rating__item' })
+		+icon({ name: 'star', class: 'rating__item' })

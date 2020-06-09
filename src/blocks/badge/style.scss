@@ -1,0 +1,33 @@
+@import "~common/styles/variables/fonts";
+
+.badge {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  background: #F0F4FD;
+  color: #122351;
+  font-size: 10px;
+  line-height: 1;
+  padding: 5px;
+  min-width: 20px;
+  border-radius: 10px;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+
+  &.badge--orange {
+    background: #F78B3D;
+    color: #fff;
+  }
+  &.badge--yellow {
+    color: #885945;
+    background: #FDFAF0;
+  }
+  &.badge--red {
+    color: #AC3434;
+    background: #FDF0F0;
+  }
+  &.badge--small {
+    padding: 3px;
+    border-radius: 8px;
+  }
+}

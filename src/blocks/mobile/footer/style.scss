@@ -1,0 +1,25 @@
+.footer {
+  padding: 20px 0;
+  background: #F4F4F4;
+  text-align: center;
+  &__copyright,
+  &__privacy {
+    margin-bottom: 10px;
+    font-weight: $font-weight-medium;
+  }
+  &__copyright {
+    color: #000;
+  }
+  &__privacy {
+    color: #8F8F8F;
+  }
+  &__logo {
+    font-size: 0;
+    line-height: 0;
+    margin-top: 20px;
+  }
+  &__logo-icon {
+    font-size: 20px;
+    color: #CBCBCB;
+  }
+}

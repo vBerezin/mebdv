@@ -1,0 +1,19 @@
+include ~layout/l-container/mixin
+include ~blocks/section/mixin
+include ~blocks/section-head/mixin
+include ~blocks/section-title/mixin
+include ~blocks/product-panel/mixin
+
+mixin section-products(data)
+	-
+		data = data || {}
+		data.class = [].concat(data.class, 'section-products')
+	+section(data)
+		+l-container
+			+section-head
+				+section-title({ icon: data.icon }) #{data.title}
+			.section-products__body
+				.section-products__list
+					each item in [1,2,3,4,5,6,7,8]
+						.section-products__item
+							+product-panel

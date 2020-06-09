@@ -1,0 +1,34 @@
+include ~layout/l-container/mixin
+include ~blocks/section/mixin
+include ~blocks/section-title/mixin
+include ~blocks/section-head/mixin
+include ~blocks/section-footer/mixin
+include ~blocks/icon-box/mixin
+include ~blocks/button/mixin
+
++section({
+	mods: 'grey',
+	class: 'section-contact'
+})
+	+l-container
+		+section-head
+			+section-title Контактная информация
+		.section-contact__body
+			.section-contact__item
+				.section-contact__item__icon
+					+icon-box({ icon: 'phone', mods: ['blue', 'small'] })
+				.section-contact__item__body
+					p Ежедневно с 09:00 до 20:00
+					p
+						a(href="tel:+74957963035") +7 (495) 796-30-35
+					p
+						a(href="+79037963035") +7 (903) 796-30-35
+			.section-contact__item
+				.section-contact__item__icon
+					+icon-box({ icon: 'mail', mods: ['blue', 'small'] })
+				.section-contact__item__body
+					p Электронная почта
+					p
+						a(href="mailto:mail@mebdv.ru") mail@mebdv.ru
+		+section-footer
+			+button({ mods: ['black','block'] }) Написать нам

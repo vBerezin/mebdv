@@ -1,0 +1,11 @@
+.idea
+.DS_Store
+dist
+*.log
+*.sql.gz
+.cache
+.vscode
+node_modules
+/web/
+/build/
+/build-dev/

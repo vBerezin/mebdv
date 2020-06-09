@@ -1,0 +1,15 @@
+.rating {
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: 15px;
+
+  &__item {
+    flex: 0 0 auto;
+    color: #EAEAEA;
+
+    &.is-active {
+      color: #FFC700;
+    }
+  }
+}

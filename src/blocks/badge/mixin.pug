@@ -1,0 +1,7 @@
+mixin badge(data)
+	- data = data || {};
+	span.badge(
+		class=data.class
+		class=mods('badge', data.mods)
+		)&attributes(data.attributes)
+		block

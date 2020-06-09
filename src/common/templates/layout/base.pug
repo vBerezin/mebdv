@@ -1,0 +1,18 @@
+include ~common/templates/functions/mods
+
+block variables
+	include ~common/templates/variables
+doctype html
+html(lang='ru')
+	head
+		block head
+			title #{TITLE}
+			include ~common/templates/meta
+			include ~common/templates/favicon
+			block stylesheets
+				link(rel="stylesheet" href=`/common.css?${$.version}`)
+	body
+		block body
+		include ~common/templates/sprite
+		block scripts
+			script(src=`/common.js?${$.version}`)

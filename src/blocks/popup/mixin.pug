@@ -1,0 +1,13 @@
+include ~blocks/icon/mixin
+
+mixin popup(data)
+	-
+		data.attributes = data.attributes || {};
+		data.attributes.id = data.id;
+		classList = mixinUtils.classList({ base:'popup', addClass: data.class, mods: data.mods })
+	.popup(class=classList)&attributes(data.attributes)
+		.popup__body(data-rel="popup.body")
+			.popup__close(data-click="popup.close")
+				+icon({ name: 'close' })
+			.popup__content
+				block

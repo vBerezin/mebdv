@@ -1,0 +1,89 @@
+include ~layout/l-container/mixin
+include ~blocks/section/mixin
+include ~blocks/section-title/mixin
+include ~blocks/section-head/mixin
+include ~blocks/section-footer/mixin
+include ~blocks/icon-box/mixin
+include ~blocks/button/mixin
+include ~blocks/mobile/grid-catalog/mixin
+
+-
+	items = [
+		{
+			url: '/catalog',
+			title: 'Диваны',
+			image: {
+				src: `/images/catalog/menu-1.png`,
+				srcset: {
+					'2x': `/images/catalog/menu-1@2x.png`,
+				}
+			}
+		},
+		{
+			url: '/catalog',
+			title: 'Шкафы',
+			image: {
+				src: `/images/catalog/menu-2.png`,
+				srcset: {
+					'2x': `/images/catalog/menu-2@2x.png`,
+				}
+			}
+		},
+		{
+			url: '/catalog',
+			title: 'Кровати',
+			image: {
+				src: `/images/catalog/menu-3.png`,
+				srcset: {
+					'2x': `/images/catalog/menu-3@2x.png`,
+				}
+			}
+		},
+		{
+			url: '/catalog',
+			title: 'Тумбы',
+			image: {
+				src: `/images/catalog/menu-4.png`,
+				srcset: {
+					'2x': `/images/catalog/menu-4@2x.png`,
+				}
+			}
+		},
+		{
+			url: '/catalog',
+			title: 'Столы',
+			image: {
+				src: `/images/catalog/menu-5.png`,
+				srcset: {
+					'2x': `/images/catalog/menu-5@2x.png`,
+				}
+			}
+		},
+		{
+			url: '/catalog',
+			title: 'Стулья',
+			image: {
+				src: `/images/catalog/menu-6.png`,
+				srcset: {
+					'2x': `/images/catalog/menu-6@2x.png`,
+				}
+			}
+		},
+	]
+
++section({
+	class: ['section-catalog','js-section-catalog']
+})
+	+l-container
+		+section-head
+			+section-title({ icon: 'bookmark' }) Популярные товары
+		.section-catalog__body
+			+grid-catalog({ items })
+		+section-footer
+			+button({
+				mods: ['block', 'white'],
+				attributes: {
+					href: '/catalog',
+					'data-click': 'catalog.open'
+				}
+			}) Смотреть весь каталог

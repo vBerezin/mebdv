@@ -1,0 +1,19 @@
+include ~blocks/lazy-image/mixin
+include ~blocks/icon/mixin
+
+mixin grid-catalog(data)
+	- data = data || {};
+	nav.grid-catalog(
+		class=data.class
+		class=mods('grid-catalog', data.mods)
+		)&attributes(data.attributes)
+		each item in data.items
+			- itemTag = item.url ? 'a' : 'div'
+			#{itemTag}.grid-catalog__item(href=item.url)
+				if (item.icon)
+					.grid-catalog__item__icon
+						+icon(item.icon)
+				if (item.image)
+					.grid-catalog__item__img
+						+lazy-image(item.image)
+				.grid-catalog__item__title #{item.title}

@@ -1,0 +1,17 @@
+extends ~common/templates/layout/base
+
+block body
+	.l-desktop
+		.l-desktop__header
+			// include ~blocks/header/index
+		aside.l-desktop__aside
+			// include ~blocks/menu-catalog/index
+		main.l-desktop__main
+			block main
+			.l-desktop__footer
+				// include ~blocks/footer/index
+
+block append stylesheets
+	link(rel="stylesheet" href=`/desktop.css?${$.version}`)
+block append scripts
+	script(src=`/desktop.js?${$.version}`)

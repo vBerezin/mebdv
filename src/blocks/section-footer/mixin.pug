@@ -1,0 +1,8 @@
+mixin section-footer(data)
+	-
+		data = data || {};
+	.section-footer(
+		class=data.class
+		class=mods('section-footer', data.mods)
+	)&attributes(data.attributes)
+		block

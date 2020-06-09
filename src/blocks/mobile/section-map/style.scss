@@ -1,0 +1,22 @@
+@import "~common/styles/variables/fonts";
+
+.section-map {
+  font-weight: $font-weight-medium;
+
+  &__map {
+    overflow: hidden;
+    position: relative;
+    height: 300px;
+    & > * {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__footer {
+    padding: 20px 0;
+    text-align: center;
+  }
+}

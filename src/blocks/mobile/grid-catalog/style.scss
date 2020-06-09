@@ -1,0 +1,61 @@
+@import "~common/styles/variables/fonts";
+@import "~blocks/breakpoints/mixin";
+
+.grid-catalog {
+  display: grid;
+  align-items: stretch;
+  grid-template-columns: repeat(2, 1fr);
+  background: #FCFCFC;
+  border-radius: 15px;
+  overflow: hidden;
+
+  &__item {
+    display: block;
+    color: #000;
+    font-size: 12px;
+    font-weight: $font-weight-medium;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    &[href] {
+      color: #312E76;
+    }
+    &:nth-child(4n + 1),
+    &:nth-child(4n + 4) {
+      background: #F6F6F6;
+    }
+    &__icon,
+    &__img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-bottom: 10px;
+      height: 50px;
+    }
+    &__icon {
+      font-size: 50px;
+    }
+    &__img {
+      font-size: 0;
+      line-height: 0;
+      img {
+        max-height: 50px;
+      }
+    }
+  }
+
+  @include breakpoint(xs) {
+    grid-template-columns: repeat(3, 1fr);
+    &__item {
+      &:nth-child(4n + 1),
+      &:nth-child(4n + 4) {
+        background: none;
+      }
+      &:nth-child(6n + 1),
+      &:nth-child(2n + 3) {
+        background: #F6F6F6;
+      }
+    }
+  }
+}

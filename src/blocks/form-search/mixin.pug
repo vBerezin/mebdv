@@ -1,0 +1,19 @@
+include ~blocks/icon/mixin
+
+mixin form-search(data)
+	-
+		data = data || {};
+	form.form-search(
+		class=data.class
+		class=mods('form-search', data.mods)
+		action="/search"
+		)&attributes(data.attributes)
+		button.form-search__submit(type="submit" data-rel="form.search.submit")
+			+icon({ name: 'search', mods: 'center' })
+		input.form-search__input(
+			required
+			type="search"
+			name="search"
+			minlength=3
+			placeholder="Поиск по сайту..."
+			data-rel="form.search.input")

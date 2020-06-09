@@ -1,0 +1,69 @@
+@import "~common/styles/variables/transition";
+
+.button-menu {
+  $transition: $transition-time;
+  $delay: $transition / 2;
+
+  &__icon {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -5px;
+    margin-top: -5px;
+    transition: transform $transition-time ease-out;
+  }
+  &__line {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    background: currentColor;
+    transition: opacity $transition ease-out;
+    &:nth-child(1) {
+      top: 0;
+      transition:
+        top $transition ease-out $delay,
+        transform $transition ease-out;
+    }
+    &:nth-child(2) {
+      top: 50%;
+      margin-top: -1px;
+    }
+    &:nth-child(3) {
+      bottom: 0;
+      transition:
+        bottom $transition ease-out $delay,
+        transform $transition ease-out;
+    }
+  }
+  &.is-active {
+    .button-menu__icon {
+      transform: scale(2);
+    }
+    .button-menu__line {
+      &:nth-child(1) {
+        top: 50%;
+        margin-top: -1px;
+        transform: rotate(45deg);
+        transition:
+          top $transition ease-out,
+          transform $transition ease-out $delay;
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        bottom: 50%;
+        margin-bottom: -1px;
+        transform: rotate(-45deg);
+        transition:
+          bottom $transition ease-out,
+          transform $transition ease-out $delay;
+      }
+    }
+  }
+}
+

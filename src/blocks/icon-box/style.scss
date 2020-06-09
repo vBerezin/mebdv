@@ -1,0 +1,38 @@
+@import "~common/styles/variables/transition";
+
+.icon-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: none;
+  padding: 0;
+  background: #F4F4F4;
+  color: #000;
+  line-height: 0;
+  font-size: 40px;
+  width: 1em;
+  height: 1em;
+  border-radius: 12px;
+  transition: color $transition-time ease-out,
+  background $transition-time ease-out;
+
+  &__icon {
+    font-size: 0.5em;
+  }
+
+  &.icon-box--blue {
+    background: #312e76;
+    color: #fff;
+  }
+  &.icon-box--white {
+    background: #fff;
+    color: #312E76;
+  }
+  &.icon-box--small {
+    font-size: 32px;
+    .icon-box__icon {
+      font-size: 20px;
+    }
+  }
+}

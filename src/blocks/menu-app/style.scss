@@ -1,0 +1,51 @@
+@import "~common/styles/variables/fonts";
+
+.menu-app {
+  background: #fff;
+
+  ul,
+  li {
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    border-bottom: 1px solid #F6F6F6;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    text-decoration: none;
+    color: #202020;
+    font-size: 14px;
+    line-height: 25px;
+    padding: 10px 15px;
+    font-weight: $font-weight-medium;
+
+    &__icon,
+    &__image {
+      flex: 0 0 30px;
+      position: relative;
+    }
+    &__icon {
+      font-size: 20px;
+      margin-left: 10px;
+    }
+    &__image {
+      font-size: 0;
+      line-height: 0;
+      text-align: center;
+      margin-right: 10px;
+    }
+    &__title {
+      flex: 1 1 auto;
+    }
+
+    &:active,
+    &.is-active {
+      background: #F6F6F6;
+    }
+  }
+}

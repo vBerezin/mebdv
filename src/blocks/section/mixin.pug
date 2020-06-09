@@ -1,0 +1,8 @@
+mixin section(data)
+	-
+		data = data || {};
+	section.section(
+		class=data.class
+		class=mods('section', data.mods)
+	)&attributes(data.attributes)
+		block

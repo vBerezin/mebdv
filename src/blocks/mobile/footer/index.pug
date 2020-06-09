@@ -1,0 +1,9 @@
+include ~layout/l-container/mixin
+include ~blocks/icon/mixin
+
+footer.footer
+	+l-container
+		.footer__copyright &copy; 2011-2020. Все права защищены.
+		.footer__privacy Копирование, распространение информации с сайта разрешается только с письменного согласия владельца.
+		.footer__logo
+			+icon({ name: 'd-inside', class: 'footer__logo-icon' })

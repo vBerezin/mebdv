@@ -1,0 +1,45 @@
+@import "~common/styles/variables/transition";
+@import "~common/styles/variables/fonts";
+
+.button {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  color: #fff;
+  background: #F78B3D;
+  border: 1px solid #F78B3D;
+  font-weight: $font-weight-medium;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 11px;
+  border-radius: 22px;
+  transition: background-color $transition-time ease-out;
+
+  &[disabled],
+  &.is-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &.button--black {
+    color: #fff;
+    background: #3A3A3A;
+    border-color: #3A3A3A;
+  }
+  &.button--white {
+    background: #fff;
+    color: #000;
+    border-color: #E0E8EB;
+  }
+  &.button--block {
+    display: block;
+    width: 100%;
+  }
+  &.button--small {
+    padding: 4px;
+    border-radius: 15px;
+  }
+}

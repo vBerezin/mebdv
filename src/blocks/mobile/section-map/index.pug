@@ -1,0 +1,8 @@
+include ~layout/l-container/mixin
+include ~blocks/lazy-iframe/mixin
+
+.section-map
+	.section-map__map
+		+lazy-iframe({ src: 'https://yandex.ru/map-widget/v1/-/CCQdRXVvcD' })
+	.section-map__footer
+		+l-container г. Москва, Федеративный проспект, д. 9, корп. 2, офис 1

@@ -1,0 +1,26 @@
+include ~blocks/icon/mixin
+
+mixin section-title(data)
+	-
+		data = data || {};
+		state = data.icon ? ['has-icon'] : [];
+		tagName = data.tag || 'h2'
+		classMods = mods('section-title', data.mods)
+
+	if (data.icon)
+		.section-title(
+			class=state
+			class=data.class
+			class=classMods
+			)&attributes(data.attributes)
+			.section-title__icon
+				+icon({name: data.icon, mods: 'center'})
+			#{tagName}.section-title__title
+				block
+	else
+		#{tagName}.section-title(
+			class=state
+			class=data.class
+			class=classMods
+			)&attributes(data.attributes)
+			block

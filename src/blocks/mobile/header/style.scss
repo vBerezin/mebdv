@@ -1,0 +1,113 @@
+@import "~common/styles/variables/animation";
+@import "~common/styles/variables/transition";
+@import "~common/styles/variables/colors";
+@import "styles/animations";
+
+.header {
+  $z-index: 100;
+  position: relative;
+  z-index: $z-index;
+  min-height: 70px;
+
+  &__sticky {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+  }
+  &__top {
+    flex: 0 0 70px;
+    height: 70px;
+    background: #F4F4F4;
+    padding: 15px 0;
+  }
+  &__top-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__bottom {
+    position: relative;
+    flex: 1 1 auto;
+  }
+  &__overlay,
+  &__search,
+  &__menu,
+  &__catalog {
+    display: none;
+  }
+  &__overlay {
+    background: $color-overlay;
+    animation: header-overlay $animation-time ease-out;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  &__search {
+    position: relative;
+    padding: 15px 0;
+    animation: header-search $animation-time ease-out;
+  }
+  &__nav {
+    position: relative;
+    max-width: 265px;
+    height: 100%;
+    background: #fff;
+    padding-right: 5px;
+    animation: header-nav $animation-time ease-out;
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 5px;
+      background: linear-gradient(to right, rgba(#000, 0.1), #F4F4F4);
+    }
+  }
+  &__logo {
+    flex: 1 1 auto;
+    font-size: 0;
+    line-height: 0;
+    text-align: center;
+  }
+  &__toggle {
+    margin-right: 20px;
+  }
+  &__phone {
+    margin-left: 20px;
+  }
+
+  &.header--menu-active,
+  &.header--search-active,
+  &.header--catalog-active {
+    .header__overlay {
+      display: block;
+    }
+    .header__sticky {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &.header--menu-active {
+    .header__menu {
+      display: block;
+    }
+  }
+  &.header--catalog-active {
+    .header__catalog {
+      display: block;
+    }
+  }
+  &.header--search-active {
+    .header__search {
+      display: block;
+    }
+  }
+}

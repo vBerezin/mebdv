@@ -1,0 +1,94 @@
+@import "~common/styles/variables/transition";
+
+@import "~owl.carousel/dist/assets/owl.carousel.min.css";
+@import "~owl.carousel/dist/assets/owl.theme.default.min.css";
+
+.owl-carousel {
+  direction: ltr;
+}
+.owl-nav {
+  direction: ltr;
+
+  button.owl-prev,
+  button.owl-next {
+    display: block;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    position: absolute;
+    top: 50%;
+    background: #FF297A;
+    color: #fff;
+    font-size: 50px;
+    width: 1em;
+    height: 2em;
+    margin-top: -1em;
+    transition: background-color $transition-time ease-out;
+
+    .icon {
+      display: block;
+      position: absolute;
+      font-size: 0.3em;
+      left: 50%;
+      top: 50%;
+      margin-left: -0.5em;
+      margin-top: -0.5em;
+    }
+    &:hover {
+      background-color: darken(#FF297A, 10%);
+    }
+    &:active {
+      background-color: darken(#FF297A, 15%);
+    }
+    &[disabled],
+    &.is-disabled,
+    &.disabled {
+      background-color: lighten(#FF297A, 15%);
+      cursor: not-allowed;
+    }
+  }
+  button.owl-prev {
+    left: 0;
+    border-radius: 0 15px;
+  }
+  button.owl-next {
+    right: 0;
+    border-radius: 15px 0;
+  }
+}
+.owl-item {
+  img {
+    width: auto;
+  }
+}
+.owl-dots {
+  text-align: center;
+  line-height: 0;
+  font-size: 0;
+  position: relative;
+  direction: ltr;
+  margin-top: 15px;
+
+  button.owl-dot {
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 50%;
+    box-shadow: none;
+    padding: 0;
+    outline: none;
+    border: none;
+    width: 6px;
+    height: 6px;
+    background: #E0E8EB;
+    margin: 0 4px;
+    transition: background $transition-time;
+    &.active {
+      background: #625878;
+    }
+  }
+}
+.owl-drag {
+  cursor: move;
+}
+
+

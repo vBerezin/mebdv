@@ -1,0 +1,10 @@
+include ~blocks/image/mixin
+include ~blocks/icon/mixin
+
+mixin menu-app(data)
+	- data = data || {};
+	nav.menu-app(
+		data-menu=data.items
+		class=data.class
+		class=mods('menu-app', data.mods)
+	)&attributes(data.attributes)

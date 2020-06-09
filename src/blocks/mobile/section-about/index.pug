@@ -1,0 +1,22 @@
+include ~layout/l-container/mixin
+include ~blocks/icon/mixin
+include ~blocks/lazy-image/mixin
+include ~blocks/section/mixin
+include ~blocks/section-head/mixin
+include ~blocks/section-title/mixin
+
++section({
+	class: 'section-about',
+	mods: 'bottom'
+})
+	+l-container
+		+section-head
+			+section-title({ tag: 'h1' }) Мы сами производим мебель и знаем о ней всё
+		.section-about__img
+			+lazy-image({
+				src: '/images/sections/about.png',
+				srcset: {
+					'2x': '/images/sections/about@2x.png',
+				}
+			})
+		.section-about__body Наша компания была основана в 1993 году, а наш интернет-магазин стал одним из первых магазинов, осуществляющих онлайн продажу мебели в регионе. Компания специализируется на оптовой и розничной продаже мебели как для дома, так и для офиса и производственных помещений, а также различной мебельной фурнитуры.

@@ -1,0 +1,109 @@
+include ~layout/l-container/mixin
+include ~blocks/image/mixin
+include ~blocks/icon-box/mixin
+include ~blocks/button-menu/mixin
+include ~blocks/menu-app/mixin
+include ~blocks/form-search/mixin
+
+-
+	catalogItems = [
+		{
+			title: 'Кухня',
+			image: {
+				src: '/images/menu/catalog-1.svg'
+			}
+		},
+		{
+			title: 'Мягкая мебель',
+			image: {
+				src: '/images/menu/catalog-2.svg'
+			}
+		},
+		{
+			title: 'Гостиная',
+			image: {
+				src: '/images/menu/catalog-3.svg'
+			}
+		},
+		{
+			title: 'Спальня',
+			image: {
+				src: '/images/menu/catalog-4.svg'
+			}
+		},
+	]
+	menuItems = [
+		{
+			title: 'О магазине',
+			href: '#'
+		},
+		{
+			title: 'Каталог мебели',
+			href: '#',
+			items: catalogItems
+		},
+		{
+			title: 'Доставка и оплата',
+			href: '#',
+			active: true,
+		},
+		{
+			title: 'Гарантия',
+			href: '#'
+		},
+		{
+			title: 'Производители',
+			href: '#'
+		},
+		{
+			title: 'Отзывы',
+			href: '#'
+		},
+		{
+			title: 'Контакты',
+			href: '#'
+		},
+	]
+
+header.header.js-header#header
+	.header__sticky
+		.header__top
+			+l-container({ class: 'header__top-inner' })
+				+button-menu({
+					mods: 'white',
+					class: 'header__toggle',
+					attributes: {
+						'data-rel': 'header.toggle'
+					}
+				})
+				.header__logo
+					a(href="/")
+						+image({ src: '/images/logo.svg' })
+				+icon-box({
+					tag: 'a',
+					class: 'header__phone',
+					icon: 'phone',
+					mods: 'white',
+					attributes: {
+						'href': 'tel:+74957963035'
+					}
+				})
+		.header__bottom
+			.header__overlay(data-rel="header.overlay")
+			.header__search
+				+l-container
+					+form-search({
+						attributes: {
+							'data-rel': 'header.search'
+						}
+					})
+			.header__nav.header__menu
+				+menu-app({
+					class: 'js-menu-mobile',
+					items: menuItems
+				})
+			.header__nav.header__catalog
+				+menu-app({
+					class: 'js-menu-mobile',
+					items: catalogItems
+				})

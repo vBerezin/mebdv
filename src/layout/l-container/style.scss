@@ -1,0 +1,8 @@
+@import "~common/styles/variables/layout";
+@import "~blocks/breakpoints/mixin";
+
+.l-container {
+  margin: 0 auto;
+  padding: 0 $layout-padding;
+  max-width: $layout-width;
+}

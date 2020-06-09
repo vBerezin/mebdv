@@ -1,0 +1,19 @@
+@import "~common/styles/variables/fonts";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-size: 18px;
+  margin: 0 0 0.5em 0;
+  font-weight: $font-weight-medium;
+  color: currentColor;
+}
