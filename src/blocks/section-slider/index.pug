@@ -1,7 +1,11 @@
 include ~layout/l-container/mixin
+include ~blocks/section/mixin
 include ~blocks/lazy-image/mixin
 
-.section-slider.js-section-slider
++section({
+	mods: ['top', 'bottom'],
+	class: ['section-slider', 'js-section-slider']
+})
 	+l-container
 		.section-slider__outer
 			.section-slider__carousel(data-rel="section.slider.carousel")

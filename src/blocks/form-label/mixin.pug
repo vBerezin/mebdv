@@ -1,0 +1,7 @@
+mixin form-label(data)
+	- data = data || {};
+	label.form-label(
+		class=data.class
+		class=mods('form-label', data.mods)
+	)&attributes(data.attributes)
+		block

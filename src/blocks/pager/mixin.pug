@@ -1,0 +1,12 @@
+mixin pager(data)
+	- data = data || {};
+	nav.pager(
+		class=data.class
+		class=mods('pager', data.mods)
+		)&attributes(data.attributes)
+		ul
+			each item in data.items
+				- tagName = item.href ? 'a' : 'span'
+				- classes = item.active ? 'is-active' : ''
+				li
+					#{tagName}.pager__item(href=item.href class=classes) #{item.title}

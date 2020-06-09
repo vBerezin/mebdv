@@ -1,0 +1,29 @@
+extends ~layout/l-mobile/index
+
+include ~blocks/text-block/mixin
+include ~blocks/breadcrumbs/mixin
+
+block variables
+	- TITLE = 'Производители'
+
+block page-head
+	+breadcrumbs({
+		items: [
+			{
+				title: 'Главная',
+				href: '/'
+			},
+			{
+				title: 'Производители',
+			},
+		]
+	})
+	h1 Производители
+block page-body
+	+text-block
+		p Наша компания была основана в 1993 году, а наш интернет-магазин стал одним из первых магазинов, осуществляющих on-line продажу мебели в регионе. Компания специализируется на оптовой и розничной продаже мебели как для дома, так и для офиса и производственных помещений, а также различной мебельной фурнитуры.
+	include ~blocks/mobile/brands-list/index
+
+block prepend footer
+	include ~blocks/mobile/section-contact/index
+	include ~blocks/mobile/section-map/index

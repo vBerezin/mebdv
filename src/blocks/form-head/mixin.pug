@@ -1,0 +1,7 @@
+mixin form-head(data)
+	- data = data || {};
+	.form-head(
+		class=data.class
+		class=mods('form-head', data.mods)
+	)&attributes(data.attributes)
+		block

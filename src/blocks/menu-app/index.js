@@ -1,27 +1,36 @@
 import { Icon } from '~blocks/icon';
 
 export class MenuApp {
+  #current;
   constructor({ node, data }) {
     this.el = node;
     this.data = data;
-    this.render(data);
+    this.#current = [];
+    this.render()
   }
-  render(data) {
-    const list = this.makeList(data);
-    this.el.innerHTML = `<ul>${list}</ul>`;
+  render() {
+    const head = this.#makeHead(this.data);
+    const body = this.#makeBody(this.data);
+    this.el.innerHTML = `${head}${body}`;
   }
-  makeList(data) {
-    return data.reduce((current, item) => {
-      return `${current}<li>${this.makeItem(item)}</li>`
+  #makeHead() {
+    return `<div class="menu-app__head"></div>`;
+  }
+  #makeBody(data) {
+    const items =  data.reduce((current, item, index) => {
+      return `${current}<li>${this.#makeItem(item, index)}</li>`
     },'');
+    return `<div class="menu-app__body"><ul>${items}</ul></div>`;
   }
-  makeItem(data) {
+  #makeItem(data, index) {
     const item = document.createElement(data.href ? 'a' : 'div');
     const icon = new Icon({
       name: data.items ? 'sub' : 'right',
       mods: 'center'
     });
     item.className = 'menu-app__item';
+    item.dataset.index = index;
+    item.dataset.click = 'menu.app.to';
     item.href = data.href;
     if (data.active) item.classList.add('is-active');
     if (data.image) {
@@ -33,4 +42,5 @@ export class MenuApp {
     item.innerHTML += `<div class="menu-app__item__icon">${icon.outerHTML}</div>`;
     return item.outerHTML;
   }
+
 }

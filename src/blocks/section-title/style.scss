@@ -1,6 +1,9 @@
+@import "~common/styles/variables/fonts";
+
 .section-title {
   font-size: 18px;
   color: #000;
+  font-weight: $font-weight-medium;
 
   &__icon {
     flex: 0 0 auto;
@@ -17,6 +20,7 @@
     color: currentColor;
     flex: 1 1 auto;
     margin: 0;
+    font-weight: $font-weight-medium;
   }
   &.has-icon {
     display: flex;

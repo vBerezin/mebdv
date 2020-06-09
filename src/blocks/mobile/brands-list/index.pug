@@ -1,0 +1,13 @@
+include ~blocks/brand/mixin
+
+.brands-list
+	each i in [1,2,3,4,5]
+		+brand({
+			class: 'brands-list__item',
+			image: {
+				src: `/images/brands/brand-${i}.png`,
+				srcset: {
+					'2x': `/images/brands/brand-${i}@2x.png`,
+				}
+			}
+		})

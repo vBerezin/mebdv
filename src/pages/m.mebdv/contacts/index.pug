@@ -1,0 +1,26 @@
+extends ~layout/l-mobile/index
+
+include ~blocks/breadcrumbs/mixin
+
+block variables
+	- TITLE = 'Контактная информация'
+
+block page-head
+	+breadcrumbs({
+		items: [
+			{
+				title: 'Главная',
+				href: '/'
+			},
+			{
+				title: 'Контакты',
+			},
+		]
+	})
+	h1 Контактная информация
+block page-body
+	include ~blocks/mobile/contacts/index
+
+block prepend footer
+	include ~blocks/mobile/section-contact/index
+	include ~blocks/mobile/section-map/index

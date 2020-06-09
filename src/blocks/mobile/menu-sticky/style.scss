@@ -1,11 +1,10 @@
+@import "~common/styles/variables/animation";
+@import "styles/animations";
+
 .menu-sticky {
   $z-index: 100;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: #F4F4F4;
-  z-index: $z-index;
+  min-height: 50px;
+
   ul {
     display: flex;
     align-items: stretch;
@@ -20,12 +19,18 @@
     padding: 1px;
     margin: 0;
   }
+  &__sticky {
+    background: #E8E8E8;
+    z-index: $z-index;
+    animation-duration: $animation-time;
+    animation-timing-function: ease-out;
+  }
   &__item {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #fff;
+    background: #F4F4F4;
     padding: 10px;
     text-align: center;
     text-decoration: none;
@@ -46,6 +51,7 @@
       line-height: 0;
     }
 
+    &:focus,
     &:active,
     &.is-active {
       color: #fff;
@@ -53,6 +59,16 @@
       .menu-sticky__item__icon {
         color: currentColor;
       }
+    }
+  }
+
+  &.menu-sticky--active {
+    .menu-sticky__sticky {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      animation-name: menu-sticky;
     }
   }
 }

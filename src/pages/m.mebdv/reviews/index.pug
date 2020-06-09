@@ -1,0 +1,28 @@
+extends ~layout/l-mobile/index
+
+include ~blocks/review/mixin
+include ~blocks/breadcrumbs/mixin
+
+block variables
+	- TITLE = 'Отзывы'
+
+block page-head
+	+breadcrumbs({
+		items: [
+			{
+				title: 'Главная',
+				href: '/'
+			},
+			{
+				title: 'Отзывы',
+			},
+		]
+	})
+	h1 Отзывы
+block page-body
+	include ~blocks/mobile/reviews-list/index
+	include ~blocks/form-review/index
+
+block prepend footer
+	include ~blocks/mobile/section-contact/index
+	include ~blocks/mobile/section-map/index

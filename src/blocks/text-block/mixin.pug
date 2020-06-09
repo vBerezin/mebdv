@@ -1,0 +1,7 @@
+mixin text-block(data)
+	- data = data || {};
+	.text-block(
+		class=data.class
+		class=mods('text-block', data.mods)
+	)&attributes(data.attributes)
+		block

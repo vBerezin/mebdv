@@ -1,4 +1,5 @@
 import { ButtonMenu } from '~blocks/button-menu';
+import { MenuSticky } from '~blocks/mobile/menu-sticky';
 import { HeaderMenu } from './scripts/header-menu';
 import { HeaderCatalog } from './scripts/header-catalog';
 import { HeaderSearch } from './scripts/header-search';
@@ -11,12 +12,14 @@ export const Header = (() => {
   let current = null;
 
   function callback(state) {
+    document.body.style.overflow = state ? 'hidden' : '';
+    header.style.minHeight = state ? `${header.offsetHeight}px` : '';
     if (state && current) {
       current.close();
     }
+    MenuSticky.active = !state;
     toggle.active = state;
     current = state ? this : null;
-    document.body.style.overflow = state ? 'hidden' : '';
   }
 
   const menu = new HeaderMenu(header, callback);

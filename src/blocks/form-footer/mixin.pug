@@ -1,0 +1,7 @@
+mixin form-footer(data)
+	- data = data || {};
+	.form-footer(
+		class=data.class
+		class=mods('form-footer', data.mods)
+	)&attributes(data.attributes)
+		block

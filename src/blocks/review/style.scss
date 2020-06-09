@@ -1,0 +1,27 @@
+@import "~common/styles/variables/fonts";
+
+.review {
+  padding: 15px;
+  color: #000;
+  background: #FFFFFF;
+  font-weight: $font-weight-medium;
+  border-radius: 6px;
+  box-shadow: 0 0 2px rgba(160, 160, 160, 0.4);
+
+  &__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+  &__title {
+    flex: 1 1 auto;
+    color: #000;
+    font-weight: $font-weight-bold;
+  }
+  &__date {
+    color: #9E9E9E;
+    margin-left: 20px;
+    font-weight: $font-weight-regular;
+  }
+}

@@ -1,0 +1,7 @@
+mixin form-field(data)
+	- data = data || {};
+	.form-field(
+		class=data.class
+		class=mods('form-field', data.mods)
+	)&attributes(data.attributes)
+		block

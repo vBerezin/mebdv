@@ -1,0 +1,13 @@
+include ~blocks/icon/mixin
+
+mixin breadcrumbs(data)
+	- data = data || {};
+	nav.breadcrumbs(
+		class=data.class
+		class=mods('breadcrumbs', data.mods)
+	)&attributes(data.attributes)
+		each item, index in data.items
+			- tagName = item.href ? 'a' : 'span'
+			#{tagName}.breadcrumbs__item(href=item.href) #{item.title}
+			if (index < data.items.length - 1)
+				+icon({ name: 'right', class: 'breadcrumbs__icon' })

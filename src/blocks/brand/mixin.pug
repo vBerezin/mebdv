@@ -1,0 +1,15 @@
+include ~blocks/lazy-image/mixin
+include ~blocks/button/mixin
+
+mixin brand(data)
+	- data = data || {};
+	.brand(
+		class=data.class
+		class=mods('brand', data.mods)
+	)&attributes(data.attributes)
+		if (data.image)
+			.brand__image
+				+lazy-image(data.image)
+		.brand__footer
+		+button({ mods: ['block', 'white'] }) Показать больше
+

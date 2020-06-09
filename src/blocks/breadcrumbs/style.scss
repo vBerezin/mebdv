@@ -1,0 +1,23 @@
+@import "~common/styles/variables/fonts";
+
+.breadcrumbs {
+  color: #898989;
+  font-weight: $font-weight-semi-bold;
+  line-height: 1.2em;
+
+  &__item,
+  &__icon {
+    vertical-align: middle;
+  }
+  &__item {
+    display: inline;
+    text-decoration: none;
+    &[href] {
+      color: #000;
+    }
+  }
+  &__icon {
+    display: inline-block;
+    font-size: 1.2em;
+  }
+}

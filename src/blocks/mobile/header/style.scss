@@ -9,6 +9,13 @@
   z-index: $z-index;
   min-height: 70px;
 
+  &__search,
+  &__nav,
+  &__overlay {
+    animation-duration: $animation-time;
+    animation-timing-function: ease-out;
+  }
+
   &__sticky {
     display: flex;
     flex-direction: column;
@@ -20,15 +27,12 @@
     height: 70px;
     background: #F4F4F4;
     padding: 15px 0;
+    position: relative;
   }
   &__top-inner {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  &__bottom {
-    position: relative;
-    flex: 1 1 auto;
   }
   &__overlay,
   &__search,
@@ -38,25 +42,29 @@
   }
   &__overlay {
     background: $color-overlay;
-    animation: header-overlay $animation-time ease-out;
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
+    animation-name: header-overlay;
   }
+
   &__search {
     position: relative;
     padding: 15px 0;
-    animation: header-search $animation-time ease-out;
+    animation-name: header-search;
   }
   &__nav {
     position: relative;
+    flex: 1 1 auto;
+    overflow: auto;
+    overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
     max-width: 265px;
-    height: 100%;
     background: #fff;
     padding-right: 5px;
-    animation: header-nav $animation-time ease-out;
+    animation-name: header-nav;
     &::after {
       content: '';
       display: block;

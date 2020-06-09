@@ -1,0 +1,8 @@
+mixin form(data)
+	- data = data || {};
+	form.form(
+		action=data.action
+		class=data.class
+		class=mods('form', data.mods)
+	)&attributes(data.attributes)
+		block

@@ -1,0 +1,40 @@
+@import "~common/styles/mixins/placeholder";
+@import "~common/styles/variables/fonts";
+
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="tel"] {
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  line-height: 20px;
+  color: #000;
+  background: #FFFFFF;
+  border: 1px solid #E7E7E7;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 9px 14px;
+  font-weight: $font-weight-regular;
+
+  @include placeholder {
+    color: #7A7A7A;
+  }
+  &:active,
+  &:focus {
+    border-color: #F78B3D;
+  }
+}
+
+textarea {
+  min-height: 165px;
+  resize: vertical;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="tel"] {
+  height: 40px;
+}

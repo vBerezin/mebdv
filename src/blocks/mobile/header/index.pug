@@ -35,16 +35,16 @@ include ~blocks/form-search/mixin
 	menuItems = [
 		{
 			title: 'О магазине',
-			href: '#'
+			href: '/m.mebdv/about'
 		},
 		{
 			title: 'Каталог мебели',
-			href: '#',
+			href: '/m.mebdv/catalog',
 			items: catalogItems
 		},
 		{
 			title: 'Доставка и оплата',
-			href: '#',
+			href: '/m.mebdv/delivery',
 			active: true,
 		},
 		{
@@ -53,20 +53,21 @@ include ~blocks/form-search/mixin
 		},
 		{
 			title: 'Производители',
-			href: '#'
+			href: '/m.mebdv/brands'
 		},
 		{
 			title: 'Отзывы',
-			href: '#'
+			href: '/m.mebdv/reviews'
 		},
 		{
 			title: 'Контакты',
-			href: '#'
+			href: '/m.mebdv/contacts'
 		},
 	]
 
 header.header.js-header#header
 	.header__sticky
+		.header__overlay(data-rel="header.overlay")
 		.header__top
 			+l-container({ class: 'header__top-inner' })
 				+button-menu({
@@ -77,7 +78,7 @@ header.header.js-header#header
 					}
 				})
 				.header__logo
-					a(href="/")
+					a(href="/m.mebdv")
 						+image({ src: '/images/logo.svg' })
 				+icon-box({
 					tag: 'a',
@@ -88,22 +89,20 @@ header.header.js-header#header
 						'href': 'tel:+74957963035'
 					}
 				})
-		.header__bottom
-			.header__overlay(data-rel="header.overlay")
-			.header__search
-				+l-container
-					+form-search({
-						attributes: {
-							'data-rel': 'header.search'
-						}
-					})
-			.header__nav.header__menu
-				+menu-app({
-					class: 'js-menu-mobile',
-					items: menuItems
+		.header__search
+			+l-container
+				+form-search({
+					attributes: {
+						'data-rel': 'header.search'
+					}
 				})
-			.header__nav.header__catalog
-				+menu-app({
-					class: 'js-menu-mobile',
-					items: catalogItems
-				})
+		.header__nav.header__menu
+			+menu-app({
+				class: 'js-menu-mobile',
+				items: menuItems
+			})
+		.header__nav.header__catalog
+			+menu-app({
+				class: 'js-menu-mobile',
+				items: catalogItems
+			})

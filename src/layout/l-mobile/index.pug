@@ -1,5 +1,7 @@
 extends ~common/templates/layout/base
 
+include ~layout/l-container/mixin
+
 block body
 	.l-mobile
 		.l-mobile__header
@@ -7,6 +9,11 @@ block body
 				include ~blocks/mobile/header/index
 		main.l-mobile__main
 			block main
+				+l-container
+					.l-mobile__head
+						block page-head
+					.l-mobile__body
+						block page-body
 		.l-mobile__footer
 			block footer
 				include ~blocks/mobile/footer/index

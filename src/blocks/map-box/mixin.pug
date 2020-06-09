@@ -1,0 +1,9 @@
+include ~blocks/lazy-iframe/mixin
+
+mixin map-box(data)
+	- data = data || {};
+	.map-box(
+		class=data.class
+		class=mods('map-box', data.mods)
+	)&attributes(data.attributes)
+		+lazy-iframe({ src: 'https://yandex.ru/map-widget/v1/-/CCQdRXVvcD' })

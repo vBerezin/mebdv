@@ -34,7 +34,7 @@ module.exports = {
   },
   pug: {
     dest: build,
-    src: `${src}/pages/**/index.pug`,
+    src: `${src}/pages/**/*.pug`,
     lint: `${src}/**/*.pug`,
     clean: `${build}/*.html`,
     watch: `${src}/**/*.pug`,

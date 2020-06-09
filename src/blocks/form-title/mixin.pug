@@ -1,0 +1,7 @@
+mixin form-title(data)
+	- data = data || {};
+	.form-title(
+		class=data.class
+		class=mods('form-title', data.mods)
+	)&attributes(data.attributes)
+		block

@@ -2,26 +2,27 @@ include ~blocks/icon/mixin
 include ~blocks/badge/mixin
 
 nav.menu-sticky.js-menu-sticky
-	ul
-		li
-			a.menu-sticky__item(href="/catalog" data-click="catalog.open")
-				span.menu-sticky__item__icon
-					+icon({ name: 'catalog' })
-				span.menu-sticky__item__name Каталог
-		li
-			a.menu-sticky__item(href="/search" data-click="search.open")
-				span.menu-sticky__item__icon
-					+icon({ name: 'search' })
-				span.menu-sticky__item__name Поиск
-		li
-			a.menu-sticky__item(href="/cart")
-				span.menu-sticky__item__icon
-					+icon({ name: 'cart' })
-					+badge({ mods: ['orange', 'small'] }) 12
-				span.menu-sticky__item__name Корзина
-		li
-			a.menu-sticky__item(href="/contacts")
-				span.menu-sticky__item__icon
-					+icon({ name: 'map' })
-				span.menu-sticky__item__name Контакты
+	.menu-sticky__sticky
+		ul
+			li
+				a.menu-sticky__item(href="/m.mebdv/catalog" data-click="catalog.open")
+					span.menu-sticky__item__icon
+						+icon({ name: 'catalog' })
+					span.menu-sticky__item__name Каталог
+			li
+				a.menu-sticky__item(href="/search" data-click="search.open")
+					span.menu-sticky__item__icon
+						+icon({ name: 'search' })
+					span.menu-sticky__item__name Поиск
+			li
+				a.menu-sticky__item(href="/m.mebdv/cart")
+					span.menu-sticky__item__icon
+						+icon({ name: 'cart' })
+						+badge({ mods: ['orange', 'small'] }) 12
+					span.menu-sticky__item__name Корзина
+			li
+				a.menu-sticky__item(href="/m.mebdv/contacts")
+					span.menu-sticky__item__icon
+						+icon({ name: 'map' })
+					span.menu-sticky__item__name Контакты
 
