@@ -1,0 +1,12 @@
+include ~blocks/button/mixin
+
+.cart-total
+	.cart-total__title Стоимость Вашего заказа
+	.cart-total__price 60 000 ₽
+	+button({
+		class: 'cart-total__button',
+		mods: ['block', 'white', 'round', 'large'],
+		attributes: {
+			href: '/checkout'
+		}
+	}) Оформить заказ

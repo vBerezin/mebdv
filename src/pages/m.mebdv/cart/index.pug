@@ -1,10 +1,12 @@
 extends ~layout/l-mobile/index
 
-include ~blocks/review/mixin
+include ~blocks/text-block/mixin
 include ~blocks/breadcrumbs/mixin
+include ~blocks/section-head/mixin
+include ~blocks/section-title/mixin
 
 block variables
-	- TITLE = 'Отзывы'
+	- TITLE = 'Корзина'
 
 block page-head
 	+breadcrumbs({
@@ -14,14 +16,13 @@ block page-head
 				href: '/'
 			},
 			{
-				title: 'Отзывы',
+				title: 'Корзина',
 			},
 		]
 	})
-	h1 Отзывы
+	h1 Корзина
 block page-body
-	include ~blocks-mobile/reviews-list/index
-	include ~blocks/form-review/index
+	include ~blocks-mobile/cart/index
 
 block prepend footer
 	include ~blocks-mobile/section-contact/index

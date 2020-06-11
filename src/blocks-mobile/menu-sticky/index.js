@@ -1,4 +1,4 @@
-import { Header } from '~blocks/mobile/header';
+import { Header } from '~blocks-mobile/header';
 import { Handlers } from '~common/scripts/utils/handlers';
 
 class Menu {

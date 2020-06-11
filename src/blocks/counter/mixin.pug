@@ -1,0 +1,20 @@
+include ~blocks/icon/mixin
+
+mixin counter(data)
+	- data = data || {};
+	.counter(
+		class=data.class
+		class=mods('counter', data.mods)
+		)&attributes(data.attributes)
+		button.counter__button(data-rel="counter.minus")
+			+icon({ name: 'minus', mods: 'center' })
+		input.counter__input(
+			min=data.min
+			max=data.max
+			step=data.step
+			value=data.value
+			pattern="[0-9]*"
+			type="number"
+			data-rel="counter.input")
+		button.counter__button(data-rel="counter.plus")
+			+icon({ name: 'plus', mods: 'center'})

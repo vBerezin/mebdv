@@ -6,7 +6,7 @@ block body
 	.l-mobile
 		.l-mobile__header
 			block header
-				include ~blocks/mobile/header/index
+				include ~blocks-mobile/header/index
 		main.l-mobile__main
 			block main
 				+l-container
@@ -16,8 +16,8 @@ block body
 						block page-body
 		.l-mobile__footer
 			block footer
-				include ~blocks/mobile/footer/index
-				include ~blocks/mobile/menu-sticky/index
+				include ~blocks-mobile/footer/index
+				include ~blocks-mobile/menu-sticky/index
 block append stylesheets
 	link(rel="stylesheet" href=`/mobile.css?${$.version}`)
 block append scripts

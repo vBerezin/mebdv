@@ -1,0 +1,64 @@
+@import "~common/styles/variables/fonts";
+
+.product-cart {
+  display: block;
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0 0 2px rgba(160, 160, 160, 0.4);
+  padding: 15px;
+
+  &__head {
+    margin-bottom: 15px;
+  }
+  &__footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #E7E7E7;
+  }
+  &__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0;
+    line-height: 0;
+    height: 160px;
+
+    img {
+      max-height: 160px;
+    }
+  }
+  &__title {
+    font-size: 14px;
+    color: #122351;
+    text-decoration: none;
+    font-weight: $font-weight-semi-bold;
+  }
+  &__price {
+    font-weight: $font-weight-bold;
+    font-size: 15px;
+    margin: 5px 0 10px 0;
+  }
+  &__specs {
+    dl {
+      display: block;
+      margin: 5px 0;
+      font-weight: $font-weight-semi-bold;
+    }
+    dd,
+    dt {
+      display: inline;
+    }
+  }
+
+  &__count,
+  &__delete {
+    flex: 0 0 auto;
+  }
+  &__count-title {
+    margin-bottom: 10px;
+  }
+}

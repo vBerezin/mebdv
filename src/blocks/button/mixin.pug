@@ -1,3 +1,5 @@
+include ~blocks/icon/mixin
+
 mixin button(data)
 	-
 		data = data || {};
@@ -7,4 +9,6 @@ mixin button(data)
 		class=data.class
 		class=mods('button', data.mods)
 		)&attributes(data.attributes)
+		if (data.icon)
+			+icon({ name: data.icon, class: 'button__icon' })
 		block

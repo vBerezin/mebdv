@@ -1,0 +1,37 @@
+include ~blocks/button/mixin
+include ~blocks/counter/mixin
+include ~blocks/lazy-image/mixin
+
+mixin product-cart(data)
+	- data = data || {};
+	.product-cart(
+		class=data.class
+		class=mods('product-cart', data.mods)
+	)&attributes(data.attributes)
+		.product-cart__head
+			a.product-cart__image(href="/product")
+				+lazy-image(data.image)
+		.product-cart__body
+			a.product-cart__title(href="/product") Диван Еврокнижка Денис
+			.product-cart__price 30 000 ₽
+			.product-cart__specs
+				dl
+					dt Габариты:
+					dd 2200 x 2100 x 600
+				dl
+					dt Материал:
+					dd ППУ
+				dl
+					dt Основная ткань:
+					dd Велюр Хаки
+				dl
+					dt Ткань компаньон:
+					dd Sontex beige
+		.product-cart__footer
+			.product-cart__count
+				.product-cart__count-title Количество:
+				+counter({ class: 'js-counter', min: 1, max: 10, step: 1, value: 10 })
+			+button({
+				class: 'product-cart__delete',
+				icon: 'delete'
+			}) Удалить

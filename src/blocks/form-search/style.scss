@@ -15,21 +15,9 @@
     font-size: 20px;
     color: #A9A9A9;
   }
-  &__input {
-    display: block;
-    width: 100%;
-    color: #000;
-    background: #fff;
-    border: none;
-    font-size: 12px;
-    line-height: 20px;
-    height: 40px;
-    padding: 20px 20px 20px 40px;
-    border-radius: 6px;
+  &__input[type="search"],
+  &__input[type="text"] {
+    padding-left: 40px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-
-    @include placeholder {
-      color: #7A7A7A;
-    }
   }
 }

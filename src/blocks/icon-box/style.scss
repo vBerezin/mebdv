@@ -21,6 +21,10 @@
     font-size: 0.5em;
   }
 
+  &.icon-box--orange {
+    color: #fff;
+    background: #F78B3D linear-gradient(to bottom, rgba(#fff, 0.2), #F78B3D);
+  }
   &.icon-box--blue {
     background: #312e76;
     color: #fff;
@@ -29,6 +33,10 @@
     background: #fff;
     color: #312E76;
   }
+  &.icon-box--round {
+    border-radius: 0.5em;
+  }
+
   &.icon-box--small {
     font-size: 32px;
     .icon-box__icon {

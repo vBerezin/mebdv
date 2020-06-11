@@ -1,5 +1,5 @@
 import { ButtonMenu } from '~blocks/button-menu';
-import { MenuSticky } from '~blocks/mobile/menu-sticky';
+import { MenuSticky } from '~blocks-mobile/menu-sticky';
 import { HeaderMenu } from './scripts/header-menu';
 import { HeaderCatalog } from './scripts/header-catalog';
 import { HeaderSearch } from './scripts/header-search';

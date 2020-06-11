@@ -5,6 +5,10 @@
 @import "~blocks/button-menu/style";
 @import "~blocks/menu-app/style";
 @import "~blocks/rating/style";
+@import "~blocks/icon-block/style";
+@import "~blocks/counter/style";
+@import "~blocks/order-info/style";
+@import "~blocks/cart-total/style";
 @import "~blocks/product-panel/style";
 @import "~blocks/section-slider/style";
 @import "~blocks/form-search/style";
@@ -13,6 +17,8 @@
 @import "~blocks/brand/style";
 @import "~blocks/breadcrumbs/style";
 @import "~blocks/review/style";
+@import "~blocks/map-box/style";
+@import "~blocks/product-cart/style";
 @import "~blocks/form/style";
 @import "~blocks/form-title/style";
 @import "~blocks/form-head/style";
@@ -21,20 +27,20 @@
 @import "~blocks/form-label/style";
 @import "~blocks/form-review/style";
 @import "~blocks/form-feedback/style";
-@import "~blocks/map-box/style";
 
-@import "~blocks/mobile/header/style";
-@import "~blocks/mobile/footer/style";
-@import "~blocks/mobile/menu-sticky/style";
-@import "~blocks/mobile/grid-catalog/style";
-@import "~blocks/mobile/section-map/style";
-@import "~blocks/mobile/section-contact/style";
-@import "~blocks/mobile/section-catalog/style";
-@import "~blocks/mobile/section-products/style";
-@import "~blocks/mobile/section-features/style";
-@import "~blocks/mobile/section-about/style";
-@import "~blocks/mobile/catalog/style";
-@import "~blocks/mobile/brands-list/style";
-@import "~blocks/mobile/reviews-list/style";
-@import "~blocks/mobile/contacts/style";
+@import "~blocks-mobile/header/style";
+@import "~blocks-mobile/footer/style";
+@import "~blocks-mobile/menu-sticky/style";
+@import "~blocks-mobile/grid-catalog/style";
+@import "~blocks-mobile/section-map/style";
+@import "~blocks-mobile/section-contact/style";
+@import "~blocks-mobile/section-catalog/style";
+@import "~blocks-mobile/section-products/style";
+@import "~blocks-mobile/section-features/style";
+@import "~blocks-mobile/section-about/style";
+@import "~blocks-mobile/catalog/style";
+@import "~blocks-mobile/brands-list/style";
+@import "~blocks-mobile/reviews-list/style";
+@import "~blocks-mobile/contacts/style";
+@import "~blocks-mobile/cart/style";
 

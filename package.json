@@ -1,9 +1,8 @@
 {
-  "name": "hackthecrisisrussia.ru",
+  "name": "mebdv",
   "version": "1.0.0",
-  "author": "",
+  "author": "v.berezin",
   "license": "ISC",
-  "description": "",
   "start": "gulp",
   "main": "gulpfile.js",
   "scripts": {
@@ -11,14 +10,6 @@
     "build": "gulp build",
     "build-prod": "gulp build --prod",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@gitlab.com/mcs-front/hackthecrisisrussia.ru.git"
-  },
-  "homepage": "https://gitlab.com/mcs-front/hackthecrisisrussia.ru#readme",
-  "bugs": {
-    "url": "https://gitlab.com/mcs-front/hackthecrisisrussia.ru/issues"
   },
   "devDependencies": {
     "@babel/core": "^7.2.0",
@@ -94,7 +85,6 @@
   },
   "dependencies": {
     "jquery": "^3.4.1",
-    "malihu-custom-scrollbar-plugin": "^3.1.5",
     "owl.carousel": "^2.2.0"
   }
 }

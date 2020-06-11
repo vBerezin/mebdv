@@ -12,6 +12,8 @@ module.exports = {
   alias: {
     '~common': common,
     '~blocks': `${src}/blocks`,
+    '~blocks-desktop': `${src}/blocks-desktop`,
+    '~blocks-mobile': `${src}/blocks-mobile`,
     '~layout': `${src}/layout`,
     '~static': `${src}/static`,
     '~vendor': `${src}/vendor`,

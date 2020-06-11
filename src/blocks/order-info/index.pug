@@ -1,0 +1,33 @@
+include ~blocks/icon-block/mixin
+
+-
+	items = [
+		{
+			title: 'Доставка',
+			text: 'Доставим бесплатно при заказе от 10 000 ₽ в пределах МКАД.',
+			icon: 'download',
+		},
+		{
+			title: 'Гарантия качества',
+			text: 'Мы официальные представител и фабрики производителей.',
+			icon: 'check',
+		},
+		{
+			title: 'Купить в кредит',
+			text: 'Вы можете купить в кредит товары в нашем магазине.',
+			icon: 'calendar',
+		},
+		{
+			title: 'Гарантия возврата',
+			text: 'Можете вернуть товар, если он вам не подошел или вы нашли дефекты.',
+			icon: 'return',
+		},
+	]
+
+.order-info
+	each item in items
+		+icon-block({
+			class: 'order-info__item',
+			title: item.title,
+			icon: item.icon,
+		}) #{item.text}

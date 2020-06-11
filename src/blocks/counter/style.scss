@@ -1,0 +1,50 @@
+@import "~common/styles/variables/fonts";
+
+.counter {
+  display: flex;
+  align-self: stretch;
+  justify-content: flex-end;
+  border: 1px solid #E7E7E7;
+  background: #fff;
+  border-radius: 4px;
+
+  &__button,
+  &__input {
+    height: 38px;
+    background: none;
+    border-radius: 0;
+  }
+
+  &__button {
+    flex: 0 0 35px;
+    width: 35px;
+    position: relative;
+    color: #A8A8A8;
+    border: none;
+
+    &:active,
+    &:focus {
+      color: #F78B3D;
+    }
+  }
+  &__input {
+    flex: 1 1 auto;
+    text-align: center;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 5px;
+    min-width: 40px;
+    font-weight: $font-weight-bold;
+    border-width: 0 1px 0 1px;
+    border-style: solid;
+    border-color: #E7E7E7;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}

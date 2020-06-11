@@ -1,7 +1,7 @@
 extends ~layout/l-mobile/index
 
 include ~blocks/breadcrumbs/mixin
-include ~blocks/mobile/section-products/mixin
+include ~blocks-mobile/section-products/mixin
 
 block variables
 	- TITLE = 'Диваны'
@@ -21,9 +21,9 @@ block page-head
 	h1 Диваны
 block page-body
 
-	include ~blocks/mobile/catalog/index
+	include ~blocks-mobile/catalog/index
 
 
 block prepend footer
-	include ~blocks/mobile/section-contact/index
-	include ~blocks/mobile/section-map/index
+	include ~blocks-mobile/section-contact/index
+	include ~blocks-mobile/section-map/index

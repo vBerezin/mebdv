@@ -1,0 +1,14 @@
+.cart {
+  &__list,
+  &__total {
+    margin-bottom: 30px;
+  }
+  &__item {
+    margin-bottom: 20px;
+  }
+  &__info {
+    border-radius: 6px;
+    border: 1px solid #F4F4F4;
+    padding: 20px 15px;
+  }
+}

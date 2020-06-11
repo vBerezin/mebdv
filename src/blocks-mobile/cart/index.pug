@@ -1,0 +1,18 @@
+include ~blocks/product-cart/mixin
+
+.cart
+	.cart__list
+		each i in [1,2]
+			+product-cart({
+				class: 'cart__item',
+				image: {
+					src: `/images/product/cart-${i}.png`,
+					srcset: {
+						'2x': `/images/product/cart-${i}@2x.png`
+					}
+				}
+			})
+	.cart__total
+		include ~blocks/cart-total/index
+	.cart__info
+		include ~blocks/order-info/index

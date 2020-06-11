@@ -1,0 +1,20 @@
+@import "~common/styles/variables/fonts";
+
+.icon-block {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-weight: $font-weight-medium;
+
+  &__icon {
+    flex: 0 0 auto;
+    margin-right: 15px;
+  }
+  &__title {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  &__body {
+    flex: 1 1 auto;
+  }
+}
