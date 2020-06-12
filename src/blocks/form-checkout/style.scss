@@ -1,0 +1,43 @@
+@import "~blocks/breakpoints/mixin";
+
+.form-checkout {
+  &__head {
+    margin-bottom: 15px;
+  }
+  &__user,
+  &__payment,
+  &__delivery,
+  &__message {
+    margin-bottom: 30px;
+  }
+  @include breakpoint(sm) {
+    &__body {
+      display: grid;
+      grid-gap: 30px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &__user,
+    &__payment,
+    &__delivery,
+    &__message {
+      margin-bottom: 0;
+    }
+    &__user,
+    &__delivery,
+    &__payment {
+      grid-row: span 2;
+    }
+  }
+  @include breakpoint(md) {
+    &__body {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    &__delivery {
+      grid-row: span 3;
+    }
+    &__message {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+  }
+}

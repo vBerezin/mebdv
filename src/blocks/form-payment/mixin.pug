@@ -1,0 +1,40 @@
+include ~blocks/option/mixin
+include ~blocks/form/mixin
+include ~blocks/form-title/mixin
+include ~blocks/form-head/mixin
+include ~blocks/form-field/mixin
+include ~blocks/form-label/mixin
+
+mixin form-payment(data)
+	- data = data || {};
+	- data.class = [].concat(data.class, 'form-payment')
+	-
+		options = [
+			{
+				title: 'Наличные курьеру',
+				text: 'Оплата по факту доставки',
+			},
+			{
+				title: 'Банковский перевод',
+				text: 'Подробности у персонального менеджера по телефону',
+			},
+			{
+				title: 'Внутренний счет',
+				text: '',
+			},
+			{
+				title: 'Оформить покупку в кредит',
+				text: 'После подтверждения заказа, с Вами свяжется специалист кредитной службы для оформления заявки на кредит. Кредитование осуществляется через Банки «Русский стандарт» и «Home Credit Bank»',
+			},
+		]
+	+form(data)
+		+form-head
+			+form-title Выберите метод оплаты
+		each option, index in options
+			+form-field
+				+option({
+					type: 'radio',
+					name: 'payment-type',
+					value: `payment-${index}`,
+					title: option.title
+				}) #{option.text}

@@ -1,0 +1,49 @@
+include ~blocks/form/mixin
+include ~blocks/form-title/mixin
+include ~blocks/form-head/mixin
+include ~blocks/form-field/mixin
+include ~blocks/form-label/mixin
+
+mixin form-delivery(data)
+	- data = data || {};
+	- data.class = [].concat(data.class, 'form-delivery')
+	-
+		options = [
+			{
+				title: 'Доставка за МКАД',
+				text: '',
+			},
+			{
+				title: 'Доставка по Москве',
+				text: 'В пределах МКАД',
+			},
+		]
+	+form(data)
+		+form-head
+			+form-title Доставка
+		each option, index in options
+			+form-field
+				+option({
+					type: 'radio',
+					name: 'delivery-type',
+					value: `delivery-${index}`,
+					title: option.title
+				}) #{option.text}
+		+form-field
+			+form-label Город:
+			input(type="text" required)
+		+form-field
+			+form-label Улица:
+			input(type="text" required)
+		+form-field
+			+form-label Дом:
+			input(type="text" required)
+		+form-field
+			+form-label Корпус:
+			input(type="text")
+		+form-field
+			+form-label Подъезд:
+			input(type="text")
+		+form-field({mods: 'bottom'})
+			+form-label Квартира
+			input(type="text" required)

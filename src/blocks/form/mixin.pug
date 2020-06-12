@@ -1,7 +1,7 @@
 mixin form(data)
 	- data = data || {};
-	form.form(
-		action=data.action
+	- tagName = data.attributes && data.attributes.action ? 'form' : 'div';
+	#{tagName}.form(
 		class=data.class
 		class=mods('form', data.mods)
 	)&attributes(data.attributes)

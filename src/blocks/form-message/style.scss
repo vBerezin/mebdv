@@ -1,0 +1,9 @@
+@import "~blocks/breakpoints/mixin";
+
+.form-message {
+  @include breakpoint(md) {
+    textarea {
+      min-height: 290px;
+    }
+  }
+}

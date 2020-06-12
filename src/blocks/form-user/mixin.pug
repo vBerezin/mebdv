@@ -1,0 +1,24 @@
+include ~blocks/form/mixin
+include ~blocks/form-title/mixin
+include ~blocks/form-head/mixin
+include ~blocks/form-field/mixin
+include ~blocks/form-label/mixin
+
+mixin form-user(data)
+	- data = data || {};
+	- data.class = [].concat(data.class, 'form-user')
+	+form(data)
+		+form-head
+			+form-title Представьтесь, пожалуйста
+		+form-field
+			+form-label Ваше имя:
+			input(type="text" placeholder="Иван")
+		+form-field
+			+form-label Фамилия:
+			input(type="text" placeholder="Не обязательно")
+		+form-field
+			+form-label Телефон:
+			input(type="tel" placeholder="+7 (XXX) XXX-XX-XX" required)
+		+form-field({ mods: 'bottom' })
+			+form-label Email:
+			input(type="email" placeholder="example@mail.ru")

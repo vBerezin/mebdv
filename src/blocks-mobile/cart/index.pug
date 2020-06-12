@@ -1,4 +1,5 @@
 include ~blocks/product-cart/mixin
+include ~blocks/cart-total/mixin
 
 .cart
 	.cart__list
@@ -12,7 +13,14 @@ include ~blocks/product-cart/mixin
 					}
 				}
 			})
-	.cart__total
-		include ~blocks/cart-total/index
+	+cart-total({
+		class: 'cart__total',
+		button: {
+			text: 'Оформить заказ',
+			attributes: {
+				href: '/m.mebdv/checkout'
+			}
+		}
+	})
 	.cart__info
 		include ~blocks/order-info/index

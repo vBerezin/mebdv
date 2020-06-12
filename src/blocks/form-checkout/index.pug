@@ -1,0 +1,24 @@
+include ~blocks/option/mixin
+include ~blocks/cart-total/mixin
+include ~blocks/form-user/mixin
+include ~blocks/form-payment/mixin
+include ~blocks/form-delivery/mixin
+include ~blocks/form-message/mixin
+
+form.form-checkout(action='?checkout')
+	.form-checkout__head
+		h2 Оформление заказа
+	.form-checkout__body
+		+form-user({ class: 'form-checkout__user' })
+		+form-payment({class: 'form-checkout__payment'})
+		+form-delivery({ class: 'form-checkout__delivery' })
+		+form-message({ class: 'form-checkout__message' })
+		+cart-total({
+			class: 'form-checkout__total',
+			button: {
+				text: 'Оформить заказ',
+				attributes: {
+					type: 'submit'
+				}
+			}
+		})

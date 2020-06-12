@@ -45,17 +45,4 @@
     }
   }
 
-  @include breakpoint(xs) {
-    grid-template-columns: repeat(3, 1fr);
-    &__item {
-      &:nth-child(4n + 1),
-      &:nth-child(4n + 4) {
-        background: none;
-      }
-      &:nth-child(6n + 1),
-      &:nth-child(2n + 3) {
-        background: #F6F6F6;
-      }
-    }
-  }
 }

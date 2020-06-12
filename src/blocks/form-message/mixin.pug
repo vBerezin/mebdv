@@ -1,0 +1,14 @@
+include ~blocks/form/mixin
+include ~blocks/form-title/mixin
+include ~blocks/form-head/mixin
+include ~blocks/form-field/mixin
+include ~blocks/form-label/mixin
+
+mixin form-message(data)
+	- data = data || {};
+	- data.class = [].concat(data.class, 'form-message')
+	+form(data)
+		+form-head
+			+form-title Добавить комментарий
+		+form-field({ mods: 'bottom' })
+			textarea(placeholder="Напишите здесь все, что считаете нужным и что по вашему мнению поможет нам лучше выполнить ваш заказ")

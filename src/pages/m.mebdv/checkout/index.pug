@@ -1,0 +1,29 @@
+extends ~layout/l-mobile/index
+
+include ~blocks/text-block/mixin
+include ~blocks/breadcrumbs/mixin
+include ~blocks/section-head/mixin
+include ~blocks/section-title/mixin
+
+block variables
+	- TITLE = 'Корзина'
+
+block page-head
+	+breadcrumbs({
+		items: [
+			{
+				title: 'Главная',
+				href: '/'
+			},
+			{
+				title: 'Корзина',
+			},
+		]
+	})
+	h1 Корзина
+block page-body
+	include ~blocks/form-checkout/index
+
+block prepend footer
+	include ~blocks-mobile/section-contact/index
+	include ~blocks-mobile/section-map/index

@@ -7,7 +7,10 @@ include ~blocks/form-footer/mixin
 include ~blocks/form-label/mixin
 
 +form({
-	class: 'form-review'
+	class: 'form-review',
+	attributes: {
+		action: '?review'
+	}
 })
 	+form-head
 		+form-title Оставить отзыв
@@ -25,7 +28,7 @@ include ~blocks/form-label/mixin
 		textarea(placeholder="Сообщение")
 	+form-footer
 		+button({
-			mods: 'block',
+			mods: ['block', 'orange', 'round'],
 			attributes: {
 				type: 'submit'
 			}

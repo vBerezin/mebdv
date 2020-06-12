@@ -1,0 +1,14 @@
+include ~blocks/button/mixin
+
+mixin cart-total(data)
+	.cart-total(
+		class=data.class
+		class=mods('cart-total', data.mods)
+		)&attributes(data.attributes)
+		.cart-total__title Стоимость Вашего заказа
+		.cart-total__price 60 000 ₽
+		+button({
+			class: 'cart-total__button',
+			mods: ['block', 'white', 'round', 'large'],
+			attributes: data.button.attributes
+		}) #{data.button.text}
