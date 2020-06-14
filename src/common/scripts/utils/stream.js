@@ -2,11 +2,10 @@
  * @function { add } - Добавляет коллбек на событие
  * @function { remove } - Удаляет коллбек на событие
  * @function { trigger } - Запускает все коллбеки события
- * @function { triggerAll } - Запускает все события
  * */
 export function Stream() {
   this.storage = new Map();
-  this.add = (name, fn) => {
+  this.on = (name, fn) => {
     if (this.storage.has(name)) {
       this.storage.get(name).add(fn);
       return this;
@@ -14,7 +13,7 @@ export function Stream() {
     this.storage.set(name, new Set([fn]));
     return this;
   };
-  this.remove = (name, fn) => {
+  this.off = (name, fn) => {
     if (!this.storage.has(name)) {
       return false;
     }
@@ -25,6 +24,7 @@ export function Stream() {
     return this;
   };
   this.trigger = (name, args) => {
+    console.log(name, args);
     if (!this.storage.has(name) || !this.storage.get(name).size) {
       return false;
     }

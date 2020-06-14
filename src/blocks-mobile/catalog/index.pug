@@ -46,12 +46,13 @@ include ~blocks/product-panel/mixin
 		.catalog__grid
 			each item in [1,2,3,4,5,6,7,8]
 				+product-panel({
+					href: '/m.mebdv/product',
 					attributes: {
 						id: `product-${item}`
 					}
 				})
 	.catalog__footer
 		.catalog__loader
-			+button({ mods: ['block', 'white'] }) Показать больше
+			+button({ mods: ['block', 'round'] }) Показать больше
 		.catalog__pager
 			+pager(pager)

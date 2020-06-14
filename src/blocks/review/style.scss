@@ -12,7 +12,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
   &__title {
     flex: 1 1 auto;
@@ -23,5 +23,8 @@
     color: #9E9E9E;
     margin-left: 20px;
     font-weight: $font-weight-regular;
+  }
+  &__body {
+    margin-top: 5px;
   }
 }

@@ -1,0 +1,37 @@
+-
+	options = [
+		'100x100x100',
+		'110x110x110',
+		'120x120x120',
+		'130x130x130',
+	]
+
+form.form-sizes.js-form-sizes
+	.form-sizes__head Основные габариты
+	.form-sizes__body
+		each option, index in options
+			-
+				sizes = option.split('x')
+				data = {
+					base: sizes,
+					sleep: sizes,
+				}
+			+option({
+				class: 'form-sizes__item',
+				type: 'radio',
+				name: 'sizes',
+				value: index,
+				attributes: {
+					checked: index === 0,
+					required: true,
+					'data-size': data
+				}
+			}) #{option} см
+	.form-sizes__footer
+		+button({
+			mods: ['block', 'orange', 'round'],
+			type: 'submit',
+			attributes: {
+				'data-click': 'popup.close',
+			}
+		}) Подтвердить выбор

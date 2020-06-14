@@ -1,4 +1,3 @@
-include ~blocks/option/mixin
 include ~blocks/cart-total/mixin
 include ~blocks/form-user/mixin
 include ~blocks/form-payment/mixin
@@ -10,7 +9,7 @@ form.form-checkout(action='?checkout')
 		h2 Оформление заказа
 	.form-checkout__body
 		+form-user({ class: 'form-checkout__user' })
-		+form-payment({class: 'form-checkout__payment'})
+		+form-payment({ class: 'form-checkout__payment'})
 		+form-delivery({ class: 'form-checkout__delivery' })
 		+form-message({ class: 'form-checkout__message' })
 		+cart-total({

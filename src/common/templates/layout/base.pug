@@ -10,9 +10,7 @@ html(lang='ru')
 			include ~common/templates/meta
 			include ~common/templates/favicon
 			block stylesheets
-				link(rel="stylesheet" href=`/common.css?${$.version}`)
 	body
 		block body
 		include ~common/templates/sprite
 		block scripts
-			script(src=`/common.js?${$.version}`)

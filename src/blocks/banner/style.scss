@@ -1,0 +1,20 @@
+@import "~common/styles/variables/fonts";
+
+.banner {
+  text-align: center;
+  color: #fff;
+  padding: 30px;
+  border-radius: 6px;
+  background: #F78B3D linear-gradient(to bottom, rgba(#fff, 0.2), #F78B3D);
+  font-size: 16px;
+  font-weight: $font-weight-medium;
+
+  &__title {
+    font-size: 18px;
+    font-weight: $font-weight-bold;
+    margin-bottom: 10px;
+  }
+  &__button {
+    margin-top: 20px;
+  }
+}

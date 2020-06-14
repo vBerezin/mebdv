@@ -1,6 +1,7 @@
 @import "~common/styles/variables/fonts";
 
 .menu-app {
+  color: #000;
   background: #fff;
 
   ul,
@@ -12,6 +13,29 @@
   li {
     border-bottom: 1px solid #F6F6F6;
   }
+
+  &__head,
+  &__item {
+    font-size: 14px;
+    line-height: 30px;
+    padding: 10px 15px;
+    user-select: none;
+  }
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-weight: $font-weight-semi-bold;
+    border-bottom: 1px solid #F6F6F6;
+    cursor: pointer;
+  }
+  &__head-icon {
+    flex: 0 0 1em;
+    width: 1em;
+    height: 1em;
+    margin-right: 5px;
+    position: relative;
+  }
   &__item {
     display: flex;
     align-items: center;
@@ -19,9 +43,6 @@
     position: relative;
     text-decoration: none;
     color: #202020;
-    font-size: 14px;
-    line-height: 25px;
-    padding: 10px 15px;
     font-weight: $font-weight-medium;
 
     &__icon,
@@ -38,6 +59,9 @@
       line-height: 0;
       text-align: center;
       margin-right: 10px;
+      img {
+        max-height: 30px;
+      }
     }
     &__title {
       flex: 1 1 auto;

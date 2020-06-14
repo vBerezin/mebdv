@@ -1,0 +1,30 @@
+include ~blocks/icon/mixin
+include ~blocks/image/mixin
+include ~blocks/button/mixin
+
+.color-preview.js-color-preview
+	.color-preview__body
+		.color-preview__image
+			+image({
+				src: '/images/colors/color-1.png',
+				attributes: {
+					'data-rel': 'color.preview.image'
+				}
+			})
+		.color-preview__close(data-click="color.preview.close")
+			+icon({ name: 'close' })
+		.color-preview__title(data-rel="color.preview.title") Sontex beige
+		+button({
+			mods: ['block','orange','round'],
+			class: 'color-preview__button',
+			attributes: {
+				'data-click': 'color.preview.select.base'
+			}
+		}) Выбрать как основной
+		+button({
+			mods: ['block','black','round'],
+			class: 'color-preview__button',
+			attributes: {
+				'data-click': 'color.preview.select.partner'
+			}
+		}) Выбрать как компаньон

@@ -1,0 +1,62 @@
+@import "~common/styles/variables/colors";
+@import "~common/styles/variables/fonts";
+@import "~common/styles/variables/animation";
+@import "~common/styles/mixins/images";
+@import "styles/animations";
+
+.color-preview {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: $color-overlay;
+  text-align: center;
+  animation: color-preview $animation-time ease-out;
+
+  &__body {
+    padding: 15px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    animation: color-preview-body $animation-time ease-out;
+  }
+  &__title {
+    font-size: 14px;
+    font-weight: $font-weight-medium;
+  }
+  &__image {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    position: relative;
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #fff;
+    margin: -95px auto 15px auto;
+    img {
+      @include image-cover;
+    }
+  }
+  &__close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: #4A4A4A;
+    font-size: 20px;
+    line-height: 0;
+    cursor: pointer;
+  }
+  &__button {
+    margin-top: 15px;
+  }
+
+  &.is-active {
+    display: block;
+  }
+}

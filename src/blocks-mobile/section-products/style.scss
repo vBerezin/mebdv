@@ -1,18 +1,5 @@
 @import "~common/styles/variables/layout";
 
 .section-products {
-  &__list {
-    display: flex;
-    align-items: stretch;
-    justify-content: flex-start;
-    margin-left: -5px;
-    margin-right: -$layout-padding;
-    overflow-x: auto;
-  }
-  &__item {
-    flex: 0 0 150px;
-    max-width: 150px;
-    padding: 5px 15px 5px 5px;
-    scroll-snap-align: start;
-  }
+
 }

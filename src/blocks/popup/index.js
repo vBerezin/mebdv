@@ -1,14 +1,22 @@
-class Popup {
-  constructor(el) {
-    this.el = el;
+import { Handlers } from '~common/scripts/utils/handlers';
+
+export class Popup {
+  #active;
+  constructor(node) {
+    this.el = node;
     this.active = false;
-    this.el.addEventListener('click', (event) => {
-      const { target } = event;
-      if (!target.closest('[data-rel="popup.body"]')
-        || target.closest('[data-click="popup.close"]')) {
-        this.close();
-      }
-    });
+    this.el.addEventListener('click', new Handlers.Click({
+      'popup.close': () => this.close()
+    }));
+  }
+
+  set active(state) {
+    this.#active = state;
+    this.el.classList.toggle('is-active', state);
+    document.body.style.overflow = state ? 'hidden' : '';
+  }
+  get active() {
+    return this.#active;
   }
 
   open() {
@@ -20,11 +28,4 @@ class Popup {
     this.active = false;
     return this;
   }
-
-  set active(state) {
-    this.el.classList.toggle('is-active', state);
-    document.body.classList.toggle('popup-opened', state);
-  }
 }
-
-export { Popup };

@@ -1,0 +1,12 @@
+include ~blocks/icon/mixin
+
+mixin button-rating(data)
+	- data = data || {};
+	.button-rating(
+		class=data.class
+		class=mods('button-rating', data.mods)
+		)&attributes(data.attributes)
+			each item in [5,4,3,2,1]
+				input(type="radio" name="rating" id=`rating-${item}` value=item)
+				label.button-rating__item(for=`rating-${item}`)
+					+icon({ name: 'star' })

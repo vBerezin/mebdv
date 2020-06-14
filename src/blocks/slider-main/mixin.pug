@@ -1,0 +1,17 @@
+include ~blocks/lazy-image/mixin
+
+mixin slider-main(data)
+	- data = data || {};
+	.slider-main(
+		class='js-slider-main'
+		class=data.class
+		class=mods('slider-main', data.mods)
+	)&attributes(data.attributes)
+		each item in [1,2,3,4]
+			a.slider-main__item(href="#")
+				+lazy-image({
+					src: '/images/slider/slide-1.jpg',
+					srcset: {
+						'2x': '/images/slider/slide-1@2x.jpg',
+					}
+				})

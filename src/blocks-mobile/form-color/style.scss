@@ -1,0 +1,57 @@
+@import "~common/styles/mixins/images";
+@import "~common/styles/variables/fonts";
+
+.form-color {
+  padding: 20px 15px;
+  background: #fff;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    font-size: 14px;
+    font-weight: $font-weight-medium;
+    margin-bottom: 20px;
+
+    &__title {
+      flex: 1 1 auto;
+    }
+    &__image {
+      font-size: 0;
+      line-height: 0;
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+      flex: 0 0 auto;
+      margin-right: 10px;
+      width: 30px;
+      height: 30px;
+      border: 2px solid #000;
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        box-sizing: border-box;
+        border: 2px solid #fff;
+        border-radius: inherit;
+      }
+      img {
+        @include image-cover;
+      }
+    }
+
+    &.is-active {
+      .form-color__item__image {
+        border-color: #FF6B00;
+      }
+    }
+  }
+  &__footer {
+    margin-top: 20px;
+  }
+}

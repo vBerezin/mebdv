@@ -1,0 +1,13 @@
+include ~blocks/icon/mixin
+
+mixin spoiler(data)
+	- data = data || {};
+	.spoiler(
+		class=data.class
+		class=mods('spoiler', data.mods)
+	)&attributes(data.attributes)
+		.spoiler__head(data-click="spoiler.toggle")
+			.spoiler__title #{data.title}
+			+icon({ name: 'right', class: 'spoiler__icon' })
+		.spoiler__body
+			block

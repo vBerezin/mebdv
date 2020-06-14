@@ -1,0 +1,22 @@
+.button-rating {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-start;
+
+  [type="radio"],
+  [type="checkbox"] {
+    display: none;
+  }
+  &__item {
+    display: block;
+    color: #EAEAEA;
+    font-size: 20px;
+    line-height: 0;
+    cursor: pointer;
+
+    :checked ~ & {
+      color: #FFC700;
+    }
+  }
+}

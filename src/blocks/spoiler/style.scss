@@ -1,0 +1,41 @@
+@import "~common/styles/variables/fonts";
+@import "~common/styles/variables/animation";
+@import "~common/styles/variables/transition";
+@import "styles/animations";
+
+.spoiler {
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: #F4F4F4;
+    padding: 15px;
+    font-size: 13px;
+    line-height: 15px;
+    font-weight: $font-weight-medium;
+    min-height: 70px;
+    cursor: pointer;
+    user-select: none;
+  }
+  &__title {
+    flex: 1 1 auto;
+  }
+  &__icon {
+    flex: 0 0 auto;
+    font-size: 15px;
+    margin-left: 10px;
+    transition: transform $transition-time ease-out;
+  }
+  &__body {
+    display: none;
+    animation: spoiler $animation-time ease-out;
+  }
+  &.is-active {
+    .spoiler__icon {
+      transform: rotate(90deg);
+    }
+    .spoiler__body {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.slider-main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: auto;
+
+  &.owl-carousel {
+    display: block;
+    overflow: visible;
+  }
+  .owl-stage-outer {
+    overflow: visible;
+  }
+  &__item {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    flex: 0 0 275px;
+    width: 275px;
+    height: 110px;
+    margin-right: 15px;
+    border-radius: 10px;
+    img {
+      @include image-cover;
+    }
+  }
+}

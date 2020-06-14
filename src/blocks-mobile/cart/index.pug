@@ -5,6 +5,7 @@ include ~blocks/cart-total/mixin
 	.cart__list
 		each i in [1,2]
 			+product-cart({
+				href: '/m.mebdv/product',
 				class: 'cart__item',
 				image: {
 					src: `/images/product/cart-${i}.png`,

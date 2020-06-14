@@ -1,7 +1,6 @@
 import { ButtonMenu } from '~blocks/button-menu';
 import { MenuSticky } from '~blocks-mobile/menu-sticky';
 import { HeaderMenu } from './scripts/header-menu';
-import { HeaderCatalog } from './scripts/header-catalog';
 import { HeaderSearch } from './scripts/header-search';
 
 export const Header = (() => {
@@ -23,7 +22,6 @@ export const Header = (() => {
   }
 
   const menu = new HeaderMenu(header, callback);
-  const catalog = new HeaderCatalog(header, callback);
   const search = new HeaderSearch(header, callback);
 
   button.addEventListener('click', (event) => {
@@ -38,5 +36,5 @@ export const Header = (() => {
     current.close();
   });
 
-  return { menu, catalog, search };
+  return { menu, search };
 })();

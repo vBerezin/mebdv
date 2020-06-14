@@ -22,8 +22,8 @@ module.exports = {
   webpack: {
     context: src,
     src: {
-      desktop: 'index.js',
-      mobile: 'm.index.js',
+      index: 'index.js',
+      'm.index': 'm.index.js',
     },
     dest: build,
   },

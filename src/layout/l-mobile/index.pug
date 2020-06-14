@@ -14,11 +14,14 @@ block body
 						block page-head
 					.l-mobile__body
 						block page-body
+							.l-mobile__content
+								block page-content
 		.l-mobile__footer
 			block footer
 				include ~blocks-mobile/footer/index
 				include ~blocks-mobile/menu-sticky/index
-block append stylesheets
-	link(rel="stylesheet" href=`/mobile.css?${$.version}`)
-block append scripts
-	script(src=`/mobile.js?${$.version}`)
+
+block stylesheets
+	link(rel="stylesheet" href=`/m.index.css?${$.version}`)
+block scripts
+	script(src=`/m.index.js?${$.version}`)

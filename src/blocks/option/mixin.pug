@@ -2,11 +2,11 @@ mixin option(data)
 	- data = data || {};
 	label.option(
 		class=data.class
-		class=mods('option', data.mods)
-	)&attributes(data.attributes)
-		input(type=data.type name=data.name value=data.value)
-		.option__btn
-		.option__body
-			.option__title #{data.title}
+		class=mods('option', data.mods))
+		input(type=data.type name=data.name value=data.value)&attributes(data.attributes)
+		.option__title
 			block
-
+		if (data.type === 'checkbox')
+			.option__checkbox
+		if (data.type === 'radio')
+			.option__radio

@@ -1,0 +1,33 @@
+@import "~common/styles/variables/layout";
+
+.product-card {
+  &__image {
+    margin-bottom: 15px;
+  }
+  &__color {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #F4F4F4;
+  }
+  &__color-head {
+    margin-bottom: 10px;
+  }
+  &__form,
+  &__banner {
+    margin-bottom: 30px;
+  }
+  &__spoiler {
+    margin-left: -$layout-padding;
+    margin-right: -$layout-padding;
+    margin-bottom: 1px;
+  }
+  &__reviews {
+    padding: 20px $layout-padding;
+  }
+  &__products {
+    padding: 15px 0 20px $layout-padding;
+  }
+  &__review {
+    margin-bottom: 20px;
+  }
+}

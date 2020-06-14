@@ -1,9 +1,6 @@
 extends ~layout/l-mobile/index
 
-include ~blocks/text-block/mixin
 include ~blocks/breadcrumbs/mixin
-include ~blocks/section-head/mixin
-include ~blocks/section-title/mixin
 
 block variables
 	- TITLE = 'Корзина'
@@ -21,7 +18,7 @@ block page-head
 		]
 	})
 	h1 Корзина
-block page-body
+block page-content
 	include ~blocks-mobile/cart/index
 
 block prepend footer

@@ -3,27 +3,25 @@ import { Handlers } from '~common/scripts/utils/handlers';
 
 const popups = new WeakMap();
 const actions = {
-  'popup:open': ({ event, target: btn }) => {
-    const { popupId } = btn.dataset;
-    btn.disabled = true;
-    btn.classList.add('is-disabled');
+  'popup': ({ event, target }) => {
+    const { popupId } = target.dataset;
+    target.disabled = true;
+    target.classList.add('is-disabled');
     event.preventDefault();
-    const el = document.getElementById(popupId);
-    if (el) {
-      let popup = popups.get(el);
+    const node = document.getElementById(popupId);
+    if (node) {
+      let popup = popups.get(node);
       if (!popup) {
-        popup = new Popup(el);
-        popups.set(el, popup);
+        popup = new Popup(node);
+        popups.set(node, popup);
       }
       popup.open();
     }
-    btn.disabled = false;
-    btn.classList.remove('is-disabled');
+    target.disabled = false;
+    target.classList.remove('is-disabled');
   },
 };
 
-window.popups = popups;
+document.addEventListener('click', new Handlers.Click(actions));
 
-const clickHandler = new Handlers.Click(actions);
-
-document.addEventListener('click', clickHandler);
+export const Popups = { popups };

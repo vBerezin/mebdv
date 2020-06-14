@@ -2,37 +2,38 @@
 
 @import "~layout/l-mobile/style";
 
-@import "~blocks/button-menu/style";
-@import "~blocks/menu-app/style";
-@import "~blocks/rating/style";
-@import "~blocks/icon-block/style";
+@import "~blocks/popup/style";
 @import "~blocks/counter/style";
+@import "~blocks/spoiler/style";
 @import "~blocks/order-info/style";
+@import "~blocks/banner/style";
 @import "~blocks/cart-total/style";
-@import "~blocks/product-panel/style";
-@import "~blocks/section-slider/style";
-@import "~blocks/form-search/style";
-@import "~blocks/pager/style";
 @import "~blocks/text-block/style";
 @import "~blocks/brand/style";
-@import "~blocks/breadcrumbs/style";
 @import "~blocks/review/style";
-@import "~blocks/map-box/style";
+@import "~blocks/option/style";
+@import "~blocks/option-order/style";
+@import "~blocks/button-rating/style";
+@import "~blocks/button-menu/style";
+@import "~blocks/menu-app/style";
+@import "~blocks/select-color/style";
+@import "~blocks/slider-main/style";
+@import "~blocks/slider-products/style";
+
+@import "~blocks/product-panel/style";
+@import "~blocks/product-gallery/style";
 @import "~blocks/product-cart/style";
-@import "~blocks/form/style";
-@import "~blocks/form-title/style";
-@import "~blocks/form-head/style";
-@import "~blocks/form-footer/style";
-@import "~blocks/form-field/style";
-@import "~blocks/form-label/style";
-@import "~blocks/form-review/style";
+
 @import "~blocks/form-feedback/style";
 @import "~blocks/form-user/style";
 @import "~blocks/form-delivery/style";
 @import "~blocks/form-payment/style";
 @import "~blocks/form-message/style";
 @import "~blocks/form-checkout/style";
-@import "~blocks/option/style";
+@import "~blocks/form-search/style";
+@import "~blocks/form-product/style";
+
+@import "~blocks/section-slider/style";
 
 @import "~blocks-mobile/header/style";
 @import "~blocks-mobile/footer/style";
@@ -49,4 +50,10 @@
 @import "~blocks-mobile/reviews-list/style";
 @import "~blocks-mobile/contacts/style";
 @import "~blocks-mobile/cart/style";
+@import "~blocks-mobile/form-review/style";
+@import "~blocks-mobile/product-card/style";
+@import "~blocks-mobile/popup-review/style";
+@import "~blocks-mobile/form-sizes/style";
+@import "~blocks-mobile/form-color/style";
+@import "~blocks-mobile/color-preview/style";
 

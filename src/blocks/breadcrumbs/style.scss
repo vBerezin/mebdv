@@ -5,9 +5,23 @@
   font-weight: $font-weight-semi-bold;
   line-height: 1.2em;
 
-  &__item,
-  &__icon {
+  &__back,
+  &__sep,
+  &__icon,
+  &__item {
     vertical-align: middle;
+  }
+  &__back {
+    color: #F78B3D;
+    font-weight: $font-weight-bold;
+  }
+  &__sep {
+    display: inline-block;
+    font-size: 0;
+    background: currentColor;
+    width: 1px;
+    height: 9px;
+    margin: 0 10px;
   }
   &__item {
     display: inline;

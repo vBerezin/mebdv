@@ -10,12 +10,11 @@
   min-height: 70px;
 
   &__search,
-  &__nav,
+  &__menu,
   &__overlay {
     animation-duration: $animation-time;
     animation-timing-function: ease-out;
   }
-
   &__sticky {
     display: flex;
     flex-direction: column;
@@ -36,8 +35,7 @@
   }
   &__overlay,
   &__search,
-  &__menu,
-  &__catalog {
+  &__menu {
     display: none;
   }
   &__overlay {
@@ -49,13 +47,12 @@
     bottom: 0;
     animation-name: header-overlay;
   }
-
   &__search {
     position: relative;
     padding: 15px 0;
     animation-name: header-search;
   }
-  &__nav {
+  &__menu {
     position: relative;
     flex: 1 1 auto;
     overflow: auto;
@@ -90,8 +87,7 @@
   }
 
   &.header--menu-active,
-  &.header--search-active,
-  &.header--catalog-active {
+  &.header--search-active {
     .header__overlay {
       display: block;
     }
@@ -105,11 +101,6 @@
   }
   &.header--menu-active {
     .header__menu {
-      display: block;
-    }
-  }
-  &.header--catalog-active {
-    .header__catalog {
       display: block;
     }
   }

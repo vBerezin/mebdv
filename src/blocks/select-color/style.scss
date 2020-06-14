@@ -1,0 +1,76 @@
+@import "~common/styles/mixins/images";
+@import "~common/styles/variables/animation";
+@import "~common/styles/variables/transition";
+@import "~common/styles/variables/fonts";
+@import "styles/animations";
+
+.select-color {
+  display: block;
+  position: relative;
+  border-radius: 4px;
+  border: 1px solid #E7E7E7;
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    color: #000;
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+  }
+  &__body {
+    display: none;
+    padding: 0 10px 10px 10px;
+    animation: select-color $animation-time ease-out;
+  }
+  &__icon {
+    flex: 0 0 auto;
+    font-size: 15px;
+    margin-left: 10px;
+    transition: transform $transition-time ease-out;
+  }
+  &__title {
+    flex: 1 1 auto;
+    font-weight: $font-weight-regular;
+  }
+  &__image {
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    position: relative;
+    margin-right: 10px;
+    img {
+      @include image-cover;
+    }
+  }
+  &__options {
+    display: grid;
+    grid-gap: 5px;
+    padding-top: 10px;
+    grid-template-columns: repeat(auto-fit, 20px);
+    border-top: 1px solid #E7E7E7;
+  }
+  &__option {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    padding: 50%;
+    border-radius: 50%;
+    img {
+      @include image-cover;
+    }
+  }
+
+  &.is-active {
+    .select-color__icon {
+      transform: scale(-1);
+    }
+    .select-color__body {
+      display: block;
+    }
+  }
+}

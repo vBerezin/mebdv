@@ -1,0 +1,118 @@
+include ~blocks/form/mixin
+include ~blocks/rating/mixin
+include ~blocks/button/mixin
+include ~blocks/image/mixin
+include ~blocks/form-label/mixin
+
++form({
+	class: ['js-form-product', 'form-product'],
+})
+	.form-product__rating
+		+rating
+		a.form-product__rating-title(href="#reviews") Отзывы
+		+badge({mods: 'small'}) 15
+	.form-product__main
+		.form-product__pricing
+			.form-product__price
+				span(data-rel="product.price") 18 890 ₽
+			.form-product__price-old
+				span(data-rel="product.price.old") 20 890 ₽
+			+badge({
+				attributes: {
+					'data-rel': 'product.discount'
+				}
+			}) -15%
+		+button({
+			mods: ['block', 'round', 'orange'],
+			class: 'form-product__submit',
+			icon: 'cart',
+			attributes: {
+				type: 'submit'
+			}
+		}) Добавить в корзину
+		+button({
+			mods: ['block', 'round'],
+			class: 'form-product__credit',
+			attributes: {
+				type: 'submit'
+			}
+		}) Купить в рассрочку за 1574 ₽/мес.
+	.form-product__info
+		.form-product__info-title Размер
+		.form-product__info-item
+			+form-label Основные габариты:
+			.form-product__size
+				.form-product__size-item
+					span(data-rel="product.base.length") 137 см
+					span Длина
+				.form-product__size-sep x
+				.form-product__size-item
+					span(data-rel="product.base.width") 100 см
+					span Ширина
+				.form-product__size-sep x
+				.form-product__size-item
+					span(data-rel="product.base.height") 90 см
+					span Высота
+		.form-product__info-item
+			+form-label Спальное место:
+			.form-product__size
+				.form-product__size-item
+					span(data-rel="product.sleep.length") 137 см
+					span Длина
+				.form-product__size-sep x
+				.form-product__size-item
+					span(data-rel="product.sleep.width") 100 см
+					span Ширина
+				.form-product__size-sep x
+				.form-product__size-item
+					span(data-rel="product.sleep.height") 90 см
+					span Высота
+		+button({
+			mods: ['block', 'round', 'grey'],
+			attributes: {
+				'data-click': 'popup',
+				'data-popup-id': 'popup-sizes',
+			}
+		}) Изменить размер
+	.form-product__info
+		.form-product__info-title Ткань
+		.form-product__colors
+			.form-product__color
+				.form-product__color__image
+					+image({
+						src: '/images/colors/color-1.png',
+						attributes: {
+							'data-rel': 'product.color.base.image'
+						}
+					})
+				.form-product__color__main
+					.form-product__color__title Основная:
+					.form-product__color__name(data-rel="product.color.base.title") Велюр Хаки
+			.form-product__color
+				.form-product__color__image
+					+image({
+						src: '/images/colors/color-2.png',
+						attributes: {
+							'data-rel': 'product.color.partner.image'
+						}
+					})
+				.form-product__color__main
+					.form-product__color__title Компаньон:
+					.form-product__color__name(data-rel="product.color.partner.title") Sontex beige
+		+button({
+			mods: ['block', 'round', 'grey'],
+			attributes: {
+				'data-click': 'popup',
+				'data-popup-id': 'popup-color',
+			}
+		}) Изменить ткань
+	.form-product__specs
+		dl
+			dt Механизм:
+			dd Пантограф
+		dl
+			dt Мягкий элемент:
+			dd ППУ
+		dl
+			dt Производство:
+			dd Россия

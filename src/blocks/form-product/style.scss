@@ -1,0 +1,141 @@
+@import "~common/styles/variables/fonts";
+@import "~common/styles/mixins/images";
+
+.form-product {
+  &__main {
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #F1F1F1;
+  }
+  &__rating {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #F1F1F1;
+  }
+  &__rating-title {
+    color: #312E76;
+    margin: 0 5px;
+  }
+  &__pricing {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    line-height: 1;
+    margin-bottom: 15px;
+  }
+  &__price {
+    font-size: 22px;
+    font-weight: $font-weight-bold;
+  }
+  &__price-old {
+    font-size: 13px;
+    font-weight: $font-weight-light;
+    text-decoration: line-through;
+    margin: 0 5px;
+  }
+  &__submit,
+  &__credit {
+    margin-top: 15px;
+  }
+  &__specs {
+    dl {
+      display: block;
+      font-weight: $font-weight-semi-bold;
+      padding-top: 15px;
+      margin-top: 15px;
+      border-top: 1px solid #F1F1F1;
+    }
+    dt,
+    dd {
+      display: inline;
+    }
+  }
+  &__info {
+    margin-bottom: 20px;
+  }
+  &__info-item {
+    margin-bottom: 15px;
+  }
+  &__info-title {
+    font-size: 16px;
+    font-weight: $font-weight-semi-bold;
+    margin-bottom: 10px;
+  }
+  &__size {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  &__size-item {
+    font-weight: $font-weight-bold;
+    span {
+      display: block;
+    }
+  }
+  &__size-sep {
+    display: block;
+    flex: 1 0 10px;
+    position: relative;
+    font-size: 0;
+    line-height: 0;
+    height: 10px;
+    margin: 0 10px;
+
+    &::before,
+    &::after {
+      display: block;
+      position: absolute;
+      content: '';
+      left: 50%;
+      top: 50%;
+      margin-left: -0.5px;
+      margin-top: -5px;
+      width: 1px;
+      height: 10px;
+      background: #BDBDBD;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+  &__colors {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 15px;
+  }
+  &__color {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-weight: $font-weight-regular;
+
+    &__image {
+      font-size: 0;
+      line-height: 0;
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+      flex: 0 0 30px;
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+
+      img {
+        @include image-cover;
+      }
+    }
+    &__main {
+      flex: 1 1 auto;
+    }
+    &__name {
+      font-weight: $font-weight-bold;
+    }
+  }
+}

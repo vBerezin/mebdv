@@ -1,0 +1,12 @@
+mixin option-order(data)
+	- data = data || {};
+	label.option-order(
+		class=data.class
+		class=mods('option-order', data.mods)
+	)&attributes(data.attributes)
+		input(type='radio' name=data.name value=data.value)
+		.option-order__radio
+		.option-order__body
+			.option-order__title #{data.title}
+			block
+

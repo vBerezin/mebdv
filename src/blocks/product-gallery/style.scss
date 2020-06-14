@@ -1,0 +1,71 @@
+@import "~common/styles/variables/transition";
+
+.product-gallery {
+  &__main {
+    border-radius: 10px;
+    border: 1px solid #F4F4F4;
+    padding: 15px;
+    margin-bottom: 15px;
+    position: relative;
+  }
+  &__badges {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 15px;
+    max-width: 100%;
+    z-index: 10;
+  }
+  &__badge {
+    flex: 0 0 auto;
+    margin: 0 5px 5px 0;
+  }
+  &__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0;
+    line-height: 0;
+    height: 220px;
+    img {
+      max-height: 220px;
+    }
+  }
+  &__thumbs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 50px);
+    grid-gap: 10px;
+  }
+  &__thumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 5px;
+    background: #fff;
+    font-size: 0;
+    outline: none;
+    border: 1px solid #F4F4F4;
+    cursor: pointer;
+    height: 50px;
+    padding: 9px;
+    transition: box-shadow $transition-time ease-out;
+
+    img {
+      max-height: 40px;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: #F78B3D;
+    }
+    &.is-active {
+      border-color: #F78B3D;
+      box-shadow: 0 0 0 1px #F78B3D;
+    }
+  }
+}

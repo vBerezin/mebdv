@@ -1,0 +1,14 @@
+include ~blocks/button/mixin
+
+mixin banner(data)
+	.banner(
+		class=data.class
+		class=mods('banner', data.mods)
+		)&attributes(data.attributes)
+		.banner__title #{data.title}
+		block
+		+button({
+			class: 'banner__button',
+			mods: ['block', 'white', 'round', 'large'],
+			attributes: data.button.attributes
+		}) #{data.button.text}

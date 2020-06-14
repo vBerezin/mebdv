@@ -1,0 +1,27 @@
+include ~blocks/badge/mixin
+include ~blocks/lazy-image/mixin
+
+.product-gallery.js-product-gallery
+	.product-gallery__main
+		.product-gallery__badges
+			+badge({class: 'product-gallery__badge'}) -15%
+			+badge({class: 'product-gallery__badge', mods: 'red'}) HIT
+			+badge({class: 'product-gallery__badge', mods: 'yellow'}) НОВИНКА
+		.product-gallery__slider(data-rel="product.gallery.slider")
+			each item in [1,2,3,4,5,6,7,8,9,10]
+				.product-gallery__image
+					+lazy-image({
+						src: '/images/product/product.png',
+						srcset: {
+							'2x': '/images/product/product@2x.png',
+						}
+					})
+	.product-gallery__thumbs(data-rel="product.gallery.thumbs")
+		each item, index in [1,2,3,4,5,6,7,8,9,10]
+			button.product-gallery__thumb(data-index=index data-click="product.gallery.to")
+				+lazy-image({
+					src: '/images/product/thumb.png',
+					srcset: {
+						'2x': '/images/product/thumb@2x.png',
+					}
+				})

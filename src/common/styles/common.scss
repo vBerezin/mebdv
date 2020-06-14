@@ -3,19 +3,38 @@
 @import "~common/styles/base";
 @import "~common/styles/titles";
 @import "~common/styles/forms";
-@import "~common/icons/symbol/sprite";
 @import "~common/styles/helpers/hidden";
 @import "~common/styles/animations/opacity";
+@import "~common/icons/symbol/sprite";
 
 @import "~layout/l-container/style";
 
 @import "~blocks/icon/style";
 @import "~blocks/icon-box/style";
+@import "~blocks/icon-block/style";
+
 @import "~blocks/image/style";
+@import "~blocks/lazy-image/style";
+
+@import "~blocks/owl-carousel/style";
+
 @import "~blocks/button/style";
 @import "~blocks/badge/style";
-@import "~blocks/owl-carousel/style";
+@import "~blocks/breadcrumbs/style";
+@import "~blocks/pager/style";
+@import "~blocks/rating/style";
+@import "~blocks/map-box/style";
+
+@import "~blocks/form/style";
+@import "~blocks/form-title/style";
+@import "~blocks/form-head/style";
+@import "~blocks/form-footer/style";
+@import "~blocks/form-field/style";
+@import "~blocks/form-label/style";
+
 @import "~blocks/section/style";
 @import "~blocks/section-title/style";
 @import "~blocks/section-head/style";
 @import "~blocks/section-footer/style";
+
+

@@ -35,10 +35,18 @@
     border-color: #fff;
     color: #000;
   }
+  &.button--grey {
+    background: #F4F4F4;
+    border-color: #F4F4F4;
+    color: #000;
+  }
   &.button--orange {
     background: #F78B3D;
     border-color: #F78B3D;
     color: #fff;
+    .button__icon {
+      color: currentColor;
+    }
   }
   &.button--block {
     display: block;

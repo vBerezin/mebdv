@@ -1,13 +1,10 @@
+@import "~common/styles/variables/fonts";
 @import "~common/styles/variables/colors";
-@import "~common/styles/variables/transitions";
-@import "~blocks/breakpoints/mixin";
-
+@import "~common/styles/variables/animation";
 @import "styles/animations";
 
 .popup {
   $z-index: 1000;
-  $popup-width: 550px;
-
   display: none;
   align-items: center;
   justify-content: center;
@@ -19,73 +16,39 @@
   top: 0;
   right: 0;
   bottom: 0;
-  padding: 20px;
   z-index: $z-index;
-  background: $overlay-background;
+  background: $color-overlay;
   animation: popup-show $animation-time ease-out;
 
   &.is-active {
-    display: flex;
+    display: block;
   }
 
-  &__body {
-    display: block;
-    position: relative;
-    margin: auto;
-    padding: 30px;
-    flex: 0 0 auto;
-    width: 100%;
-    background: #fff;
-    max-width: 100%;
-    animation: popup-body $animation-time ease-out;
-    border-radius: 0 20px;
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #fff;
+    background: #F78B3D;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: $font-weight-semi-bold;
+    padding: 15px;
   }
-  &__content {
-    position: relative;
-    z-index: $z-index - 10;
+  &__icon,
+  &__close {
+    font-size: 20px;
+    line-height: 0;
+    flex: 0 0 auto;
+  }
+  &__icon {
+    margin-right: 10px;
   }
   &__close {
-    display: block;
-    position: absolute;
-    z-index: $z-index;
     cursor: pointer;
-    top: 0;
-    right: 0;
-    padding: 1em;
-    font-size: 15px;
-    line-height: 0;
-    color: #000;
-    transition: color $transition-time ease-out, transform $transition-time ease-out;
-    .icon {
-      display: block;
-      stroke: currentColor;
-      fill: currentColor;
-      font-size: 1em;
-      width: 1em;
-      height: 1em;
-    }
-    &:hover {
-      color: #FF2A7A;
-      transform: rotate(90deg) scale(0.9);
-    }
+    margin-left: 10px;
   }
-
-  @include breakpoint(sm) {
-    padding: 60px;
-    &__body {
-      width: $popup-width;
-      padding: 40px;
-    }
-    &__close {
-      top: 10px;
-      right: 10px;
-    }
-  }
-}
-
-body,
-html {
-  &.popup-opened {
-    overflow: hidden;
+  &__title {
+    flex: 1 1 auto;
   }
 }

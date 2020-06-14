@@ -1,3 +1,4 @@
+include ~blocks/option-order/mixin
 include ~blocks/form/mixin
 include ~blocks/form-title/mixin
 include ~blocks/form-head/mixin
@@ -23,8 +24,7 @@ mixin form-delivery(data)
 			+form-title Доставка
 		each option, index in options
 			+form-field
-				+option({
-					type: 'radio',
+				+option-order({
 					name: 'delivery-type',
 					value: `delivery-${index}`,
 					title: option.title

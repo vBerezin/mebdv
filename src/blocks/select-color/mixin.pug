@@ -1,0 +1,24 @@
+include ~blocks/icon/mixin
+include ~blocks/image/mixin
+
+mixin select-color(data)
+	- data = data || {};
+	.select-color(
+		class=data.class
+		class=mods('select-color', data.mods)
+	)&attributes(data.attributes)
+		.select-color__head(data-click="select.color.toggle")
+			.select-color__image
+				+image({
+					src: '/images/colors/color-1.png',
+					alt: 'Шоколадный',
+				})
+			.select-color__title Шоколадный
+			+icon({ name: 'down', class: 'select-color__icon' })
+		.select-color__body
+			.select-color__options
+				each color, index in [1,2,3,4,5,6,7,8,9,10,11,12,13]
+					- title = `Название цвета - ${color}`
+					- image = `/images/colors/color-${color}.png`
+					a.select-color__option(href="/m.mebdv/product")
+						+image({ src: image, alt: title })

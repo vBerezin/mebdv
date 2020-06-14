@@ -6,6 +6,11 @@ mixin breadcrumbs(data)
 		class=data.class
 		class=mods('breadcrumbs', data.mods)
 	)&attributes(data.attributes)
+		if (data.back)
+			a.breadcrumbs__back(href=data.back.href)
+				+icon({name: 'left', class: 'breadcrumbs__icon'})
+			a.breadcrumbs__back(href=data.back.href) #{data.back.title}
+			span.breadcrumbs__sep |
 		each item, index in data.items
 			- tagName = item.href ? 'a' : 'span'
 			#{tagName}.breadcrumbs__item(href=item.href) #{item.title}

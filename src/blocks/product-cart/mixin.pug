@@ -9,10 +9,10 @@ mixin product-cart(data)
 		class=mods('product-cart', data.mods)
 	)&attributes(data.attributes)
 		.product-cart__head
-			a.product-cart__image(href="/product")
+			a.product-cart__image(href=data.href)
 				+lazy-image(data.image)
 		.product-cart__body
-			a.product-cart__title(href="/product") Диван Еврокнижка Денис
+			a.product-cart__title(href=data.href) Диван Еврокнижка Денис
 			.product-cart__price 30 000 ₽
 			.product-cart__specs
 				dl

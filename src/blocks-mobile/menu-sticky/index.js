@@ -1,4 +1,5 @@
 import { Header } from '~blocks-mobile/header';
+import { MenuMobile } from '~blocks-mobile/menu-mobile';
 import { Handlers } from '~common/scripts/utils/handlers';
 
 class Menu {
@@ -25,8 +26,9 @@ export const MenuSticky = (() => {
       Header.search.toggle();
       event.preventDefault();
     },
-    'catalog.open': ({ event }) => {
-      Header.catalog.toggle();
+    'menu.open': ({ event, target }) => {
+      Header.menu.toggle();
+      MenuMobile.state = JSON.parse(target.dataset.menuState);
       event.preventDefault();
     },
   });

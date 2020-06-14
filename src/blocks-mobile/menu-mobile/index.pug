@@ -1,0 +1,79 @@
+include ~blocks/menu-app/mixin
+
+-
+	menu = [
+		{
+			title: 'О магазине',
+			href: '/m.mebdv/about'
+		},
+		{
+			title: 'Каталог мебели',
+			href: '/m.mebdv/catalog',
+			items: [
+				{
+					title: 'Кухня',
+					href: '/m.mebdv/catalog',
+					image: {
+						src: '/images/menu/catalog-1.svg'
+					},
+					items: [
+						{
+							title: 'Кухня 1',
+							href: '/m.mebdv/catalog',
+						}
+					]
+				},
+				{
+					title: 'Мягкая мебель',
+					href: '/m.mebdv/catalog',
+					image: {
+						src: '/images/menu/catalog-2.svg'
+					}
+				},
+				{
+					title: 'Гостиная',
+					href: '/m.mebdv/catalog',
+					image: {
+						src: '/images/menu/catalog-3.svg'
+					}
+				},
+				{
+					title: 'Спальня',
+					href: '/m.mebdv/catalog',
+					image: {
+						src: '/images/menu/catalog-4.svg'
+					}
+				},
+			]
+		},
+		{
+			title: 'Доставка и оплата',
+			href: '/m.mebdv/delivery',
+			active: true,
+		},
+		{
+			title: 'Гарантия',
+			href: '#'
+		},
+		{
+			title: 'Производители',
+			href: '/m.mebdv/brands'
+		},
+		{
+			title: 'Отзывы',
+			href: '/m.mebdv/reviews'
+		},
+		{
+			title: 'Контакты',
+			href: '/m.mebdv/contacts'
+		},
+	]
+
++menu-app({
+	class: 'js-menu-mobile',
+	menu: [
+		{
+			items: menu
+		}
+	]
+})

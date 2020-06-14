@@ -1,6 +1,6 @@
 include ~layout/l-container/mixin
 include ~blocks/section/mixin
-include ~blocks/lazy-image/mixin
+include ~blocks/slider-main/mixin
 
 +section({
 	mods: ['top', 'bottom'],
@@ -8,12 +8,5 @@ include ~blocks/lazy-image/mixin
 })
 	+l-container
 		.section-slider__outer
-			.section-slider__carousel(data-rel="section.slider.carousel")
-				each item in [1,2,3,4]
-					a.section-slider__item(href="#")
-						+lazy-image({
-							src: '/images/slider/slide-1.jpg',
-							srcset: {
-								'2x': '/images/slider/slide-1@2x.jpg',
-							}
-						})
+			+slider-main({ class: 'section-slider__carousel' })
+

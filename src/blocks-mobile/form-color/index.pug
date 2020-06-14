@@ -1,0 +1,29 @@
+form.form-color.js-form-color
+	.form-color__body
+		+form-label Основная:
+		.form-color__item.is-active
+			.form-color__item__image
+				+image({
+					src: '/images/colors/color-5.png',
+					attributes: {
+						'data-rel': 'form.color.base.image'
+					}
+				})
+			.form-color__item__title(data-rel="form.color.base.title") Sontex beige
+		+form-label Компаньон:
+		.form-color__item
+			.form-color__item__image
+				+image({
+					src: '/images/colors/color-6.png',
+					attributes: {
+						'data-rel': 'form.color.partner.image'
+					}
+				})
+			.form-color__item__title(data-rel="form.color.partner.title") Sontex beige
+	.form-color__footer
+		+button({
+			mods: ['block', 'orange', 'round'],
+			attributes: {
+				'data-click': 'popup.close'
+			}
+		}) Подтвердить выбор

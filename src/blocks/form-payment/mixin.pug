@@ -1,4 +1,4 @@
-include ~blocks/option/mixin
+include ~blocks/option-order/mixin
 include ~blocks/form/mixin
 include ~blocks/form-title/mixin
 include ~blocks/form-head/mixin
@@ -32,8 +32,7 @@ mixin form-payment(data)
 			+form-title Выберите метод оплаты
 		each option, index in options
 			+form-field
-				+option({
-					type: 'radio',
+				+option-order({
 					name: 'payment-type',
 					value: `payment-${index}`,
 					title: option.title

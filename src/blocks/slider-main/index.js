@@ -1,11 +1,10 @@
 import { OwlCarousel } from "~blocks/owl-carousel";
 
 (() => {
-  const section = document.querySelector('.js-section-slider');
-  if (!section) return false;
-  const slider = section.querySelector('[data-rel="section.slider.carousel"]');
+  const node = document.querySelector('.js-slider-main');
+  if (!node) return false;
   const carousel = new OwlCarousel({
-    node: slider,
+    node: node,
     options: {
       items: 2,
       autoWidth: true,

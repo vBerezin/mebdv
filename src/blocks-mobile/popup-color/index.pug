@@ -1,0 +1,12 @@
+include ~blocks/popup/mixin
+include ~blocks/image/mixin
+include ~blocks/button/mixin
+include ~blocks/form-label/mixin
+
++popup({
+	title: 'Изменить ткань',
+	attributes: {
+		id: 'popup-color'
+	}
+})
+	include ~blocks-mobile/form-color/index

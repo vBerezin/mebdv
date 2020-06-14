@@ -2,8 +2,8 @@ import 'owl.carousel';
 import { Icon } from '~blocks/icon';
 
 $.fn.owlCarousel.Constructor.Plugins.Navigation.Defaults.navText = [
-  new Icon({ name: 'slider-prev', mods: 'center' }).outerHTML,
-  new Icon({ name: 'slider-next', mods: 'center' }).outerHTML,
+  new Icon({ name: 'left', mods: 'center' }).outerHTML,
+  new Icon({ name: 'right', mods: 'center' }).outerHTML,
 ];
 
 export function OwlCarousel({ node, options }) {

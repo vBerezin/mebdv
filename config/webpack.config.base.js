@@ -30,15 +30,6 @@ module.exports = merge(
     },
     optimization: {
       namedChunks: true,
-      splitChunks: {
-        cacheGroups: {
-          common: {
-            name: 'common',
-            chunks: 'initial',
-            minChunks: 2,
-          },
-        },
-      },
     },
     plugins: [
       new webpack.ProvidePlugin({

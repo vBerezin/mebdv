@@ -2,68 +2,7 @@ include ~layout/l-container/mixin
 include ~blocks/image/mixin
 include ~blocks/icon-box/mixin
 include ~blocks/button-menu/mixin
-include ~blocks/menu-app/mixin
 include ~blocks/form-search/mixin
-
--
-	catalogItems = [
-		{
-			title: 'Кухня',
-			image: {
-				src: '/images/menu/catalog-1.svg'
-			}
-		},
-		{
-			title: 'Мягкая мебель',
-			image: {
-				src: '/images/menu/catalog-2.svg'
-			}
-		},
-		{
-			title: 'Гостиная',
-			image: {
-				src: '/images/menu/catalog-3.svg'
-			}
-		},
-		{
-			title: 'Спальня',
-			image: {
-				src: '/images/menu/catalog-4.svg'
-			}
-		},
-	]
-	menuItems = [
-		{
-			title: 'О магазине',
-			href: '/m.mebdv/about'
-		},
-		{
-			title: 'Каталог мебели',
-			href: '/m.mebdv/catalog',
-			items: catalogItems
-		},
-		{
-			title: 'Доставка и оплата',
-			href: '/m.mebdv/delivery',
-			active: true,
-		},
-		{
-			title: 'Гарантия',
-			href: '#'
-		},
-		{
-			title: 'Производители',
-			href: '/m.mebdv/brands'
-		},
-		{
-			title: 'Отзывы',
-			href: '/m.mebdv/reviews'
-		},
-		{
-			title: 'Контакты',
-			href: '/m.mebdv/contacts'
-		},
-	]
 
 header.header.js-header#header
 	.header__sticky
@@ -96,13 +35,5 @@ header.header.js-header#header
 						'data-rel': 'header.search'
 					}
 				})
-		.header__nav.header__menu
-			+menu-app({
-				class: 'js-menu-mobile',
-				items: menuItems
-			})
-		.header__nav.header__catalog
-			+menu-app({
-				class: 'js-menu-mobile',
-				items: catalogItems
-			})
+		.header__menu
+			include ~blocks-mobile/menu-mobile/index
