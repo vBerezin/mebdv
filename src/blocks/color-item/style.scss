@@ -1,0 +1,66 @@
+@import "~common/styles/variables/fonts";
+@import "~common/styles/mixins/images";
+
+.color-item {
+  display: block;
+  text-align: center;
+  font-weight: $font-weight-medium;
+
+  &__image {
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    font-size: 0;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    &::after {
+      content: '';
+      display: none;
+      position: absolute;
+      border-radius: inherit;
+      box-sizing: border-box;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      border: 2px solid #fff;
+    }
+    img {
+      @include image-cover;
+    }
+  }
+
+  &.is-active {
+    .color-item__image {
+      border: 2px solid currentColor;
+      &::after {
+        display: block;
+      }
+    }
+  }
+
+  &.color-item--horizontal {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    font-size: 14px;
+
+    .color-item__title {
+      flex: 1 1 auto;
+    }
+    .color-item__image {
+      flex: 0 0 30px;
+      width: 30px;
+      height: 30px;
+      margin-bottom: 0;
+      margin-right: 10px;
+    }
+  }
+  &.color-item--orange {
+    .color-item__image {
+      color: #FF6B00;
+    }
+  }
+}

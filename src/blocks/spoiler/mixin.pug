@@ -2,7 +2,9 @@ include ~blocks/icon/mixin
 
 mixin spoiler(data)
 	- data = data || {};
-	.spoiler(
+	- data.class = [].concat(data.class)
+	- if (data.active) data.class.push('is-active')
+	.spoiler.js-spoiler(
 		class=data.class
 		class=mods('spoiler', data.mods)
 	)&attributes(data.attributes)

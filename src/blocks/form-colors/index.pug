@@ -1,0 +1,45 @@
+include ~blocks/form-label/mixin
+include ~blocks/form-search/mixin
+include ~blocks/color-item/mixin
+
+.form-colors.js-form-colors
+	.form-colors__head
+		.form-colors__pricing
+			+form-label Выберите ценовую категорию тканей:
+			code // +form-range
+		.form-colors__search
+			+form-search({
+				attributes: {
+					'data-rel': 'form.colors.search'
+				}
+			})
+	.form-colors__body
+		each item in [0,1,2]
+			.form-colors__item
+				.form-colors__item-head
+					span.form-colors__item-title Sontex
+					span.form-colors__item-sep &nbsp;·&nbsp;
+					span.form-colors__item-price 16 190 ₽
+					.form-colors__item-type Искусственная кожа
+				.form-colors__options
+					each option in [1,2,3,4]
+						- index = item * 4 + option
+						- image = `/images/colors/color-${index}.png`
+						- title = `Sontex beige ${index}`
+						+color-item({
+							active: index === 2 || index === 5,
+							mods: index === 2 ? 'orange' : '',
+							title: {
+								text: title,
+							},
+							image: {
+								src: image,
+							},
+							attributes: {
+								'data-click': "form.colors.option",
+								'data-price': index,
+								'data-image': image,
+								'data-title': title,
+								'data-rel': index === 2 && 'form.colors.base' || index === 5 && 'form.colors.partner',
+							}
+						})

@@ -1,0 +1,11 @@
+@import "~common/styles/mixins/images";
+@import "~common/styles/variables/fonts";
+
+.form-color {
+  &__item {
+    margin-bottom: 20px;
+  }
+  &__footer {
+    margin-top: 20px;
+  }
+}

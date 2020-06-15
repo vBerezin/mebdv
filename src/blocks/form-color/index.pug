@@ -1,0 +1,47 @@
+include ~blocks/color-item/mixin
+
+form.form-color.js-form-color
+	.form-color__body
+		+form-label Основная:
+		+color-item({
+			active: true,
+			class: 'form-color__item',
+			mods: ['orange', 'horizontal'],
+			image: {
+				src: '/images/colors/color-2.png',
+				attributes: {
+					'data-rel': 'form.color.base.image'
+				}
+			},
+			title: {
+				text: 'Sontex beige',
+				attributes: {
+					'data-rel': 'form.color.base.title'
+				}
+			}
+		})
+		+form-label Компаньон:
+		+color-item({
+			active: true,
+			class: 'form-color__item',
+			mods: 'horizontal',
+			image: {
+				src: '/images/colors/color-5.png',
+				attributes: {
+					'data-rel': 'form.color.partner.image'
+				}
+			},
+			title: {
+				text: 'Sontex beige',
+				attributes: {
+					'data-rel': 'form.color.partner.title'
+				}
+			}
+		})
+	.form-color__footer
+		+button({
+			mods: ['block', 'orange', 'round'],
+			attributes: {
+				'data-click': 'popup.close'
+			}
+		}) Подтвердить выбор

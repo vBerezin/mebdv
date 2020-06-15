@@ -14,10 +14,13 @@
     padding: 0;
     font-size: 20px;
     color: #A9A9A9;
+
+    :focus ~ & {
+      color: #F78B3D;
+    }
   }
   &__input[type="search"],
   &__input[type="text"] {
     padding-left: 40px;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
   }
 }

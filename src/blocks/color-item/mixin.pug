@@ -1,0 +1,14 @@
+include ~blocks/image/mixin
+
+mixin color-item(data)
+	- data = data || {};
+	- state = [];
+	- if (data.active) state.push('is-active')
+	.color-item(
+		class=state
+		class=data.class
+		class=mods('color-item', data.mods)
+		)&attributes(data.attributes)
+		.color-item__image
+			+image(data.image)
+		.color-item__title&attributes(data.title.attributes) #{data.title.text}

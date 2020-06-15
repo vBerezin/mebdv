@@ -29,10 +29,30 @@ class Form {
       App.stream.trigger('form.color.submit', this.value);
     });
   }
+  set base(value) {
+    const { image, title } = value;
+    this.#nodes.base.title.innerHTML = title;
+    this.#nodes.base.image.src = image;
+    this.value.base.title = title;
+    this.value.base.image = image;
+  }
+  set partner(value) {
+    const { image, title } = value;
+    this.#nodes.partner.title.innerHTML = title;
+    this.#nodes.partner.image.src = image;
+    this.value.partner.title = title;
+    this.value.partner.image = image;
+  }
 }
 
 export const FormColor = (() => {
   const node = document.querySelector('.js-form-color');
   if (!node) return false;
-  return new Form(node);
+  const form = new Form(node);
+  App.stream.on('color.preview.select.base', (data) => {
+    form.base = data;
+  });
+  App.stream.on('color.preview.select.partner', (data) => {
+    form.partner = data;
+  });
 })();

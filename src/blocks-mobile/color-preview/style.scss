@@ -14,6 +14,7 @@
   background: $color-overlay;
   text-align: center;
   animation: color-preview $animation-time ease-out;
+  z-index: 300;
 
   &__body {
     padding: 15px;

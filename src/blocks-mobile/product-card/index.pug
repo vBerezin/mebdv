@@ -22,30 +22,32 @@ include ~blocks/slider-products/mixin
 				text: 'Указать размеры',
 				attributes: {
 					'data-click': 'popup',
-					'data-popup-id': 'popup-sizes',
+					'data-popup-id': 'popup-custom',
 				}
 			},
 		}) Мы изготовим по Вашим
 	+spoiler({
-		class: ['js-spoiler', 'product-card__spoiler'],
+		active: true,
+		class: 'product-card__spoiler',
 		title: 'Сопутствующие товары'
 	})
 		.product-card__products
 			+slider-products
 	+spoiler({
-		class: ['js-spoiler', 'product-card__spoiler'],
+		class: 'product-card__spoiler',
 		title: 'Диван Еврокнижка Лиссабон в других цветах (10 шт)'
 	})
 		.product-card__products
 			+slider-products
 	+spoiler({
-		class: ['js-spoiler', 'product-card__spoiler'],
+		class: 'product-card__spoiler',
 		title: 'Все товары коллекции Лиссабон (8 шт)'
 	})
 		.product-card__products
 			+slider-products
 	+spoiler({
-		class: ['js-spoiler', 'product-card__spoiler'],
+		active: true,
+		class: 'product-card__spoiler',
 		title: 'Отзывы (3)',
 		attributes: {
 			id: 'reviews'

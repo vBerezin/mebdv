@@ -5,8 +5,13 @@ include ~blocks/form-label/mixin
 
 +popup({
 	title: 'Изменить ткань',
+	class: 'popup-color',
 	attributes: {
 		id: 'popup-color'
 	}
 })
-	include ~blocks-mobile/form-color/index
+	.popup-color__inner
+		.popup-color__head
+			include ~blocks/form-color/index
+		.popup-color__body
+			include ~blocks/form-colors/index

@@ -1,4 +1,4 @@
-export class Counter {
+class Counter {
   #val;
   constructor(node) {
     this.el = node;
@@ -48,3 +48,9 @@ export class Counter {
     return +value.toString().replace(/\D/,'');
   }
 }
+
+(() => {
+  const nodes = document.querySelectorAll('.js-counter');
+  if (!nodes || !nodes.length) return false;
+  nodes.forEach(node => new Counter(node));
+})();

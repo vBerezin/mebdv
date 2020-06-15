@@ -2,15 +2,27 @@
 @import "~common/styles/variables/animation";
 @import "~common/styles/variables/transition";
 @import "~common/styles/variables/fonts";
+@import "~blocks/breakpoints/mixin";
 @import "styles/animations";
 
 .select-color {
   display: block;
   position: relative;
-  border-radius: 4px;
-  border: 1px solid #E7E7E7;
 
-  &__head {
+  ul,
+  li {
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    border-bottom: 1px solid #E7E7E7;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  &__head,
+  &__option {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -20,9 +32,14 @@
     cursor: pointer;
     user-select: none;
   }
+  &__head,
+  &__body {
+    border-radius: 4px;
+    border: 1px solid #E7E7E7;
+  }
   &__body {
     display: none;
-    padding: 0 10px 10px 10px;
+    margin-top: 15px;
     animation: select-color $animation-time ease-out;
   }
   &__icon {
@@ -46,22 +63,16 @@
       @include image-cover;
     }
   }
-  &__options {
-    display: grid;
-    grid-gap: 5px;
-    padding-top: 10px;
-    grid-template-columns: repeat(auto-fit, 20px);
-    border-top: 1px solid #E7E7E7;
+  &__checkbox {
+    font-size: 15px;
   }
+
   &__option {
-    display: block;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    padding: 50%;
-    border-radius: 50%;
-    img {
-      @include image-cover;
+    &:active,
+    &:focus,
+    &:hover,
+    &.is-active {
+      color: #F78B3D;
     }
   }
 
@@ -71,6 +82,13 @@
     }
     .select-color__body {
       display: block;
+    }
+  }
+
+  @include breakpoint(xs) {
+    ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 }

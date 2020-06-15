@@ -2,7 +2,7 @@ include ~blocks/icon/mixin
 
 mixin counter(data)
 	- data = data || {};
-	.counter(
+	.counter.js-counter(
 		class=data.class
 		class=mods('counter', data.mods)
 		)&attributes(data.attributes)

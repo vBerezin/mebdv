@@ -1,0 +1,40 @@
+@import "~common/styles/variables/fonts";
+@import "~common/styles/mixins/images";
+
+.form-colors {
+  &__head {
+    margin-bottom: 20px;
+  }
+  &__pricing {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #F5F5F5;
+  }
+  &__item {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #E7E7E7;
+    &:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+  }
+  &__item-head {
+    font-size: 18px;
+    font-weight: $font-weight-medium;
+    margin-bottom: 20px;
+  }
+  &__item-title {
+    font-weight: $font-weight-bold;
+  }
+  &__item-type {
+    font-size: 12px;
+    font-weight: $font-weight-medium;
+  }
+  &__options {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fit, 60px);
+  }
+}
