@@ -11,7 +11,7 @@ mixin form-search(data)
 			type="search"
 			name="search"
 			minlength=3
-			placeholder="Поиск по сайту..."
+			placeholder=data.placeholder
 			data-rel="form.search.input")
 		button.form-search__submit(type="submit" data-rel="form.search.submit")
 			+icon({name: 'search', mods: 'center'})

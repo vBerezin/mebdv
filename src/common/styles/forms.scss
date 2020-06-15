@@ -18,6 +18,7 @@ input[type="tel"] {
   padding: 9px 14px;
   font-weight: $font-weight-regular;
   box-shadow: none;
+  outline: none;
 
   @include placeholder {
     color: #7A7A7A;
