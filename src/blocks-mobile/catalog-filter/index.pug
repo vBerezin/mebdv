@@ -1,0 +1,13 @@
+include ~blocks/button/mixin
+
+.catalog-filter
+	+button({
+		class: 'catalog-filter__toggle',
+		mods: ['block', 'orange', 'round'],
+		icon: 'filter',
+		attributes: {
+			'data-click': 'popup',
+			'data-popup-id': 'popup-filter'
+		}
+	}) Подбор по параметрам
+	.catalog-filter__current

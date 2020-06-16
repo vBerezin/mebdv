@@ -42,10 +42,20 @@ export class MenuApp {
   get state() {
     return this.#current;
   }
+
+  #animate() {
+    const items = this.el.querySelector('ul').children;
+    Array.from(items).forEach((item, index) => {
+      setTimeout(() => {
+        item.classList.add('is-visible');
+      }, index * 50);
+    });
+  }
   #render(data) {
     const head = this.#makeHead(data);
     const body = this.#makeBody(data);
     this.el.innerHTML = `${head}${body}`;
+    this.#animate();
   }
   #makeHead(data) {
     if (data.title) {

@@ -1,4 +1,6 @@
 @import "~common/styles/variables/fonts";
+@import "~common/styles/variables/animation";
+@import "styles/animations";
 
 .menu-app {
   color: #000;
@@ -6,13 +8,22 @@
 
   ul,
   li {
-    display: block;
     padding: 0;
     margin: 0;
   }
-  li {
-    border-bottom: 1px solid #F6F6F6;
+  ul {
+    display: block;
   }
+  li {
+    display: none;
+    border-bottom: 1px solid #F6F6F6;
+    animation: menu-app-item $animation-time ease-out;
+
+    &.is-visible {
+      display: block;
+    }
+  }
+
 
   &__head,
   &__item {
@@ -44,6 +55,7 @@
     text-decoration: none;
     color: #202020;
     font-weight: $font-weight-medium;
+
 
     &__icon,
     &__image {

@@ -40,9 +40,6 @@
     }
   }
   &.is-active {
-    .button-menu__icon {
-      transform: scale(2);
-    }
     .button-menu__line {
       &:nth-child(1) {
         top: 50%;
