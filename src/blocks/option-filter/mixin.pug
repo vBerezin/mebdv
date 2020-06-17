@@ -1,0 +1,24 @@
+include ~blocks/icon/mixin
+
+mixin option-filter(data)
+	-
+		data = data || {};
+		if (data.type) data.mods = [].concat(data.mods, data.type);
+	label.option-filter.js-option-filter(
+		class=data.class
+		data-type=data.type
+		class=mods('option-filter', data.mods)
+		)&attributes(data.attributes)
+			if (data.type === 'removable')
+				input(type="checkbox" checked)
+				block
+				.option-filter__remove
+					+icon({ name: 'close', mods: 'center' })
+			else if (data.type === 'toggle')
+				input(type="checkbox")
+				block
+				.option-filter__toggle
+					+icon({ name: 'down' })
+			else
+				input(type="checkbox")
+				block

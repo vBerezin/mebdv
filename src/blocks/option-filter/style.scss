@@ -1,0 +1,53 @@
+@import "~common/styles/variables/fonts";
+@import "~common/styles/variables/transition";
+
+.option-filter {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  font-size: 10px;
+  line-height: 15px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: $font-weight-bold;
+  background: #F0F4FD;
+  color: #312E76;
+
+  [type="radio"],
+  [type="checkbox"] {
+    display: none;
+  }
+  &__toggle,
+  &__remove {
+    position: relative;
+    line-height: 0;
+    font-size: 15px;
+    transition: transform $transition-time ease-out;
+  }
+  &__remove {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    color: #fff;
+    background: #4A4796;
+    width: 20px;
+    border-radius: 0 20px 20px 0;
+  }
+
+  &.is-active {
+    background: #312E76;
+    color: #fff;
+    .option-filter__toggle {
+      transform: scale(-1);
+    }
+  }
+  &.option-filter--toggle {
+    display: inline-flex;
+    align-items: center;
+  }
+  &.option-filter--removable {
+    padding-right: 30px;
+  }
+}

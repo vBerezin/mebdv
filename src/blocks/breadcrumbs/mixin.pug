@@ -9,7 +9,7 @@ mixin breadcrumbs(data)
 		if (data.back)
 			a.breadcrumbs__back(href=data.back.href)
 				+icon({name: 'left', class: 'breadcrumbs__icon'})
-			a.breadcrumbs__back(href=data.back.href) #{data.back.title}
+				span #{data.back.title}
 			span.breadcrumbs__sep |
 		each item, index in data.items
 			- tagName = item.href ? 'a' : 'span'

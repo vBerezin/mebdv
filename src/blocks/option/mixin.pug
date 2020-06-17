@@ -8,5 +8,6 @@ mixin option(data)
 			block
 		if (data.type === 'checkbox')
 			.option__checkbox
+				+icon({ name: 'check' })
 		if (data.type === 'radio')
 			.option__radio

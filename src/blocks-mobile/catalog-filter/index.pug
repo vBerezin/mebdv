@@ -1,8 +1,21 @@
 include ~blocks/button/mixin
+include ~blocks/option-filter/mixin
 
-.catalog-filter
+-
+	options = [
+		'Цвет: Синий',
+		'Цена: 30000₽ - 60000₽',
+		'Длина, см (120-300)',
+		'Ширина, см (120-300)',
+		'Цвет: Синий',
+		'Цена: 30000₽ - 60000₽',
+		'Длина, см (120-300)',
+		'Ширина, см (120-300)',
+	]
+
+.catalog-filter.js-catalog-filter
 	+button({
-		class: 'catalog-filter__toggle',
+		class: 'catalog-filter__open',
 		mods: ['block', 'orange', 'round'],
 		icon: 'filter',
 		attributes: {
@@ -11,3 +24,29 @@ include ~blocks/button/mixin
 		}
 	}) Подбор по параметрам
 	.catalog-filter__current
+		.catalog-filter__label Выбранные параметры:&nbsp;
+			strong(data-rel="catalog.filter.count") 7
+		.catalog-filter__options
+			each option in options
+				+option-filter({
+					type: 'removable',
+					class: 'catalog-filter__option',
+					attributes: {
+						'data-rel': 'catalog.filter.current',
+					}
+				}) #{option}
+		+button({
+			class: 'catalog-filter__toggle',
+			mods: ['block', 'small', 'round', 'blue'],
+			attributes: {
+				'data-count': 4,
+				'data-rel': 'catalog.filter.toggle'
+			}
+		}) Показать все (2)
+	.catalog-filter__sorting
+		.catalog-filter__label Показано товаров:&nbsp;
+			strong 500
+		.catalog-filter__label Сортировка товаров:
+		.catalog-filter__options
+			+option-filter({ type: 'toggle', class: 'catalog-filter__option' }) По цене
+			+option-filter({ type: 'toggle', class: 'catalog-filter__option' }) По рейтину

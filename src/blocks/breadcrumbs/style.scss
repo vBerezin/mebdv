@@ -3,7 +3,8 @@
 .breadcrumbs {
   color: #898989;
   font-weight: $font-weight-semi-bold;
-  line-height: 1.2em;
+  font-size: 12px;
+  line-height: 20px;
 
   &__back,
   &__sep,
@@ -12,16 +13,23 @@
     vertical-align: middle;
   }
   &__back {
+    display: inline-flex;
+    align-items: center;
     color: #F78B3D;
     font-weight: $font-weight-bold;
   }
   &__sep {
     display: inline-block;
     font-size: 0;
-    background: currentColor;
-    width: 1px;
-    height: 9px;
     margin: 0 10px;
+    &::after {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      background: currentColor;
+      width: 1px;
+      height: 9px;
+    }
   }
   &__item {
     display: inline;
@@ -32,6 +40,6 @@
   }
   &__icon {
     display: inline-block;
-    font-size: 1.2em;
+    font-size: 15px;
   }
 }

@@ -16,10 +16,12 @@
 @import "~blocks/option-order/style";
 @import "~blocks/button-rating/style";
 @import "~blocks/button-menu/style";
+@import "~blocks/option-filter/style";
 @import "~blocks/menu-app/style";
 @import "~blocks/select-color/style";
 @import "~blocks/slider-main/style";
 @import "~blocks/slider-products/style";
+@import "~blocks/preloader/style";
 
 @import "~blocks/product-panel/style";
 @import "~blocks/product-gallery/style";
@@ -48,10 +50,12 @@
 @import "~blocks-mobile/reviews-list/style";
 @import "~blocks-mobile/contacts/style";
 @import "~blocks-mobile/cart/style";
-@import "~blocks-mobile/form-review/style";
 @import "~blocks-mobile/product-card/style";
-@import "~blocks-mobile/form-sizes/style";
 @import "~blocks-mobile/color-preview/style";
+
+@import "~blocks-mobile/form-review/style";
+@import "~blocks-mobile/form-sizes/style";
+@import "~blocks-mobile/form-filter/style";
 
 @import "~blocks-mobile/section-map/style";
 @import "~blocks-mobile/section-contact/style";
@@ -62,4 +66,5 @@
 
 @import "~blocks-mobile/popup-review/style";
 @import "~blocks-mobile/popup-color/style";
+@import "~blocks-mobile/popup-filter/style";
 

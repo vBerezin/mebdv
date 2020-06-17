@@ -1,0 +1,28 @@
+include ~blocks/button/mixin
+include ~blocks/option/mixin
+include ~blocks/option-spoiler/mixin
+
+form.form-filter.js-form-filter
+	.form-filter__body
+		.form-filter__item
+			+option-spoiler({ title: 'Категории' })
+				+option({ type: 'checkbox', name: 'category' }) Нераскладные диваны
+				+option({ type: 'checkbox', name: 'category' }) Диваны книжка
+				+option({ type: 'checkbox', name: 'category' }) Выкатные диваны
+				+option({ type: 'checkbox', name: 'category' }) Диваны еврокнижка
+		.form-filter__item
+			+option-spoiler({title: 'Цена'})
+	.form-filter__footer
+		+button({
+			mods: ['block', 'round'],
+			attributes: {
+				type: 'reset'
+			}
+		}) Сбросить все
+		+button({
+			mods: ['block', 'round', 'black'],
+			attributes: {
+				type: 'submit',
+				'data-click': 'popup.close',
+			}
+		}) Применить

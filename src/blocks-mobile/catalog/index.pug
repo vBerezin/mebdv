@@ -40,10 +40,11 @@ include ~blocks/product-panel/mixin
 		]
 	}
 
-.catalog
-	.catalog__head фильтры
+.catalog.js-catalog
+	.catalog__head
+		include ~blocks-mobile/catalog-filter/index
 	.catalog__body
-		.catalog__grid
+		.catalog__grid(data-rel="catalog.list")
 			each item in [1,2,3,4,5,6,7,8]
 				+product-panel({
 					href: '/m.mebdv/product',

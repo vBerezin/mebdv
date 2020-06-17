@@ -1,0 +1,12 @@
+include ~blocks/icon/mixin
+
+mixin option-spoiler(data)
+	- data = data || {};
+	.option-spoiler.js-option-spoiler(
+		class=data.class
+		class=mods('option-spoiler', data.mods)
+		)&attributes(data.attributes)
+			.option-spoiler__head
+				.option-spoiler__title #{data.title}
+			.option-spoiler__body
+				block

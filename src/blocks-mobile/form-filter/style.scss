@@ -1,0 +1,15 @@
+.form-filter {
+  background: #fff;
+  &__body {}
+  &__item {
+    padding: 15px;
+    border-bottom: 1px solid #F5F5F5;
+  }
+  &__footer {
+    padding: 20px 15px;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    background: #F4F4F4;
+  }
+}

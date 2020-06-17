@@ -48,11 +48,20 @@
       color: currentColor;
     }
   }
+  &.button--blue {
+    background: #F0F4FD;
+    border-color: #F0F4FD;
+    color: #312E76;
+    .button__icon {
+      color: currentColor;
+    }
+  }
   &.button--block {
     display: block;
     width: 100%;
   }
   &.button--small {
+    font-weight: $font-weight-bold;
     padding-top: 4px;
     padding-bottom: 4px;
   }
