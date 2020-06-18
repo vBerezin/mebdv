@@ -2,10 +2,11 @@ include ~blocks/icon/mixin
 
 mixin spoiler(data)
 	- data = data || {};
-	- data.class = [].concat(data.class)
-	- if (data.active) data.class.push('is-active')
+	- state = [];
+	- if (data.active) state.push('is-active')
 	.spoiler.js-spoiler(
 		class=data.class
+		class=state
 		class=mods('spoiler', data.mods)
 	)&attributes(data.attributes)
 		.spoiler__head(data-click="spoiler.toggle")

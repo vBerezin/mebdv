@@ -30,6 +30,7 @@
     display: none;
     animation: spoiler $animation-time ease-out;
   }
+
   &.is-active {
     .spoiler__icon {
       transform: rotate(90deg);

@@ -1,6 +1,8 @@
+import {App} from "~common/scripts/app";
 import { Handlers } from '~common/scripts/utils/handlers';
+import {documentReady} from "~common/scripts/utils/document-ready";
 
-class Spoiler {
+class Instance {
   #active;
   constructor(node) {
     this.el = node;
@@ -13,13 +15,6 @@ class Spoiler {
       }
     }));
   }
-  set active(state) {
-    this.el.classList.toggle('is-active', state);
-    this.#active = state;
-  }
-  get active() {
-    return this.#active;
-  }
   open() {
     this.active = true;
   }
@@ -29,11 +24,25 @@ class Spoiler {
   toggle() {
     this.active = !this.active;
   }
+  set active(state) {
+    this.el.classList.toggle('is-active', state);
+    this.#active = state;
+  }
+  get active() {
+    return this.#active;
+  }
 }
 
-(() => {
-  const nodes = document.querySelectorAll('.js-spoiler');
-  if (!nodes || !nodes.length) return false;
-  nodes.forEach(node => new Spoiler(node));
-})();
+function init(context) {
+  try {
+    const nodes = context.querySelectorAll('.js-spoiler');
+    if (!nodes || !nodes.length) return false;
+    return nodes.forEach(node => new Instance(node));
+  } catch (e) {
+    App.debug(e);
+  }
+}
 
+documentReady(init);
+
+export const Spoiler = { init, Instance };
