@@ -1,0 +1,8 @@
+mixin option-button(data)
+	- data = data || {};
+	label.option-button(
+		class=data.class
+		class=mods('option-button', data.mods))
+		input(type=data.type name=data.name value=data.value)&attributes(data.attributes)
+		.option-button__btn
+			block

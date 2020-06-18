@@ -1,0 +1,36 @@
+@import "~common/styles/variables/transition";
+@import "~common/styles/variables/fonts";
+
+.option-button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+
+  [type="radio"],
+  [type="checkbox"] {
+    display: none;
+  }
+  &__btn {
+    display: block;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: $font-weight-semi-bold;
+    line-height: 18px;
+    min-width: 40px;
+    background: #fff;
+    text-align: center;
+    border: 1px solid #E7E7E7;
+    border-radius: 4px;
+    transition: color $transition-time ease-out;
+
+    :checked ~ & {
+      color: #F78B3D;
+      border-color: currentColor;
+    }
+  }
+
+  &.option-button--block {
+    display: block;
+  }
+}

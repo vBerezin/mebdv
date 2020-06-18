@@ -1,0 +1,6 @@
+@import "~common/styles/variables/fonts";
+
+.input-price,
+.input-price[type="text"] {
+  font-weight: $font-weight-bold;
+}

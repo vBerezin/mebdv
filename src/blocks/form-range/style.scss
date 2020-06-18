@@ -1,0 +1,39 @@
+@import "~common/styles/variables/fonts";
+
+.form-range {
+  &__inputs {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  &__from,
+  &__to {
+    flex: 1 1 auto;
+    position: relative;
+    input {
+      padding-left: 30px;
+    }
+  }
+  &__label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: right;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 25px;
+    height: 100%;
+    color: #7A7A7A;
+    font-size: 12px;
+    font-weight: $font-weight-regular;
+  }
+  &__sep {
+    font-size: 0;
+    width: 8px;
+    height: 1px;
+    margin: 0 6px;
+    flex: 0 0 auto;
+    background: #C4C4C4;
+  }
+}

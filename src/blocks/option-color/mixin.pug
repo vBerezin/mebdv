@@ -1,0 +1,9 @@
+mixin option-color(data)
+	- data = data || {};
+	label.option-color(
+		title=data.title
+		class=data.class
+		class=mods('option-color', data.mods))
+		input(type=data.type name=data.name value=data.value)&attributes(data.attributes)
+		+image(data.image)
+		+icon({ name: 'check', mods: 'center', class: 'option-color__icon' })

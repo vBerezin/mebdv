@@ -9,7 +9,7 @@
   cursor: pointer;
   user-select: none;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 15px;
   font-weight: $font-weight-regular;
   padding: 15px 0;
 
@@ -21,8 +21,9 @@
   &__checkbox {
     display: block;
     position: relative;
-    width: 14px;
-    height: 14px;
+    font-size: 15px;
+    width: 1em;
+    height: 1em;
     flex: 0 0 auto;
     margin-left: 10px;
     color: #F78B3D;

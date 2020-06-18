@@ -1,0 +1,43 @@
+@import "~common/styles/variables/transition";
+@import "~common/styles/variables/fonts";
+
+.option-color {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 50%;
+  overflow: hidden;
+  font-size: 0;
+  width: 30px;
+  height: 30px;
+  color: #fff;
+
+  [type="radio"],
+  [type="checkbox"] {
+    display: none;
+  }
+  img {
+    @include image-cover;
+  }
+  &__icon {
+    font-size: 20px;
+    opacity: 0;
+    transform: scale(0);
+    color: currentColor;
+    transition:
+      transform $transition-time ease-out,
+      opacity $transition-time ease-out;
+
+    :checked ~ & {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  &.option-color--block {
+    display: block;
+    width: auto;
+    height: auto;
+    padding: 50%;
+  }
+}

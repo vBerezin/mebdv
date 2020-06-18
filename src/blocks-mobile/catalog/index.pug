@@ -42,7 +42,8 @@ include ~blocks/product-panel/mixin
 
 .catalog.js-catalog
 	.catalog__head
-		include ~blocks-mobile/catalog-filter/index
+		.catalog__filter(data-rel="catalog.filter")
+			include ~blocks-mobile/catalog-filter/index
 	.catalog__body
 		.catalog__grid(data-rel="catalog.list")
 			each item in [1,2,3,4,5,6,7,8]
@@ -54,6 +55,14 @@ include ~blocks/product-panel/mixin
 				})
 	.catalog__footer
 		.catalog__loader
-			+button({ mods: ['block', 'round'] }) Показать больше
-		.catalog__pager
+			+button({
+				mods: ['block', 'round'],
+				attributes: {
+					'data-page-current': 1,
+					'data-page-count': 5,
+					'data-page-url': '?getPage=',
+					'data-click': 'catalog.more'
+				}
+			}) Показать больше
+		.catalog__pager(data-rel="catalog.pager")
 			+pager(pager)

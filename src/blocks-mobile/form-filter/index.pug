@@ -1,22 +1,163 @@
 include ~blocks/button/mixin
 include ~blocks/option/mixin
 include ~blocks/option-spoiler/mixin
+include ~blocks/option-button/mixin
+include ~blocks/option-color/mixin
+include ~blocks/form-range/mixin
+
+-
+	spoilers = [
+		{
+			title: 'Категории',
+			options: [
+				'Нераскладные диваны',
+				'Диваны книжка',
+				'Выкатные диваны',
+				'Диваны еврокнижка',
+			]
+		},
+		{
+			title: 'Цена',
+			separator: ' ',
+			price: true,
+		},
+		{
+			title: 'Цвет',
+			colors: true,
+		},
+		{
+			title: 'Количество мест',
+			buttons: [1,2,3,4]
+		},
+		{
+			title: 'Размер',
+			separator: ' ',
+			size: true,
+		},
+		{
+			title: 'Механизм',
+			options: [
+				'Аккордеон',
+				'Барон',
+				'Без механизма',
+				'Выкатной',
+			]
+		},
+		{
+			title: 'Тип обивки',
+			options: [
+				'Натуральная кожа',
+				'Ткань',
+				'Без механизма',
+				'Экокожа',
+			]
+		},
+	]
 
 form.form-filter.js-form-filter
 	.form-filter__body
-		.form-filter__item
-			+option-spoiler({ title: 'Категории' })
-				+option({ type: 'checkbox', name: 'category' }) Нераскладные диваны
-				+option({ type: 'checkbox', name: 'category' }) Диваны книжка
-				+option({ type: 'checkbox', name: 'category' }) Выкатные диваны
-				+option({ type: 'checkbox', name: 'category' }) Диваны еврокнижка
-		.form-filter__item
-			+option-spoiler({title: 'Цена'})
+		each spoiler in spoilers
+			+option-spoiler({
+				title: spoiler.title,
+				class: 'form-filter__item',
+				separator: spoiler.separator
+			})
+				if (spoiler.size)
+					.form-filter__range
+						+form-range({
+							class: 'form-filter__size',
+							title: 'Длина, см',
+							from: {
+								value: 130,
+								title: 'Длина от'
+							},
+							to: {
+								value: 280,
+							}
+						})
+						+form-range({
+							class: 'form-filter__size',
+							title: 'Ширина, см',
+							from: {
+								value: 130,
+								title: 'Ширина от'
+							},
+							to: {
+								value: 280,
+							}
+						})
+						+form-range({
+							class: 'form-filter__size',
+							title: 'Высота, см',
+							from: {
+								title: 'Высота от',
+								value: 130
+							},
+							to: {
+								value: 280
+							}
+						})
+
+				if (spoiler.price)
+					.form-filter__range
+						+form-range({
+							price: true,
+							from: {
+								value: 30000
+							},
+							to: {
+								value: 60000
+							}
+						})
+				if (spoiler.options)
+					.form-filter__options
+						each option, index in spoiler.options
+							+option({
+								type: 'checkbox',
+								name: spoiler.title,
+								class: 'form-filter__option',
+								attributes: {
+									title: option,
+									checked: Math.random() > 0.5
+								}
+							}) #{option}
+				if (spoiler.colors)
+					.form-filter__colors
+						each color in [1,2,3,4,5,6,7,8,9,10]
+							- title = `Цвет-${color}`
+							+option-color({
+								title,
+								mods: 'block',
+								type: 'checkbox',
+								value: color,
+								name: spoiler.title,
+								image: {
+									src: `/images/colors/color-${color}.png`,
+								},
+								attributes: {
+									title,
+									checked: Math.random() > 0.5
+								}
+							})
+				if (spoiler.buttons)
+					.form-filter__buttons
+						each button in spoiler.buttons
+							+option-button({
+								mods: 'block',
+								type: 'radio',
+								value: button,
+								name: spoiler.title,
+								attributes: {
+									title: button,
+									checked: Math.random() > 0.5
+								}
+							}) #{button}
 	.form-filter__footer
 		+button({
 			mods: ['block', 'round'],
 			attributes: {
-				type: 'reset'
+				type: 'reset',
+				'data-click': 'form.filter.reset'
 			}
 		}) Сбросить все
 		+button({

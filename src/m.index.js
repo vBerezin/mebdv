@@ -11,10 +11,13 @@ import '~blocks/product-gallery';
 import '~blocks/form-product';
 import '~blocks/spoiler';
 import '~blocks/counter';
+import '~blocks/input-price';
 import '~blocks/select-color';
 import '~blocks/form-color';
 import '~blocks/form-colors';
+import '~blocks/form-range';
 import '~blocks/option-filter';
+import '~blocks/option-spoiler';
 
 import '~blocks-mobile/header';
 import '~blocks-mobile/menu-sticky';

@@ -1,0 +1,48 @@
+include ~blocks/input-price/mixin
+include ~blocks/form-label/mixin
+
+mixin form-range(data)
+	- data = data || {};
+	.form-range(
+		class=data.class
+		class=mods('form-range', data.mods)
+	)&attributes(data.attributes)
+		if (data.title)
+			+form-label #{data.title}
+		.form-range__inputs
+			.form-range__from
+				.form-range__label от
+				if (data.price)
+					+input-price({
+						value: data.from.value,
+						attributes: {
+							'title': data.from.title || 'от',
+							'data-rel': 'form.range.from'
+						}
+					})
+				else
+					input(
+						title= data.from.title || 'от'
+						value=data.from.value
+						data-rel="form.range.from"
+						type="text"
+						pattern="[0-9]*")
+			.form-range__sep -
+			.form-range__to
+				.form-range__label до
+				if (data.price)
+					+input-price({
+						value: data.to.value,
+						attributes: {
+							'title': data.to.title || 'до',
+							'data-rel': 'form.range.to'
+						}
+					})
+				else
+					input(
+						title= data.to.title || 'до'
+						value=data.to.value
+						data-rel="form.range.to"
+						type="text"
+						pattern="[0-9]*")
+		.form-range__slider(data-rel="form.range.slider")

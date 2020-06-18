@@ -1,4 +1,7 @@
-class Counter {
+import { App } from '~common/scripts/app';
+import { documentReady } from '~common/scripts/utils/document-ready';
+
+class Instance {
   #val;
   constructor(node) {
     this.el = node;
@@ -45,12 +48,20 @@ class Counter {
     return val;
   }
   filter(value) {
-    return +value.toString().replace(/\D/,'');
+    return +value.toString().replace(/\D/mg,'');
   }
 }
 
-(() => {
-  const nodes = document.querySelectorAll('.js-counter');
-  if (!nodes || !nodes.length) return false;
-  nodes.forEach(node => new Counter(node));
-})();
+function init(context) {
+  try {
+    const nodes = context.querySelectorAll('.js-counter');
+    if (!nodes || !nodes.length) return false;
+    return nodes.forEach(node => new Instance(node));
+  } catch (e) {
+    App.debug(e);
+  }
+}
+
+documentReady(init);
+
+export const Counter = { init, Instance };

@@ -1,0 +1,9 @@
+mixin input-price(data)
+	- data = data || {}
+	input.input-price.js-input-price(
+		type="text"
+		value=data.value
+		pattern="[0-9]*"
+		class=data.class
+		class=mods('input-price', data.mods)
+	)&attributes(data.attributes)
