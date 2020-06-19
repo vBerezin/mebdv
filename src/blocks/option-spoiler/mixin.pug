@@ -1,9 +1,13 @@
 include ~blocks/icon/mixin
 
 mixin option-spoiler(data)
-	- data = data || {};
+	-
+		data = data || {};
+		state = [];
+		if (data.active) state.push('is-active');
 	.option-spoiler.js-option-spoiler(
 		data-separator=data.separator
+		class=state
 		class=data.class
 		class=mods('option-spoiler', data.mods)
 		)&attributes(data.attributes)

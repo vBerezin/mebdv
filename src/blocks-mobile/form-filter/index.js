@@ -36,6 +36,7 @@ class Instance {
         const { value, checked } = state.get(input);
         input.value = value;
         input.checked = checked;
+        input.dispatchEvent(new Event('change', { bubbles: true }))
       }
     });
   }

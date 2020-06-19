@@ -85,6 +85,8 @@
   },
   "dependencies": {
     "jquery": "^3.4.1",
-    "owl.carousel": "^2.2.0"
+    "jquery-ui-touch-punch": "^0.2.3",
+    "owl.carousel": "^2.2.0",
+    "webpack-jquery-ui": "^2.0.1"
   }
 }

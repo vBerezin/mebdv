@@ -1,0 +1,36 @@
+.slider-range {
+  display: block;
+  position: relative;
+  font-size: 0;
+  color: #F78B3D;
+  background: #F8F8F8;
+  border-radius: 10px;
+  height: 6px;
+  padding: 0 8px;
+  margin: 5px 0;
+
+  .ui-slider {
+    .ui-slider-range {
+      background: currentColor;
+      border-radius: inherit;
+    }
+    .ui-slider-handle {
+      display: block;
+      top: -5px;
+      margin-left: -8px;
+      cursor: pointer;
+      outline: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #fff;
+      border: 5px solid currentColor;
+    }
+  }
+  .ui-slider-horizontal {
+    border-radius: inherit;
+    height: 100%;
+    background: inherit;
+  }
+
+}

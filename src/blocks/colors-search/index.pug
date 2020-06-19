@@ -1,28 +1,40 @@
 include ~blocks/form-label/mixin
 include ~blocks/form-search/mixin
 include ~blocks/color-item/mixin
+include ~blocks/form-range/mixin
 
-.form-colors.js-form-colors
-	.form-colors__head
-		.form-colors__pricing
+.colors-search.js-colors-search
+	.colors-search__head
+		.colors-search__pricing
 			+form-label Выберите ценовую категорию тканей:
-			code // +form-range
-		.form-colors__search
+			+form-range({
+				price: true,
+				from: {
+					id: 'price-from',
+					value: 30000
+				},
+				to: {
+					id: 'price-to',
+					value: 60000
+				}
+			})
+		.colors-search__search
 			+form-search({
 				placeholder: 'Поиск по коллекциям',
 				attributes: {
-					'data-rel': 'form.colors.search'
+					'data-rel': 'colors.search.search'
 				}
 			})
-	.form-colors__body
+
+	.colors-search__body
 		each item in [0,1,2]
-			.form-colors__item
-				.form-colors__item-head
-					span.form-colors__item-title Sontex
-					span.form-colors__item-sep &nbsp;·&nbsp;
-					span.form-colors__item-price 16 190 ₽
-					.form-colors__item-type Искусственная кожа
-				.form-colors__options
+			.colors-search__item
+				.colors-search__item-head
+					span.colors-search__item-title Sontex
+					span.colors-search__item-sep &nbsp;·&nbsp;
+					span.colors-search__item-price 16 190 ₽
+					.colors-search__item-type Искусственная кожа
+				.colors-search__options
 					each option in [1,2,3,4]
 						- index = item * 4 + option
 						- image = `/images/colors/color-${index}.png`
@@ -37,10 +49,10 @@ include ~blocks/color-item/mixin
 								src: image,
 							},
 							attributes: {
-								'data-click': "form.colors.option",
+								'data-click': "colors.search.option",
 								'data-price': index,
 								'data-image': image,
 								'data-title': title,
-								'data-rel': index === 2 && 'form.colors.base' || index === 5 && 'form.colors.partner',
+								'data-rel': index === 2 && 'colors.search.base' || index === 5 && 'colors.search.partner',
 							}
 						})

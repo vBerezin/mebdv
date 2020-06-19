@@ -6,11 +6,21 @@ class Instance {
   constructor(node) {
     this.el = node;
     this.symbol = '₽';
-    this.el.addEventListener('keyup', () => this.onChange());
+    this.el.addEventListener('focus', () => this.onFocus());
+    this.el.addEventListener('focusout', () => this.onChange());
+    this.el.addEventListener('keyup', () => this.onInput());
     this.el.addEventListener('change', () => this.onChange());
+    this.value = this.el.value;
+    this.onChange();
+  }
+  onFocus() {
     this.value = this.el.value;
   }
   onChange() {
+    this.#value = this.validate(this.el.value);
+    this.el.value = `${this.#value} ${this.symbol}`;
+  }
+  onInput() {
     this.value = this.el.value;
   }
   set value(value) {
@@ -23,8 +33,7 @@ class Instance {
   validate(value) {
     const string = value.replace(/\D/mg,'');
     const number = parseInt(string);
-    const price = number ? number.toLocaleString() : 0;
-    return `${price} ${this.symbol}`;
+    return number ? number.toLocaleString() : 0;
   }
 }
 

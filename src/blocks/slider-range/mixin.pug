@@ -1,0 +1,10 @@
+mixin slider-range(data)
+	- data = data || {};
+	.slider-range.js-slider-range(
+		data-max=data.max
+		data-min=data.min
+		data-step=data.step
+		class=data.class
+		class=mods('slider-range', data.mods)
+	)&attributes(data.attributes)
+		div(data-rel="slider.range.slider")

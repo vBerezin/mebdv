@@ -14,7 +14,7 @@ import '~blocks/counter';
 import '~blocks/input-price';
 import '~blocks/select-color';
 import '~blocks/form-color';
-import '~blocks/form-colors';
+import '~blocks/colors-search';
 import '~blocks/form-range';
 import '~blocks/option-filter';
 import '~blocks/option-spoiler';

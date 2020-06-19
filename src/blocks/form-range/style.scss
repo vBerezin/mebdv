@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    margin-bottom: 15px;
   }
   &__from,
   &__to {
@@ -21,6 +22,7 @@
     justify-content: flex-end;
     text-align: right;
     position: absolute;
+    user-select: none;
     left: 0;
     top: 0;
     width: 25px;
@@ -28,6 +30,9 @@
     color: #7A7A7A;
     font-size: 12px;
     font-weight: $font-weight-regular;
+    &[for] {
+      cursor: pointer;
+    }
   }
   &__sep {
     font-size: 0;

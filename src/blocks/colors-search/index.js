@@ -3,14 +3,14 @@ import { App } from '~common/scripts/app';
 import { ColorItem } from '~blocks/color-item';
 import { ColorPreview } from '~blocks-mobile/color-preview';
 
-// TODO: ajax search
-
 class Form {
+  #base;
+  #partner;
   constructor(node) {
     this.el = node;
     this.selected = null;
     this.el.addEventListener('click', new Handlers.Click({
-      'form.colors.option': ({ event, target }) => {
+      'colors.search.option': ({ event, target }) => {
         const { image, title } = target.dataset;
         ColorPreview.image = image;
         ColorPreview.title = title;
@@ -18,15 +18,18 @@ class Form {
         this.selected = new ColorItem(target);
       }
     }));
-    const base = this.el.querySelector('[data-rel="form.colors.base"]');
-    const partner = this.el.querySelector('[data-rel="form.colors.partner"]');
-    this.base = base ? new ColorItem(base) : null;
-    this.partner = base ? new ColorItem(partner) : null;
+    this.el.addEventListener('change', ({ target }) => {
+      App.stream.trigger('change', target);
+    });
+    this.#base = this.el.querySelector('[data-rel="colors.search.base"]');
+    this.#partner = this.el.querySelector('[data-rel="colors.search.partner"]');
+    this.base = this.#base ? new ColorItem(this.#base) : null;
+    this.partner = this.#partner ? new ColorItem(this.#partner) : null;
   }
 }
 
 export const FormColors = (() => {
-  const node = document.querySelector('.js-form-colors');
+  const node = document.querySelector('.js-colors-search');
   if (!node) return false;
   const form = new Form(node);
   App.stream.on('color.preview.select.base', () => {

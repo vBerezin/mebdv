@@ -20,6 +20,7 @@ include ~blocks/form-range/mixin
 			title: 'Цена',
 			separator: ' ',
 			price: true,
+			active: true,
 		},
 		{
 			title: 'Цвет',
@@ -58,6 +59,7 @@ form.form-filter.js-form-filter
 	.form-filter__body
 		each spoiler in spoilers
 			+option-spoiler({
+				active: spoiler.active,
 				title: spoiler.title,
 				class: 'form-filter__item',
 				separator: spoiler.separator
@@ -68,10 +70,12 @@ form.form-filter.js-form-filter
 							class: 'form-filter__size',
 							title: 'Длина, см',
 							from: {
+								id: 'length.from',
 								value: 130,
 								title: 'Длина от'
 							},
 							to: {
+								id: 'length.to',
 								value: 280,
 							}
 						})
@@ -79,10 +83,12 @@ form.form-filter.js-form-filter
 							class: 'form-filter__size',
 							title: 'Ширина, см',
 							from: {
+								id: 'width.from',
 								value: 130,
 								title: 'Ширина от'
 							},
 							to: {
+								id: 'width.to',
 								value: 280,
 							}
 						})
@@ -90,10 +96,12 @@ form.form-filter.js-form-filter
 							class: 'form-filter__size',
 							title: 'Высота, см',
 							from: {
+								id: 'height.from',
 								title: 'Высота от',
 								value: 130
 							},
 							to: {
+								id: 'height.to',
 								value: 280
 							}
 						})
@@ -103,9 +111,11 @@ form.form-filter.js-form-filter
 						+form-range({
 							price: true,
 							from: {
+								id: 'price-from',
 								value: 30000
 							},
 							to: {
+								id: 'price-to',
 								value: 60000
 							}
 						})
