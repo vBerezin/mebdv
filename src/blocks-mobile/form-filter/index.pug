@@ -14,9 +14,6 @@ include ~blocks/form-range/mixin
 				'Диваны книжка',
 				'Выкатные диваны',
 				'Диваны еврокнижка',
-				'Диваны еврокнижка-2',
-				'Диваны еврокнижка-3',
-				'Диваны еврокнижка-4',
 			]
 		},
 		{
@@ -143,19 +140,17 @@ form.form-filter.js-form-filter
 				if (spoiler.options)
 					- scrollbar = spoiler.options.length > 4
 					if (scrollbar)
-						// больше 4х => scroll
-						.form-filter__options.form-filter__scroll-outer
-							.form-filter__scroll-inner
-								each option, index in spoiler.options
-									+option({
-										type: 'checkbox',
-										name: spoiler.title,
-										class: 'form-filter__option',
-										attributes: {
-											title: option,
-											checked: Math.random() > 0.5
-										}
-									}) #{option}
+						.form-filter__options
+							each option, index in spoiler.options
+								+option({
+									type: 'checkbox',
+									name: spoiler.title,
+									class: 'form-filter__option',
+									attributes: {
+										title: option,
+										checked: Math.random() > 0.5
+									}
+								}) #{option}
 					else
 						.form-filter__options
 							each option, index in spoiler.options
