@@ -35,7 +35,6 @@ include ~blocks/form-range/mixin
 		},
 		{
 			title: 'Размер',
-			separator: ' ',
 			size: true,
 		},
 		{
@@ -65,7 +64,8 @@ form.form-filter.js-form-filter
 				active: spoiler.active,
 				title: spoiler.title,
 				class: 'form-filter__item',
-				separator: spoiler.separator
+				separator: spoiler.separator,
+				group: spoiler.group
 			})
 				if (spoiler.size)
 					.form-filter__range
@@ -75,11 +75,17 @@ form.form-filter.js-form-filter
 							from: {
 								id: 'length.from',
 								value: 130,
-								title: 'Длина от'
+								title: 'Длина от',
+								attributes: {
+									'data-group': 1,
+								}
 							},
 							to: {
 								id: 'length.to',
 								value: 280,
+								attributes: {
+									'data-group': 1,
+								}
 							}
 						})
 						+form-range({
@@ -88,11 +94,17 @@ form.form-filter.js-form-filter
 							from: {
 								id: 'width.from',
 								value: 130,
-								title: 'Ширина от'
+								title: 'Ширина от',
+								attributes: {
+									'data-group': 2,
+								}
 							},
 							to: {
 								id: 'width.to',
 								value: 280,
+								attributes: {
+									'data-group': 2,
+								}
 							}
 						})
 						+form-range({
@@ -101,11 +113,17 @@ form.form-filter.js-form-filter
 							from: {
 								id: 'height.from',
 								title: 'Высота от',
-								value: 130
+								value: 130,
+								attributes: {
+									'data-group': 3,
+								}
 							},
 							to: {
 								id: 'height.to',
-								value: 280
+								value: 280,
+								attributes: {
+									'data-group': 3,
+								}
 							}
 						})
 

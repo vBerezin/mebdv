@@ -30,16 +30,24 @@ class Instance {
     this.#values.innerHTML = this.getValuesText();
   }
   getValuesText() {
-    const inputs = [];
+    let inputs = [];
+    let groups = null;
     Array.from(this.#inputs).forEach((input) => {
-      const { type, checked, title, value } = input;
+      const { type, checked, title, value, dataset: { group } } = input;
       if (checked) {
         inputs.push(`<span>${input.title}</span>`);
       }
       if (type === 'text') {
-        inputs.push(`<span>${title} <strong>${value}</strong></span>`);
+        const text = `<span>${title} <strong>${value}</strong></span>`;
+        if (group) {
+          groups = groups || {};
+          groups[group] ? groups[group].push(text) : groups[group] = [text];
+        }
       }
     });
+    if (groups) {
+      inputs = inputs.concat(Object.values(groups).map(group => group.join(' ')));
+    }
     return inputs.length ? inputs.join(this.separator) : 'Не выбрано';
   }
   set active(state) {

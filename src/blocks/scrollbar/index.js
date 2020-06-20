@@ -1,3 +1,5 @@
+// TODO: touch drag
+
 export class Scrollbar {
   constructor({ node, container }) {
     this.el = node;
@@ -9,15 +11,6 @@ export class Scrollbar {
     window.addEventListener('resize', () => {
       this.init();
     });
-    this.track.addEventListener('touchstart', (event) => {
-      this.touchstart = event.touches[0].clientX;
-    });
-    this.track.addEventListener('touchmove', (event) => {
-      const size = event.touches[0].clientX - this.touchstart;
-      const position = this.container.scrollLeft + size / 10;
-      const scrollLeft = size > 0 ? Math.max(position, 0) : Math.min(position, this.scrollSize);
-      this.container.scrollLeft = scrollLeft;
-    }, { passive: true });
     this.init();
   }
   set active(state) {

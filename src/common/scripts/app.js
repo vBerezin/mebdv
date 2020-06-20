@@ -14,7 +14,4 @@ const App = (function () {
   };
 }());
 
-global.App = App;
-global.$ = $;
-
 export { App };

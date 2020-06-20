@@ -3,8 +3,11 @@ include ~blocks/icon/mixin
 mixin option-filter(data)
 	-
 		data = data || {};
+		state = [];
 		if (data.type) data.mods = [].concat(data.mods, data.type);
+		if (data.active) state.push('is-active')
 	label.option-filter.js-option-filter(
+		class=state
 		class=data.class
 		data-type=data.type
 		class=mods('option-filter', data.mods)
@@ -15,10 +18,10 @@ mixin option-filter(data)
 				.option-filter__remove
 					+icon({ name: 'close', mods: 'center' })
 			else if (data.type === 'toggle')
-				input(type="checkbox")
+				input(type="checkbox" checked=data.active)
 				block
 				.option-filter__toggle
 					+icon({ name: 'down' })
 			else
-				input(type="checkbox")
+				input(type="checkbox" checked=data.active)
 				block
