@@ -1,3 +1,5 @@
+@import "~common/styles/mixins/scrollbar";
+
 .form-filter {
   background: #fff;
   &__item {
@@ -6,8 +8,16 @@
   }
   &__options {
     padding-bottom: 15px;
-    max-height: 200px;
+  }
+  &__scroll-outer {
+    padding: 15px 0;
+  }
+  &__scroll-inner {
+    scroll-snap-type: y mandatory;
     overflow-y: auto;
+    max-height: 200px;
+    padding-right: 20px;
+    @include scrollbar;
   }
   &__buttons {
     display: grid;
@@ -22,6 +32,7 @@
     padding: 15px 0;
   }
   &__option {
+    scroll-snap-align: start;
     border-bottom: 1px solid #F5F5F5;
   }
   &__range {

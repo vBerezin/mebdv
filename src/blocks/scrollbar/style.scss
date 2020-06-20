@@ -1,0 +1,25 @@
+@import "~common/styles/mixins/scrollbar";
+@import "~common/styles/mixins/scrollbar-hide";
+
+.scrollbar {
+  display: none;
+  position: relative;
+  height: 6px;
+  border-radius: 6px;
+  background: #F8F8F8;
+
+  &__track {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #F78B3D;
+    border-radius: inherit;
+    cursor: pointer;
+  }
+  &.is-active {
+    display: block;
+  }
+}

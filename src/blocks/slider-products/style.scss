@@ -1,16 +1,32 @@
+@import "~common/styles/mixins/scrollbar";
+@import "~common/styles/mixins/scrollbar-hide";
+
 .slider-products {
-  display: flex;
-  align-items: stretch;
-  justify-content: flex-start;
-  margin-left: -5px;
-  margin-right: -15px;
-  overflow-x: auto;
-  scroll-snap-type: x;
+  position: relative;
+
+  &__body {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    overflow-x: auto;
+    margin: 0 -15px;
+    padding: 0 10px 15px 10px;
+    @include scrollbar;
+
+    &.scrollbar-active {
+      @include scrollbar-hide;
+    }
+  }
+  &__scrollbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 
   &__item {
     flex: 0 0 150px;
     max-width: 150px;
-    padding: 5px 15px 5px 5px;
-    scroll-snap-align: start;
+    padding: 5px 10px 5px 5px;
   }
 }

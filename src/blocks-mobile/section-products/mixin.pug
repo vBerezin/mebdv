@@ -13,4 +13,6 @@ mixin section-products(data)
 			+section-head
 				+section-title({ icon: data.icon }) #{data.title}
 			.section-products__body
-				+slider-products({ class: 'section-products__list' })
+				+slider-products({
+					scrollbar: true,
+				})

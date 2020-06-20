@@ -32,19 +32,19 @@ include ~blocks/slider-products/mixin
 		title: 'Сопутствующие товары'
 	})
 		.product-card__products
-			+slider-products
+			+slider-products({ scrollbar: true })
 	+spoiler({
 		class: 'product-card__spoiler',
 		title: 'Диван Еврокнижка Лиссабон в других цветах (10 шт)'
 	})
 		.product-card__products
-			+slider-products
+			+slider-products({scrollbar: true})
 	+spoiler({
 		class: 'product-card__spoiler',
 		title: 'Все товары коллекции Лиссабон (8 шт)'
 	})
 		.product-card__products
-			+slider-products
+			+slider-products({scrollbar: true})
 	+spoiler({
 		active: true,
 		class: 'product-card__spoiler',

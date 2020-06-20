@@ -1,14 +1,22 @@
 include ~blocks/product-panel/mixin
+include ~blocks/scrollbar/mixin
 
 mixin slider-products(data)
 	- data = data || {};
-	.slider-products(
-		class='js-slider-products'
+	.slider-products.js-slider-products(
 		class=data.class
 		class=mods('slider-products', data.mods)
 	)&attributes(data.attributes)
-		each item in [1,2,3,4,5,6,7,8]
-			.slider-products__item
-				+product-panel({
-					href: '/m.mebdv/product'
+		.slider-products__body(data-rel="slider.products.container")
+			each item in [1,2,3,4,5,6,7,8]
+				.slider-products__item
+					+product-panel({
+						href: '/m.mebdv/product'
+					})
+		if (data.scrollbar)
+			.slider-products__scrollbar
+				+scrollbar({
+					attributes: {
+						'data-rel': 'slider.products.scrollbar'
+					}
 				})

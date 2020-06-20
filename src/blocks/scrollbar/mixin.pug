@@ -1,0 +1,7 @@
+mixin scrollbar(data)
+	- data = data || {};
+	.scrollbar(
+		class=data.class
+		class=mods('scrollbar', data.mods)
+	)&attributes(data.attributes)
+		.scrollbar__track(data-rel="scrollbar.track")
