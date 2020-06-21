@@ -1,8 +1,22 @@
+@import "~blocks/breakpoints/mixin";
+
 .section-about {
   &__img {
     font-size: 0;
     line-height: 0;
     text-align: center;
     margin-bottom: 30px;
+  }
+  @include breakpoint(sm) {
+    &__inner {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+    }
+    &__img {
+      flex: 0 0 300px;
+      margin-bottom: 0;
+      margin-right: 30px;
+    }
   }
 }
