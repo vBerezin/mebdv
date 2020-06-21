@@ -28,9 +28,13 @@ mixin product-cart(data)
 					dt Ткань компаньон:
 					dd Sontex beige
 		.product-cart__footer
-			.product-cart__count
-				.product-cart__count-title Количество:
-				+counter({ class: 'js-counter', min: 1, max: 10, step: 1, value: 10 })
+			+counter({
+				class: 'product-cart__count',
+				min: 1,
+				max: 10,
+				step: 1,
+				value: 10
+			})
 			+button({
 				class: 'product-cart__delete',
 				icon: 'delete'

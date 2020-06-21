@@ -13,6 +13,7 @@
   &__footer {
     display: flex;
     align-items: flex-end;
+    flex-direction: row-reverse;
     justify-content: space-between;
     margin-top: 15px;
     padding-top: 15px;
@@ -57,8 +58,5 @@
   &__count,
   &__delete {
     flex: 0 0 auto;
-  }
-  &__count-title {
-    margin-bottom: 10px;
   }
 }
