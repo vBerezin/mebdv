@@ -15,6 +15,7 @@ mixin form-range(data)
 				label.form-range__label(for=data.from.id) от
 				- data.from.attributes['data-rel'] = 'form.range.from'
 				- data.from.attributes.title = data.from.title || 'от'
+				- data.from.attributes.id = data.from.id
 				+input-price({
 					value: data.from.value,
 					attributes: data.from.attributes
@@ -24,6 +25,7 @@ mixin form-range(data)
 				label.form-range__label(for=data.to.id) до
 				- data.to.attributes['data-rel'] = 'form.range.to'
 				- data.to.attributes.title = data.to.title || 'до'
+				- data.to.attributes.id = data.to.id
 				+input-price({
 					value: data.to.value,
 					attributes: data.to.attributes
