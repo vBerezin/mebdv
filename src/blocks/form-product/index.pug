@@ -14,9 +14,9 @@ include ~blocks/form-label/mixin
 	.form-product__main
 		.form-product__pricing
 			.form-product__price
-				span(data-rel="product.price") 18 890 ₽
+				span(data-rel="product.price") 18 890 <i class="ruble">₽</i>
 			.form-product__price-old
-				span(data-rel="product.price.old") 20 890 ₽
+				span(data-rel="product.price.old") 20 890 <i class="ruble">₽</i>
 			+badge({
 				attributes: {
 					'data-rel': 'product.discount'
@@ -36,7 +36,7 @@ include ~blocks/form-label/mixin
 			attributes: {
 				type: 'submit'
 			}
-		}) Купить в рассрочку за 1574 ₽/мес.
+		}) Купить в рассрочку за 1574 <i class="ruble">₽</i>/мес.
 	.form-product__info
 		.form-product__info-title Размер
 		.form-product__info-item
