@@ -24,8 +24,8 @@ mixin product-panel(data)
 			a.product-panel__title(href=data.href) Диван Еврокнижка Атлант с барной стойкой
 		.product-panel__body
 			.product-panel__prices
-				span.product-panel__price 20 090 &#8381;
-				span.product-panel__price-old 20 090 &#8381;
+				span.product-panel__price 20 090 <i class="ruble">₽</i>
+				span.product-panel__price-old 20 090 <i class="ruble">₽</i>
 			.product-panel__reviews
 				+rating({ value: 3, class: 'product-panel__rating' })
 				+badge({ mods: 'small', class: 'product-panel__reviews-count' }) 15
