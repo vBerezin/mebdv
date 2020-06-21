@@ -39,7 +39,7 @@ class Instance {
 
 function init(context) {
   try {
-    const nodes = context.querySelectorAll('.js-input');
+    const nodes = context.querySelectorAll('.js-input-price');
     if (!nodes || !nodes.length) return false;
     return nodes.forEach(node => new Instance(node));
   } catch (e) {

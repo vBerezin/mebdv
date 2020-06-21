@@ -4,11 +4,11 @@ include ~blocks/option-filter/mixin
 -
 	options = [
 		'Цвет: Синий',
-		'Цена: 30000 <i class="ruble">₽</i> - 60000 <i class="ruble">₽</i>',
+		'Цена: 30000₽ - 60000₽',
 		'Длина, см (120-300)',
 		'Ширина, см (120-300)',
 		'Цвет: Синий',
-		'Цена: 30000 <i class="ruble">₽</i> - 60000 <i class="ruble">₽</i>',
+		'Цена: 30000₽ - 60000₽',
 		'Длина, см (120-300)',
 		'Ширина, см (120-300)',
 	]
@@ -34,7 +34,7 @@ include ~blocks/option-filter/mixin
 					attributes: {
 						'data-rel': 'catalog.filter.current',
 					}
-				}) !{option}
+				}) #{option}
 		+button({
 			class: 'catalog-filter__toggle',
 			mods: ['block', 'small', 'round', 'blue'],

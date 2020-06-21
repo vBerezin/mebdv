@@ -127,6 +127,7 @@ form.form-filter.js-form-filter
 				if (spoiler.price)
 					.form-filter__range
 						+form-range({
+							price: true,
 							from: {
 								id: 'price-from',
 								value: 30000
@@ -149,7 +150,7 @@ form.form-filter.js-form-filter
 										title: option,
 										checked: Math.random() > 0.5
 									}
-								}) !{option}
+								}) #{option}
 					else
 						.form-filter__options
 							each option, index in spoiler.options
@@ -161,7 +162,7 @@ form.form-filter.js-form-filter
 										title: option,
 										checked: Math.random() > 0.5
 									}
-								}) !{option}
+								}) #{option}
 				if (spoiler.colors)
 					.form-filter__colors
 						each color in [1,2,3,4,5,6,7,8,9,10]
@@ -192,7 +193,7 @@ form.form-filter.js-form-filter
 									title: button,
 									checked: Math.random() > 0.5
 								}
-							}) !{button}
+							}) #{button}
 	.form-filter__footer
 		+button({
 			mods: ['block', 'round'],
