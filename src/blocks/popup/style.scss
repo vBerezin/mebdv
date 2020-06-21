@@ -26,12 +26,12 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    justify-content: flex-end;
+    justify-content: flex-start;
     position: absolute;
     left: 0;
-    top: 0;
+    bottom: 0;
     width: 100%;
-    height: 100%;
+    max-height: 100%;
     animation: popup-inner $animation-time ease-out;
   }
   &__head {
@@ -47,7 +47,7 @@
     padding: 15px;
   }
   &__body {
-    flex: 0 1 auto;
+    flex: 1 1 auto;
     overflow: auto;
     overflow-scrolling: touch;
     -webkit-overflow-scrolling: touch;
