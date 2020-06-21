@@ -27,6 +27,7 @@
     background: #F4F4F4;
     padding: 15px 0;
     position: relative;
+    z-index: $z-index;
   }
   &__top-inner {
     display: flex;
@@ -53,7 +54,7 @@
     animation-name: header-search;
   }
   &__search-form {
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 4px rgba(#000, 0.1);
   }
   &__menu {
     position: relative;
@@ -61,20 +62,10 @@
     overflow: auto;
     overflow-scrolling: touch;
     -webkit-overflow-scrolling: touch;
-    max-width: 265px;
+    max-width: 260px;
     background: #fff;
-    padding-right: 5px;
     animation-name: header-nav;
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      right: 0;
-      top: 0;
-      height: 100%;
-      width: 5px;
-      background: linear-gradient(to right, rgba(#000, 0.1), #F4F4F4);
-    }
+    box-shadow: 4px 0 10px rgba(#000, 0.25);
   }
   &__logo {
     flex: 1 1 auto;
