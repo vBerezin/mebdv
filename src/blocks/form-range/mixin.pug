@@ -13,43 +13,21 @@ mixin form-range(data)
 		.form-range__inputs
 			.form-range__from
 				label.form-range__label(for=data.from.id) от
-				if (data.price)
-					+input-price({
-						value: data.from.value,
-						attributes: {
-							'title': data.from.title || 'от',
-							'data-rel': 'form.range.from',
-							id: data.from.id
-						}
-					})
-				else
-					input(
-						id=data.from.id
-						title= data.from.title || 'от'
-						value=data.from.value
-						data-rel="form.range.from"
-						type="text"
-						pattern="[0-9]*")&attributes(data.from.attributes)
+				- data.from.attributes['data-rel'] = 'form.range.from'
+				- data.from.attributes.title = data.from.title || 'от'
+				+input-price({
+					value: data.from.value,
+					attributes: data.from.attributes
+				})
 			.form-range__sep -
 			.form-range__to
 				label.form-range__label(for=data.to.id) до
-				if (data.price)
-					+input-price({
-						value: data.to.value,
-						attributes: {
-							'title': data.to.title || 'до',
-							'data-rel': 'form.range.to',
-							id: data.to.id
-						}
-					})
-				else
-					input(
-						id=data.to.id
-						title= data.to.title || 'до'
-						value=data.to.value
-						data-rel="form.range.to"
-						type="text"
-						pattern="[0-9]*")&attributes(data.to.attributes)
+				- data.to.attributes['data-rel'] = 'form.range.to'
+				- data.to.attributes.title = data.to.title || 'до'
+				+input-price({
+					value: data.to.value,
+					attributes: data.to.attributes
+				})
 		+slider-range({
 			min: data.from.value,
 			max: data.to.value,

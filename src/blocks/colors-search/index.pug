@@ -8,14 +8,19 @@ include ~blocks/form-range/mixin
 		.colors-search__pricing
 			+form-label Выберите ценовую категорию тканей:
 			+form-range({
-				price: true,
 				from: {
 					id: 'price-from',
-					value: 30000
+					value: 30000,
+					attributes: {
+						'data-symbol': '₽'
+					}
 				},
 				to: {
 					id: 'price-to',
-					value: 60000
+					value: 60000,
+					attributes: {
+						'data-symbol': '₽'
+					}
 				}
 			})
 		.colors-search__search

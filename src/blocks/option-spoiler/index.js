@@ -42,6 +42,8 @@ class Instance {
         if (group) {
           groups = groups || {};
           groups[group] ? groups[group].push(text) : groups[group] = [text];
+        } else {
+          inputs.push(text);
         }
       }
     });

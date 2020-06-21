@@ -5,7 +5,7 @@ class Instance {
   #value;
   constructor(node) {
     this.el = node;
-    this.symbol = '₽';
+    this.symbol = this.el.dataset.symbol || '';
     this.el.addEventListener('focus', () => this.onFocus());
     this.el.addEventListener('focusout', () => this.onChange());
     this.el.addEventListener('keyup', () => this.onInput());
