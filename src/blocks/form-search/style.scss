@@ -23,4 +23,11 @@
   &__input[type="text"] {
     padding-left: 40px;
   }
+
+  &.form-search--round {
+    .form-search__input[type="search"],
+    .form-search__input[type="text"] {
+      border-radius: 20px;
+    }
+  }
 }

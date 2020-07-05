@@ -1,0 +1,106 @@
+include ~blocks/lazy-iframe/mixin
+include ~blocks/icon/mixin
+
+footer.footer
+	+l-container
+		.footer__top
+			.footer__nav
+				.footer__menu
+					.footer__menu-title О магазине
+					.footer__menu-body
+						ul
+							li
+								a(href="#") О магазине
+							li
+								a(href="#") Доставка и оплата
+							li
+								a(href="#") Гарантия
+							li
+								a(href="#") Производители
+							li
+								a(href="#") Отзывы
+							li
+								a(href="#") Контакты
+				.footer__menu
+					.footer__menu-title Популярные категории
+					.footer__menu-body
+						ul
+							li
+								a(href="#") Диваны
+							li
+								a(href="#")   Шкафы
+							li
+								a(href="#")   Кровати
+							li
+								a(href="#")   Тумбы
+							li
+								a(href="#")   Столы
+							li
+								a(href="#")   Стулья
+						ul
+							li
+								a(href="#") Матрасы
+							li
+								a(href="#") Офис
+							li
+								a(href="#") Для дачи
+							li
+								a(href="#") Мебель из массива
+							li
+								a(href="#") Спальня
+							li
+								a(href="#") Прихожая
+			.footer__map
+				+lazy-iframe({src: 'https://yandex.ru/map-widget/v1/-/CCQdRXVvcD'})
+			.footer__info
+				.footer__info-item
+					.footer__info-item__icon
+						+icon-box({icon: 'phone', mods: ['blue', 'small']})
+					.footer__info-item__body
+						p Ежедневно с 09:00 до 20:00
+						p
+							a(href="tel:+74957963035") +7 (495) 796-30-35
+						p
+							a(href="+79037963035") +7 (903) 796-30-35
+				.footer__info-item
+					.footer__info-item__icon
+						+icon-box({icon: 'mail', mods: ['blue', 'small']})
+					.footer__info-item__body
+						p Электронная почта
+						p
+							a(href="mailto:mail@mebdv.ru") mail@mebdv.ru
+				+button({
+					class: 'footer__info-btn',
+					mods: ['black', 'block', 'large', 'round']
+				}) Написать нам
+		.footer__bottom
+			.footer__dev
+				+icon({name: 'd-inside'})
+			.footer__privacy
+				p © 2011-2020. Все права защищены.
+				p
+					a(href="/privacy") Политика конфиденциальности
+			.footer__copyright Копирование, распространение информации с сайта разрешается только с письменного согласия владельца.
+			.footer__location
+				.footer__location__icon
+					+icon({ name: 'map' })
+				.footer__location__text
+					.footer__location__title Адрес:
+					p г. Москва, Федеративный проспект, д. 9, корп. 2, офис 1
+			.footer__payment
+				ul
+					li
+						+image({
+							src: '/images/payment-mir.png',
+							srcset: {
+								'2x': '/images/payment-mir@2x.png'
+							},
+						})
+					li
+						+image({
+							src: '/images/payment-mastercard.svg',
+						})
+					li
+						+image({
+							src: '/images/payment-visa.svg',
+						})

@@ -16,7 +16,7 @@ const intersectionObserver = new IntersectionObserver(
   {
     root: null,
     rootMargin: '0% 0px',
-    threshold: 0.05,
+    threshold: 0.01,
   },
 );
 const observe = ({ node, callback, once = false }) => {

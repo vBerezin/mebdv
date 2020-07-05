@@ -1,4 +1,5 @@
 @import "~common/styles/variables/fonts";
+@import "~blocks/breakpoints/mixin";
 
 .section-title {
   font-size: 18px;
@@ -7,7 +8,7 @@
 
   &__icon {
     flex: 0 0 auto;
-    font-size: 1.4em;
+    font-size: 25px;
     line-height: 0;
     width: 1em;
     height: 1em;
@@ -26,5 +27,11 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+  }
+  @include breakpoint(sm) {
+    font-size: 32px;
+    .section-title__icon {
+      font-size: 30px;
+    }
   }
 }

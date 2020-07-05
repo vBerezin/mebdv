@@ -1,4 +1,5 @@
 include ~blocks/icon/mixin
+include ~blocks/badge/mixin
 
 mixin button(data)
 	-
@@ -12,3 +13,5 @@ mixin button(data)
 		if (data.icon)
 			+icon({ name: data.icon, class: 'button__icon' })
 		block
+		if (data.badge)
+			span.button__badge #{data.badge}

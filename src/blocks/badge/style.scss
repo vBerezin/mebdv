@@ -2,7 +2,6 @@
 
 .badge {
   display: inline-block;
-  vertical-align: top;
   text-align: center;
   background: #F0F4FD;
   color: #122351;
@@ -29,5 +28,13 @@
   &.badge--small {
     padding: 3px;
     border-radius: 8px;
+  }
+  &.badge--grey {
+    background: #E8E8E8;
+    color: #000;
+  }
+  &.badge--white {
+    background: #fff;
+    color: #F78B3D;
   }
 }

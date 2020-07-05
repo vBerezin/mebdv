@@ -10,6 +10,23 @@ import { OwlCarousel } from "~blocks/owl-carousel";
       autoWidth: true,
       dots: true,
       nav: false,
+      margin: 0,
+      responsive: {
+        [App.breakpoints.points.sm]: {
+          center: true,
+          nav: true,
+          dots: false,
+          loop: true,
+        }
+      },
+      onInitialized() {
+        const cloned = node.querySelectorAll('.cloned img[data-src]');
+        if (cloned.length) {
+          cloned.forEach((clone) => {
+            clone.src = clone.dataset.src;
+          });
+        }
+      },
     },
   });
   carousel.init();

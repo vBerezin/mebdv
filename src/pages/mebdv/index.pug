@@ -1,0 +1,35 @@
+extends ~layout/l-desktop/index
+include ~blocks-desktop/section-products/mixin
+
+block variables
+	- TITLE = 'Главная'
+	- DESKTOP = true
+
+block page-content
+	include ~blocks-desktop/section-slider/index
+	include ~blocks-desktop/section-catalog/index
+	+section-products({
+		title: 'Новинки',
+		icon: 'new',
+		mods: 'bottom'
+	})
+	+section-products({
+		title: 'Хиты продаж',
+		icon: 'star',
+		mods: 'bottom'
+	})
+	+section-products({
+		title: 'Распродажа',
+		icon: 'tag',
+		mods: 'bottom'
+	})
+	+section-products({
+		title: 'Скидки в июне',
+		icon: 'calendar',
+		mods: 'bottom'
+	})
+	+section-products({
+		title: 'Ликвидация склада',
+		icon: 'home',
+		mods: 'bottom'
+	})

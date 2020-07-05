@@ -11,9 +11,14 @@ mixin product-panel(data)
 	)&attributes(data.attributes)
 		.product-panel__head
 			.product-panel__badges
-				+badge({ class: 'product-panel__badge' }) -15%
-				+badge({ class: 'product-panel__badge', mods: 'red' }) HIT
-				+badge({ class: 'product-panel__badge', mods: 'yellow' }) NEW
+				if (DESKTOP)
+					+badge({class: 'product-panel__badge'}) -15%
+					+badge({class: 'product-panel__badge', mods: 'red'}) ХИТ ПРОДАЖ
+					+badge({class: 'product-panel__badge', mods: 'yellow'}) НОВИНКА
+				else
+					+badge({class: 'product-panel__badge'}) -15%
+					+badge({class: 'product-panel__badge', mods: 'red'}) HIT
+					+badge({class: 'product-panel__badge', mods: 'yellow'}) NEW
 			a.product-panel__image(href=data.href)
 				+lazy-image({
 					src: '/images/product/panel-1.png',
@@ -28,6 +33,15 @@ mixin product-panel(data)
 				span.product-panel__price-old 20 090 <i class="ruble">₽</i>
 			.product-panel__reviews
 				+rating({ value: 3, class: 'product-panel__rating' })
-				+badge({ mods: 'small', class: 'product-panel__reviews-count' }) 15
+				if (DESKTOP)
+					+badge({ mods: 'grey', class: 'product-panel__reviews-count' }) 15
+				else
+					+badge({mods: 'small', class: 'product-panel__reviews-count'}) 15
 		.product-panel__footer
-			+button({ mods: ['block', 'small', 'round', 'orange'] }) В корзину
+			if (DESKTOP)
+				+button({
+					icon: 'cart',
+					mods: ['block', 'round', 'orange']
+				}) Добавить в коризну
+			else
+				+button({ mods: ['block', 'small', 'round', 'orange'] }) В корзину

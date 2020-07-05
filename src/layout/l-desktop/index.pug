@@ -3,13 +3,20 @@ extends ~common/templates/layout/base
 block body
 	.l-desktop
 		.l-desktop__header
-			// include ~blocks/header/index
-		aside.l-desktop__aside
-			// include ~blocks/menu-catalog/index
-		main.l-desktop__main
-			block main
-			.l-desktop__footer
-				// include ~blocks/footer/index
+			block header
+				include ~blocks-desktop/header/index
+		.l-desktop__inner
+			aside.l-desktop__aside
+				block aside
+					include ~blocks/menu-catalog/index
+			.l-desktop__body
+				main.l-desktop__main
+					block main
+						.l-desktop__content
+							block page-content
+				.l-desktop__footer
+					block footer
+						include ~blocks-desktop/footer/index
 
 block append stylesheets
 	link(rel="stylesheet" href=`/index.css?${$.version}`)

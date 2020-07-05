@@ -9,6 +9,7 @@ $.fn.owlCarousel.Constructor.Plugins.Navigation.Defaults.navText = [
 export function OwlCarousel({ node, options }) {
   this.el = node;
   this.options = options;
+  this.slides = Array.from(this.el.children);
   this.init = () => {
     this.el.classList.add('owl-carousel');
     $(this.el).owlCarousel(this.options);
@@ -23,6 +24,17 @@ export function OwlCarousel({ node, options }) {
   this.to = (index) => {
     $(this.el).trigger('to.owl.carousel', index);
     return this;
+  };
+  this.next = () => {
+    $(this.el).trigger('next.owl.carousel');
+    return this;
+  };
+  this.prev = () => {
+    $(this.el).trigger('prev.owl.carousel');
+    return this;
+  };
+  this.center = () => {
+    return this.to(Math.ceil(this.slides.length / 2));
   };
 }
 

@@ -1,12 +1,16 @@
+@import "~common/styles/mixins/images";
+
 .slider-main {
+  $z-index: 10;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   overflow: auto;
+  z-index: $z-index;
 
   &.owl-carousel {
     display: block;
-    overflow: visible;
+    overflow: hidden;
   }
   .owl-stage-outer {
     overflow: visible;
@@ -17,13 +21,54 @@
     overflow: hidden;
     font-size: 0;
     line-height: 0;
-    flex: 0 0 275px;
+    flex: 0 0 auto;
     width: 275px;
     height: 110px;
     margin-right: 15px;
     border-radius: 10px;
     img {
       @include image-cover;
+    }
+  }
+
+  @include breakpoint(sm) {
+    overflow: hidden;
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 5%;
+      pointer-events: none;
+      z-index: $z-index;
+    }
+    &::before {
+      left: 0;
+      background: linear-gradient(to right, #fff, rgba(#fff, 0.0001));
+    }
+    &::after {
+      right: 0;
+      background: linear-gradient(to left, #fff, rgba(#fff, 0.0001));
+    }
+    &__item {
+      margin: 0 15px;
+      border-radius: 10px;
+      height: 290px;
+      width: 980px;
+    }
+    .owl-nav {
+      button.owl-prev {
+        left: auto;
+        right: 50%;
+        margin-right: (980 / 2) + 15px;
+      }
+      button.owl-next {
+        right: auto;
+        left: 50%;
+        margin-left: (980 / 2) + 15px;
+      }
     }
   }
 }

@@ -1,0 +1,261 @@
+include ~blocks/image/mixin
+include ~blocks/icon/mixin
+
+-
+	menu = [
+		{
+			title: 'Кухня',
+			href: '/mebdv/catalog',
+			image: {
+				src: '/images/menu/catalog-1.svg'
+			},
+		},
+		{
+			title: 'Мягкая мебель',
+			href: '/mebdv/catalog',
+			image: {
+				src: '/images/menu/catalog-2.svg'
+			}
+		},
+		{
+			title: 'Гостиная',
+			href: '/mebdv/catalog',
+			image: {
+				src: '/images/menu/catalog-3.svg'
+			},
+			items: [
+				[
+					{
+						title: 'Стенки',
+						items: [
+							'В современном стиле'
+						]
+					},
+					{
+						title: 'Гарнитуры',
+					},
+					{
+						title: 'Модульные гостиные',
+					},
+					{
+						title: 'Комоды для гостиной',
+					},
+					{
+						title: 'Журнальные столики',
+						items: [
+							'Столы-трансформеры',
+							'Журнальные столики на колесах',
+						]
+					},
+					{
+						title: 'Стелажи для гостиной',
+						items: [
+							'Открытые',
+							'Закрытые',
+							'Угловые',
+						]
+					},
+					{
+						title: 'Туалетные столики',
+						items: [
+							'С зеркалом'
+						]
+					},
+					{
+						title: 'Серванты',
+					},
+					{
+						title: 'Кресла-качалки',
+					},
+					{
+						title: 'Настенные полки',
+					},
+					{
+						title: 'Декор для гостиной',
+					},
+				],
+				[
+					{
+						title: 'Кофейные столики',
+					},
+					{
+						title: 'Стулья мягкие дизайнерские',
+					},
+				]
+			]
+		},
+		{
+			title: 'Спальня',
+			href: '/mebdv/catalog',
+			image: {
+				src: '/images/menu/catalog-4.svg'
+			}
+		},
+		{
+			title: 'Прихожая',
+			href: '/mebdv/catalog',
+			image: {
+				src: '/images/menu/catalog-5.svg'
+			},
+			items: [
+				[
+					{
+						title: 'Стенки',
+						items: [
+							'В современном стиле'
+						]
+					},
+					{
+						title: 'Гарнитуры',
+					},
+					{
+						title: 'Модульные гостиные',
+					},
+					{
+						title: 'Комоды для гостиной',
+					},
+					{
+						title: 'Журнальные столики',
+						items: [
+							'Столы-трансформеры',
+							'Журнальные столики на колесах',
+						]
+					},
+					{
+						title: 'Стелажи для гостиной',
+						items: [
+							'Открытые',
+							'Закрытые',
+							'Угловые',
+						]
+					},
+					{
+						title: 'Туалетные столики',
+						items: [
+							'С зеркалом'
+						]
+					},
+					{
+						title: 'Серванты',
+					},
+					{
+						title: 'Кресла-качалки',
+					},
+					{
+						title: 'Настенные полки',
+					},
+					{
+						title: 'Декор для гостиной',
+					},
+				],
+				[
+					{
+						title: 'Кофейные столики',
+					},
+					{
+						title: 'Стулья мягкие дизайнерские',
+					},
+				]
+			]
+		},
+		{
+			title: 'Детская',
+			href: '/mebdv/catalog',
+			image: {
+				src: '/images/menu/catalog-6.svg'
+			}
+		},
+		{
+			title: 'Офис',
+			href: '/mebdv/catalog',
+			image: {
+				src: '/images/menu/catalog-7.svg'
+			}
+		},
+		{
+			title: 'Шкафы',
+			href: '/mebdv/catalog',
+			image: {
+				src: '/images/menu/catalog-8.svg'
+			}
+		},
+		{
+			title: 'Матрасы',
+			href: '/mebdv/catalog',
+			image: {
+				src: '/images/menu/catalog-9.svg'
+			}
+		},
+		{
+			title: 'Для дома',
+			href: '/mebdv/catalog',
+			image: {
+				src: '/images/menu/catalog-10.svg'
+			}
+		},
+		{
+			title: 'Для дачи',
+			href: '/mebdv/catalog',
+			image: {
+				src: '/images/menu/catalog-11.svg'
+			}
+		},
+		{
+			title: 'Мебель из массива',
+			href: '/mebdv/catalog',
+			image: {
+				src: '/images/menu/catalog-12.svg'
+			}
+		},
+		{
+			title: 'Распродажа',
+			href: '/mebdv/catalog',
+			active: true,
+			image: {
+				src: '/images/menu/sale.svg'
+			}
+		},
+	]
+
+nav.menu-catalog.js-menu-catalog
+	.menu-catalog__head
+		.menu-catalog__title Каталог мебели
+	.menu-catalog__body
+		ul
+			each item in menu
+				- icon = item.items ? 'sub' : 'right'
+				- state = []
+				- if (item.active) state.push('is-active')
+				li
+					a.menu-catalog__item(href=item.href class=state)
+						.menu-catalog__item__img
+							+image(item.image)
+						.menu-catalog__item__title #{item.title}
+						.menu-catalog__item__icon
+							+icon({name: icon, mods: 'center'})
+					if (item.items)
+						.menu-catalog__dropdown
+							each column in item.items
+								.menu-catalog__column
+									each item2 in column
+										.menu-catalog__category
+											.menu-catalog__category-head
+												a.menu-catalog__category-title(href="#") #{item2.title}
+													sup &nbsp;13
+											if (item2.items)
+												.menu-catalog__category-body
+													ul
+														each item3 in item2.items
+															li
+																.menu-catalog__sub
+																	a(href="#").menu-catalog__item-sub
+																		span #{item3}
+																		+icon({ name: 'right', class: 'menu-catalog__item-sub__icon' })
+																	.menu-catalog__dropdown-sub
+																		ul
+																			li
+																				a(href="#") Открытые
+																			li
+																				a(href="#") Закрытые
+																			li
+																				a(href="#") Угловые

@@ -1,0 +1,15 @@
+include ~blocks/icon-box/mixin
+
+.button-phone
+	+icon-box({
+		tag: 'a',
+		class: 'button-phone__icon',
+		icon: 'phone',
+		mods: ['phone', 'round'],
+		attributes: {
+			'href': 'tel:+74957963035'
+		}
+	})
+	.button-phone__main
+		.button-phone__title Ежедневно с 09:00 до 20:00
+		a.button-phone__tel(href="tel:+74957963035") +7 (495) 796-30-35

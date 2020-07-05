@@ -1,0 +1,11 @@
+include ~layout/l-container/mixin
+include ~blocks/section/mixin
+include ~blocks/slider-main/mixin
+
++section({
+	mods: 'bottom',
+	class: 'section-slider'
+})
+	+l-container
+		+slider-main({ class: 'section-slider__carousel' })
+

@@ -1,15 +1,22 @@
 @import "~common/styles/variables/fonts";
+@import "~blocks/breakpoints/mixin";
 
 .product-panel {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   position: relative;
   background: #FFFFFF;
   box-shadow: 0 0 2px rgba(160, 160, 160, 0.4);
   border-radius: 6px;
   padding: 40px 10px 10px 10px;
+  min-height: 260px;
 
   &__head {
     margin-bottom: 5px;
+  }
+  &__body {
+    flex: 1 1 auto;
   }
   &__footer {
     margin-top: 8px;
@@ -69,5 +76,24 @@
   &__reviews-count {
     flex: 0 0 auto;
     margin-left: 5px;
+  }
+
+  @include breakpoint(sm) {
+    min-height: 350px;
+    font-size: 15px;
+    padding: 40px 15px 15px 15px;
+
+    .product-panel__title {
+      font-weight: $font-weight-regular;
+    }
+    .product-panel__badges {
+      padding: 15px;
+    }
+    .product-panel__image {
+      height: 120px;
+      img {
+        max-height: 120px;
+      }
+    }
   }
 }

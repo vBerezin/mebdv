@@ -1,0 +1,18 @@
+include ~blocks/icon/mixin
+
+mixin nav-slider(data)
+	- data = data || {};
+	.nav-slider(
+		class=data.class
+		class=mods('nav-slider', data.mods)
+	)&attributes(data.attributes)
+		button.nav-slider__prev&attributes(data.prev.attributes)
+			+icon({
+				name: 'left',
+				mods: 'center'
+			})
+		button.nav-slider__next&attributes(data.next.attributes)
+			span.nav-slider__btn-label #{data.next.text}
+			+icon({
+				name: 'right'
+			})
