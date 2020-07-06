@@ -1,3 +1,4 @@
+include ~blocks/banner/mixin
 include ~blocks/form/mixin
 include ~blocks/rating/mixin
 include ~blocks/button/mixin
@@ -74,8 +75,26 @@ include ~blocks/form-label/mixin
 				'data-popup-id': 'popup-sizes',
 			}
 		}) Изменить размер
+	if (DESKTOP)
+		+banner({
+			mods: 'small',
+			class: 'form-product__banner',
+			title: 'Не нашли подходящий размер?',
+			button: {
+				text: 'Указать размеры',
+				attributes: {
+					'data-click': 'popup',
+					'data-popup-id': 'popup-custom',
+				}
+			},
+		}) Мы изготовим по Вашим
 	.form-product__info
-		.form-product__info-title Ткань
+		if (DESKTOP)
+			.form-product__info-title Ткань
+				span &nbsp;&nbsp;·&nbsp;&nbsp;
+				span(data-rel="product.color.price.color") 16 190 ₽
+		else
+			.form-product__info-title Ткань
 		.form-product__colors
 			.form-product__color
 				.form-product__color__image

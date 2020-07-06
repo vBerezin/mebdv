@@ -1,4 +1,6 @@
-include ~desktop/slider-products/mixin
+include ~desktop/section-similar/mixin
+include ~desktop/section-reviews/mixin
+include ~desktop/form-review/mixin
 
 .product-card
 	.product-card__main
@@ -7,7 +9,8 @@ include ~desktop/slider-products/mixin
 		.product-card__desc
 			include ~blocks/product-description/index
 		.product-card__specs
-			h3.product-card__specs-title Свойства
+			+section-head
+				+section-title({ mods: ['thin', 'small'] }) Свойства
 			table.product-card__specs-table
 				tr
 					th Производитель
@@ -18,17 +21,23 @@ include ~desktop/slider-products/mixin
 				tr
 					th Срок службы
 					td 5 лет
-		+slider-products({
+		+section-similar({
+			mods: 'bottom',
 			title: 'Сопутствующие товары',
-			class: 'product-card__similar'
 		})
-		+slider-products({
+		+section-similar({
+			mods: 'bottom',
 			title: 'Диван Еврокнижка Лиссабонв других цветах (10 шт)',
-			class: 'product-card__similar'
 		})
-		+slider-products({
+		+section-similar({
+			mods: 'bottom',
 			title: 'Все товары коллекции Лиссабон (8 шт)',
-			class: 'product-card__similar'
 		})
-
+		+section-reviews({
+			mods: 'bottom'
+		})
+		+form-review({
+			rating: true,
+		})
 	.product-card__aside
+		include ~blocks/form-product/index

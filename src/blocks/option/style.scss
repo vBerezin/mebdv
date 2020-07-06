@@ -1,5 +1,6 @@
 @import "~common/styles/variables/fonts";
 @import "~common/styles/variables/transition";
+@import "~blocks/breakpoints/mixin";
 
 .option {
   display: flex;
@@ -11,7 +12,7 @@
   font-size: 14px;
   line-height: 15px;
   font-weight: $font-weight-regular;
-  padding: 15px 0;
+  padding: 15px;
 
   [type="radio"],
   [type="checkbox"] {
@@ -73,6 +74,18 @@
     :checked ~ & {
       color: #F78B3D;
       font-weight: $font-weight-medium;
+    }
+  }
+
+  @include breakpoint(sm) {
+    &:hover {
+      background: #F78B3D;
+      color: #fff;
+      .option__title,
+      .option__radio,
+      .option__checkbox {
+        color: currentColor;
+      }
     }
   }
 }

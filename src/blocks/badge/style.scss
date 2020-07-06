@@ -31,7 +31,10 @@
   }
   &.badge--large {
     font-size: 14px;
+    line-height: 15px;
+    border-radius: 20px;
     padding: 5px 10px;
+    min-width: 25px;
   }
   &.badge--grey {
     background: #E8E8E8;

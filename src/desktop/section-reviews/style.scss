@@ -1,0 +1,18 @@
+.section-reviews {
+  &__head {
+    display: flex;
+    align-items: center;
+  }
+  &__title {
+    margin: 0;
+  }
+  &__count {
+    margin-left: 10px;
+  }
+  &__item {
+    margin-bottom: 20px;
+  }
+  &__pager {
+    text-align: right;
+  }
+}

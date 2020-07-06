@@ -1,0 +1,78 @@
+include ~blocks/option-filter/mixin
+
+-
+	pager = [
+		{
+			title: '1',
+			href: '#',
+		},
+		{
+			title: '2',
+			href: '#',
+		},
+		{
+			title: '3',
+			active: true,
+		},
+		{
+			title: '4',
+			href: '#',
+		},
+		{
+			title: '5',
+			href: '#',
+		},
+		{
+			title: '6',
+			href: '#',
+		},
+		{
+			title: '7',
+			href: '#',
+		},
+	]
+	options = [
+		'Цвет: Синий',
+		'Цена: 30000₽ - 60000₽',
+		'Длина, см (120-300)',
+		'Ширина, см (120-300)',
+	]
+
+.form-filter.js-form-filter
+	.form-filter__nav
+		include ~desktop/menu-filter/index
+	.form-filter__row
+		.form-filter__row-title Выбранные фильтры:
+		each option in options
+			+option-filter({
+				type: 'removable',
+				class: 'form-filter__option',
+			}) #{option}
+		+option-filter({
+			type: 'link',
+			icon: 'close',
+			class: 'form-filter__option',
+			attributes: {
+				href: '?reset'
+			}
+		}) Очистить все
+	.form-filter__row
+		.form-filter__row-title Сортировка товаров:
+		+option-filter({
+			active: true,
+			type: 'toggle',
+			class: 'form-filter__option'
+		}) По цене
+		+option-filter({
+			type: 'toggle',
+			class: 'form-filter__option'
+		}) По рейтину
+
+		+pager({
+			class: 'form-filter__pager',
+			title: 'Страницы:',
+			items: pager
+		})
+
+
+

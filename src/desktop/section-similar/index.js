@@ -1,5 +1,4 @@
 import {documentReady} from "~common/scripts/utils/document-ready";
-import { Animate} from "~common/scripts/utils/animate";
 
 class Proto {
   constructor() {
@@ -18,9 +17,9 @@ class Instance extends Proto {
   constructor(node) {
     super();
     this.el = node;
-    this.#prev = this.el.querySelector('[data-rel="slider.products.prev"]');
-    this.#next = this.el.querySelector('[data-rel="slider.products.next"]');
-    this.#body = this.el.querySelector('[data-rel="slider.products.body"]');
+    this.#prev = this.el.querySelector('[data-rel="section.similar.prev"]');
+    this.#next = this.el.querySelector('[data-rel="section.similar.next"]');
+    this.#body = this.el.querySelector('[data-rel="section.similar.body"]');
     this.#slides = Array.from(this.#body.children);
     this.#scrollSize = this.#slides[0].offsetWidth;
     this.#body.addEventListener('scroll', () =>this.onScroll());
@@ -35,14 +34,14 @@ class Instance extends Proto {
   }
   onScroll() {
     const { scrollLeft, scrollWidth, offsetWidth } = this.#body;
-    this.#prev.disabled = scrollLeft === 0;
-    this.#next.disabled = scrollLeft === scrollWidth - offsetWidth;
+    this.#prev.disabled = scrollLeft <= 0;
+    this.#next.disabled = scrollLeft >= scrollWidth - offsetWidth;
   }
   prev() {
-    this.#body.scrollLeft -= this.#scrollSize;
+    this.#body.scrollBy(-this.#scrollSize, 0);
   }
   next() {
-    this.#body.scrollLeft += this.#scrollSize;
+    this.#body.scrollBy(this.#scrollSize, 0);
   }
   set active(state) {
     this.el.classList.toggle('is-active', state);
@@ -56,11 +55,11 @@ window.addEventListener('resize', () => {
 });
 
 function init() {
-  const nodes = document.querySelectorAll('.js-slider-products');
+  const nodes = document.querySelectorAll('.js-section-similar');
   if (!nodes || !nodes.length) return false;
   return nodes.forEach(node => new Instance(node));
 }
 
 documentReady(init);
 
-export const SliderProducts = { init, Instance };
+export const SectionSimilar = { init, Instance };

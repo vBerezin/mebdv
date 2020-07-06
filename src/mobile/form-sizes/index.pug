@@ -16,17 +16,18 @@ form.form-sizes.js-form-sizes
 					base: sizes,
 					sleep: sizes,
 				}
-			+option({
-				class: 'form-sizes__item',
-				type: 'radio',
-				name: 'sizes',
-				value: index,
-				attributes: {
-					checked: index === 0,
-					required: true,
-					'data-size': data
-				}
-			}) #{option} см
+			.form-sizes__item-outer
+				+option({
+					class: 'form-sizes__item',
+					type: 'radio',
+					name: 'sizes',
+					value: index,
+					attributes: {
+						checked: index === 0,
+						required: true,
+						'data-size': data
+					}
+				}) #{option} см
 	.form-sizes__footer
 		+button({
 			mods: ['block', 'orange', 'round'],

@@ -39,8 +39,6 @@
     margin-right: 15px;
   }
   &.pager--right {
-    ul {
-      justify-content: flex-end;
-    }
+    justify-content: flex-end;
   }
 }

@@ -1,5 +1,6 @@
 @import "~common/styles/variables/fonts";
 @import "~common/styles/mixins/images";
+@import "~blocks/breakpoints/mixin";
 
 .form-product {
   &__main {
@@ -136,6 +137,17 @@
     }
     &__name {
       font-weight: $font-weight-bold;
+    }
+  }
+  &__banner {
+    margin: 20px 0;
+  }
+  @include breakpoint(sm) {
+    &__price {
+      font-size: 26px;
+    }
+    &__price-old {
+      color: #000;
     }
   }
 }

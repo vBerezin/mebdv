@@ -9,16 +9,6 @@
   &__options {
     padding-bottom: 15px;
   }
-  &__scroll-outer {
-    padding: 15px 0;
-  }
-  &__scroll-inner {
-    scroll-snap-type: y mandatory;
-    overflow-y: auto;
-    max-height: 200px;
-    padding-right: 20px;
-    @include scrollbar;
-  }
   &__buttons {
     display: grid;
     grid-gap: 10px;
@@ -32,7 +22,9 @@
     padding: 15px 0;
   }
   &__option {
-    scroll-snap-align: start;
+    margin: 0 -15px;
+  }
+  &__option-outer {
     border-bottom: 1px solid #F5F5F5;
   }
   &__range {

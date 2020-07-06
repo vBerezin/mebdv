@@ -4,14 +4,20 @@ mixin option-filter(data)
 	-
 		data = data || {};
 		state = [];
+		tagName = data.attributes && data.attributes.href ? 'a' : 'label'
 		if (data.type) data.mods = [].concat(data.mods, data.type);
 		if (data.active) state.push('is-active')
-	label.option-filter.js-option-filter(
+	#{tagName}.option-filter.js-option-filter(
 		class=state
 		class=data.class
 		data-type=data.type
 		class=mods('option-filter', data.mods)
 		)&attributes(data.attributes)
+			if (data.icon)
+				+icon({
+					name: data.icon,
+					class: 'option-filter__icon'
+				})
 			if (data.type === 'removable')
 				input(type="checkbox" checked)
 				block
@@ -22,6 +28,8 @@ mixin option-filter(data)
 				block
 				.option-filter__toggle
 					+icon({ name: 'down' })
+			else if (data.type === 'link')
+				block
 			else
 				input(type="checkbox" checked=data.active)
 				block

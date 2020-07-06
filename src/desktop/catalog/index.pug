@@ -2,44 +2,10 @@ include ~blocks/pager/mixin
 include ~blocks/button/mixin
 include ~blocks/product-panel/mixin
 
--
-	pager = {
-		title: 'Страницы:',
-		items: [
-			{
-				title: '1',
-				href: '#',
-			},
-			{
-				title: '2',
-				href: '#',
-			},
-			{
-				title: '3',
-				active: true,
-			},
-			{
-				title: '4',
-				href: '#',
-			},
-			{
-				title: '5',
-				href: '#',
-			},
-			{
-				title: '6',
-				href: '#',
-			},
-			{
-				title: '7',
-				href: '#',
-			},
-		]
-	}
-
 .catalog.js-catalog
 	.catalog__head
-		.catalog__filter(data-rel="catalog.filter")
+		.catalog__filter
+			include ~desktop/form-filter/index
 	.catalog__body
 		.catalog__grid(data-rel="catalog.list")
 			- items = []
@@ -62,5 +28,37 @@ include ~blocks/product-panel/mixin
 					'data-click': 'catalog.more'
 				}
 			}) Показать больше
-		.catalog__pager(data-rel="catalog.pager")
-			+pager(pager)
+		+pager({
+			class: 'catalog__pager',
+			title: 'Страницы:',
+			items: [
+				{
+					title: '1',
+					href: '#',
+				},
+				{
+					title: '2',
+					href: '#',
+				},
+				{
+					title: '3',
+					active: true,
+				},
+				{
+					title: '4',
+					href: '#',
+				},
+				{
+					title: '5',
+					href: '#',
+				},
+				{
+					title: '6',
+					href: '#',
+				},
+				{
+					title: '7',
+					href: '#',
+				},
+			]
+		})

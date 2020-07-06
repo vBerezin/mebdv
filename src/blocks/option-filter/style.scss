@@ -1,5 +1,6 @@
 @import "~common/styles/variables/fonts";
 @import "~common/styles/variables/transition";
+@import "~blocks/breakpoints/mixin";
 
 .option-filter {
   display: inline-block;
@@ -35,10 +36,18 @@
     width: 20px;
     border-radius: 0 20px 20px 0;
   }
+  &__icon {
+    font-size: 15px;
+    color: #4A4796;
+    vertical-align: top;
+  }
 
   &.is-active {
     background: #312E76;
     color: #fff;
+    .option-filter__icon {
+      color: currentColor;
+    }
     .option-filter__toggle {
       transform: scale(-1);
     }
@@ -49,5 +58,10 @@
   }
   &.option-filter--removable {
     padding-right: 30px;
+  }
+
+  @include breakpoint(sm) {
+    font-size: 13px;
+    font-weight: $font-weight-medium;
   }
 }

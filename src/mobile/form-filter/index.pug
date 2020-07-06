@@ -149,22 +149,9 @@ form.form-filter.js-form-filter
 							}
 						})
 				if (spoiler.options)
-					- scrollbar = spoiler.options.length > 4
-					if (scrollbar)
-						.form-filter__options
-							each option, index in spoiler.options
-								+option({
-									type: 'checkbox',
-									name: spoiler.title,
-									class: 'form-filter__option',
-									attributes: {
-										title: option,
-										checked: Math.random() > 0.5
-									}
-								}) #{option}
-					else
-						.form-filter__options
-							each option, index in spoiler.options
+					.form-filter__options
+						each option, index in spoiler.options
+							.form-filter__option-outer
 								+option({
 									type: 'checkbox',
 									name: spoiler.title,

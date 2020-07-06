@@ -1,0 +1,58 @@
+include ~blocks/review/mixin
+include ~blocks/badge/mixin
+include ~blocks/pager/mixin
+include ~blocks/section/mixin
+include ~blocks/section-head/mixin
+include ~blocks/section-title/mixin
+
+mixin section-reviews(data)
+	- data = data || {}
+	- data.class = [].concat(data.class, 'section-reviews')
+	+section(data)
+		+section-head({ class: 'section-reviews__head' })
+			+section-title({
+				mods: ['thin', 'small'],
+				class: 'section-reviews__title'
+			}) Отзывы
+			+badge({
+				mods: ['grey', 'large'],
+				class: 'section-reviews__count',
+			}) 2
+		.section-reviews__body
+			- items = []
+			- items.length = 2
+			each item in items
+				+review({
+					rating: true,
+					class: 'section-reviews__item'
+				})
+		.section-reviews__pager
+			+pager({
+				mods: 'right',
+				items: [
+					{
+						title: '1',
+						href: '#',
+					},
+					{
+						title: '2',
+						href: '#',
+					},
+					{
+						title: '3',
+						active: true,
+					},
+					{
+						title: '4',
+						href: '#',
+					},
+					{
+						title: '5',
+						href: '#',
+					},
+					{
+						title: '6',
+						href: '#',
+					},
+				]
+			})

@@ -1,0 +1,120 @@
+@import "~common/styles/variables/animation";
+@import "~common/styles/mixins/scrollbar";
+@import "styles/animations";
+
+.menu-filter {
+  position: relative;
+  z-index: 100;
+  ul {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0 -20px;
+    li {
+      display: inline-block;
+      padding: 0 20px;
+      margin: 0;
+    }
+  }
+  &__item {
+    position: relative;
+    &.is-opened {
+      .menu-filter__dropdown {
+        display: block;
+      }
+    }
+    &.is-active {
+      .menu-filter__toggle {
+        color: #122351;
+        &::after {
+          background-image: url("~common/images/chosen.svg");
+        }
+      }
+    }
+  }
+  &__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000;
+    font-weight: $font-weight-bold;
+    background: #fff;
+    padding: 15px 0;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    user-select: none;
+    &::after {
+      content: '';
+      display: block;
+      margin-left: 5px;
+      width: 1em;
+      height: 1em;
+      background: url("~common/icons/down.svg") center center no-repeat;
+      background-size: contain;
+    }
+  }
+  &__dropdown {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin-top: 10px;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    padding: 15px;
+    animation: menu-filter-dropdown $animation-time ease-out;
+    overflow: hidden;
+  }
+  &__scroll-outer {
+    padding: 15px 15px 15px 0;
+  }
+  &__scroll {
+    scroll-snap-type: y mandatory;
+    overflow-y: auto;
+    max-height: 270px;
+    padding-right: 15px;
+    @include scrollbar;
+  }
+  &__option {
+    margin: 0 -15px;
+  }
+  &__option-outer {
+    margin: 0 15px;
+    border-bottom: 1px solid #F5F5F5;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  &__pricing {
+    width: 320px;
+  }
+  &__options {
+    width: 260px;
+    margin: -15px;
+  }
+  &__colors {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(7, 1fr);
+  }
+  &__buttons {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  &__size {
+    width: 240px;
+  }
+  &__range {
+    margin-bottom: 30px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

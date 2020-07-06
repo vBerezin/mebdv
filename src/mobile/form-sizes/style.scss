@@ -15,7 +15,13 @@
     padding: 20px 15px 5px 15px;
     margin: 0 -15px;
   }
-  &__item {
+  &__item-outer {
     border-bottom: 1px solid #F5F5F5;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  &__item {
+    margin: 0 -15px;
   }
 }

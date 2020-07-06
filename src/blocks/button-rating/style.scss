@@ -1,3 +1,5 @@
+@import "~blocks/breakpoints/mixin";
+
 .button-rating {
   display: inline-flex;
   flex-direction: row-reverse;
@@ -17,6 +19,11 @@
 
     :checked ~ & {
       color: #FFC700;
+    }
+  }
+  @include breakpoint(sm) {
+    &__item {
+      font-size: 25px;
     }
   }
 }

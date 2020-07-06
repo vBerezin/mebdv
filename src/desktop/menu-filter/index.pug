@@ -1,0 +1,208 @@
+include ~blocks/option/mixin
+include ~blocks/option-spoiler/mixin
+include ~blocks/option-button/mixin
+include ~blocks/option-color/mixin
+include ~blocks/form-range/mixin
+
+-
+	category = [
+		'Нераскладные диваны',
+		'Диваны книжка',
+		'Выкатные диваны',
+		'Диваны еврокнижка',
+		'Диваны еврокнижка',
+		'Диваны еврокнижка',
+		'Диваны еврокнижка',
+		'Диваны еврокнижка',
+	]
+	motion = [
+		'Аккордеон',
+		'Барон',
+		'Без механизма',
+		'Выкатной',
+	]
+	type = [
+		'Натуральная кожа',
+		'Ткань',
+		'Экокожа',
+	]
+
+.menu-filter.js-menu-filter
+	ul
+		li
+			.menu-filter__item(data-rel="menu.filter.item")
+				button.menu-filter__toggle(data-click="menu.filter.item.toggle") Категории
+				.menu-filter__dropdown
+					.menu-filter__options
+						// если > 5 скролл обертки
+						.menu-filter__scroll-outer
+							.menu-filter__scroll
+								each option, index in category
+									.menu-filter__option-outer
+										+option({
+											type: 'checkbox',
+											name: option,
+											class: 'menu-filter__option',
+											attributes: {
+												title: option,
+												checked: Math.random() > 0.5
+											}
+										}) #{option}
+
+		li
+			.menu-filter__item(data-rel="menu.filter.item")
+				button.menu-filter__toggle(data-click="menu.filter.item.toggle") Цена
+				.menu-filter__dropdown
+					.menu-filter__pricing
+						+form-range({
+							from: {
+								id: 'price-from',
+								value: 30000,
+								attributes: {
+									'data-symbol': '₽'
+								}
+							},
+							to: {
+								id: 'price-to',
+								value: 60000,
+								attributes: {
+									'data-symbol': '₽'
+								}
+							}
+						})
+		li
+			.menu-filter__item(data-rel="menu.filter.item")
+				button.menu-filter__toggle(data-click="menu.filter.item.toggle") Цвет
+				.menu-filter__dropdown
+					.menu-filter__colors
+						each color in [1,2,3,4,5,6,7,8,9,10]
+							- title = `Цвет-${color}`
+							+option-color({
+								title,
+								type: 'checkbox',
+								value: color,
+								name: 'color',
+								image: {
+									src: `/images/colors/color-${color}.png`,
+								},
+								attributes: {
+									title,
+									checked: Math.random() > 0.5
+								}
+							})
+		li
+			.menu-filter__item(data-rel="menu.filter.item")
+				button.menu-filter__toggle(data-click="menu.filter.item.toggle") Количество мест
+				.menu-filter__dropdown
+					.menu-filter__buttons
+						each button in [1,2,3,4]
+							+option-button({
+								mods: 'block',
+								type: 'radio',
+								value: button,
+								name: 'Количество мест',
+								attributes: {
+									title: button,
+									checked: Math.random() > 0.5
+								}
+							}) #{button}
+		li
+			.menu-filter__item(data-rel="menu.filter.item")
+				button.menu-filter__toggle(data-click="menu.filter.item.toggle") Размер
+				.menu-filter__dropdown
+					.menu-filter__size
+						+form-range({
+							class: 'menu-filter__range',
+							title: 'Длина, см',
+							from: {
+								id: 'length.from',
+								value: 130,
+								title: 'Длина от',
+								attributes: {
+									'data-group': 1,
+									'data-symbol': 'см'
+								}
+							},
+							to: {
+								id: 'length.to',
+								value: 280,
+								attributes: {
+									'data-group': 1,
+									'data-symbol': 'см'
+								}
+							}
+						})
+						+form-range({
+							class: 'menu-filter__range',
+							title: 'Ширина, см',
+							from: {
+								id: 'width.from',
+								value: 130,
+								title: 'Ширина от',
+								attributes: {
+									'data-group': 2,
+									'data-symbol': 'см'
+								}
+							},
+							to: {
+								id: 'width.to',
+								value: 280,
+								attributes: {
+									'data-group': 2,
+									'data-symbol': 'см'
+								}
+							}
+						})
+						+form-range({
+							class: 'menu-filter__range',
+							title: 'Высота, см',
+							from: {
+								id: 'height.from',
+								title: 'Высота от',
+								value: 130,
+								attributes: {
+									'data-group': 3,
+									'data-symbol': 'см'
+								}
+							},
+							to: {
+								id: 'height.to',
+								value: 280,
+								attributes: {
+									'data-group': 3,
+									'data-symbol': 'см'
+								}
+							}
+						})
+		li
+			.menu-filter__item(data-rel="menu.filter.item")
+				button.menu-filter__toggle(data-click="menu.filter.item.toggle") Механизм
+				.menu-filter__dropdown
+					.menu-filter__options
+						each option, index in motion
+							.menu-filter__option-outer
+								+option({
+									type: 'checkbox',
+									name: option,
+									class: 'menu-filter__option',
+									attributes: {
+										title: option,
+										checked: Math.random() > 0.5
+									}
+								}) #{option}
+		li
+			.menu-filter__item(data-rel="menu.filter.item")
+				button.menu-filter__toggle(data-click="menu.filter.item.toggle") Тип обивки
+				.menu-filter__dropdown
+					.menu-filter__options
+						each option, index in type
+							.menu-filter__option-outer
+								+option({
+									type: 'checkbox',
+									name: option,
+									class: 'menu-filter__option',
+									attributes: {
+										title: option,
+										checked: Math.random() > 0.5
+									}
+								}) #{option}
