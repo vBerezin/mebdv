@@ -5,4 +5,10 @@
   border-radius: 6px;
   background: #FFFFFF;
   box-shadow: 0 0 2px rgba(160, 160, 160, 0.4);
+  &.form--large {
+    padding: 40px;
+  }
+  @include breakpoint(sm) {
+    padding: 30px;
+  }
 }

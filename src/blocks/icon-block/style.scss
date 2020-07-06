@@ -4,7 +4,6 @@
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  font-weight: $font-weight-medium;
 
   &__icon {
     flex: 0 0 auto;
@@ -13,6 +12,7 @@
   &__title {
     font-size: 16px;
     margin-bottom: 5px;
+    font-weight: $font-weight-medium;
   }
   &__body {
     flex: 1 1 auto;

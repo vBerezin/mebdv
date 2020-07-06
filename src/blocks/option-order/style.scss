@@ -66,4 +66,9 @@
     line-height: 20px;
     font-weight: $font-weight-semi-bold;
   }
+  @include breakpoint(sm) {
+    &__title {
+      font-size: 1em;
+    }
+  }
 }

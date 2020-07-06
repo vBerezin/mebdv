@@ -6,13 +6,19 @@ mixin nav-slider(data)
 		class=data.class
 		class=mods('nav-slider', data.mods)
 	)&attributes(data.attributes)
-		button.nav-slider__prev&attributes(data.prev.attributes)
-			+icon({
-				name: 'left',
-				mods: 'center'
-			})
-		button.nav-slider__next&attributes(data.next.attributes)
-			span.nav-slider__btn-label #{data.next.text}
-			+icon({
-				name: 'right'
-			})
+		ul
+			li
+				button.nav-slider__btn&attributes(data.prev.attributes)
+					+icon({
+						name: 'left',
+						mods: 'center'
+					})
+			li
+				button.nav-slider__btn&attributes(data.next.attributes)
+					if (data.next.text)
+						span.nav-slider__btn-label #{data.next.text}
+					+icon({
+						name: 'right',
+						mods: data.next.text ? '' : 'center'
+					})
+

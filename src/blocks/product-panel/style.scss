@@ -83,13 +83,13 @@
     font-size: 15px;
     padding: 40px 15px 15px 15px;
 
-    .product-panel__title {
+    &__title {
       font-weight: $font-weight-regular;
     }
-    .product-panel__badges {
+    &__badges {
       padding: 15px;
     }
-    .product-panel__image {
+    &__image {
       height: 120px;
       img {
         max-height: 120px;

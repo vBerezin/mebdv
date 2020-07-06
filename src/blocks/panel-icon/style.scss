@@ -1,0 +1,16 @@
+.panel-icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: #FAFAFA;
+  border-radius: 5px;
+  padding: 10px 20px;
+
+  &__icon {
+    font-size: 2em;
+    margin-right: 0.5em;
+  }
+  &__title {
+    flex: 1 1 auto;
+  }
+}

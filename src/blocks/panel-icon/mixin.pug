@@ -1,0 +1,14 @@
+include ~blocks/icon/mixin
+
+mixin panel-icon(data)
+	- data = data || {};
+	.panel-icon(
+		class=data.class
+		class=mods('panel-icon', data.mods)
+	)&attributes(data.attributes)
+		+icon({
+			class: 'panel-icon__icon',
+			name: data.icon,
+		})
+		.panel-icon__title
+			block

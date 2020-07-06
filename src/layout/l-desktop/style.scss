@@ -26,7 +26,6 @@
     flex-direction: column;
   }
   &__content {
-    padding-top: 30px;
     padding-bottom: 50px;
   }
   &__main {
@@ -35,9 +34,8 @@
   &__footer {
     margin-top: auto;
   }
-  &__content,
-  &__footer {
-    padding-left: 15px;
-    padding-right: 15px;
+  &__head {
+    margin-top: 20px;
+    margin-bottom: 30px;
   }
 }

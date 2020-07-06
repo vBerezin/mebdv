@@ -1,0 +1,24 @@
+extends ~layout/l-desktop/index
+
+include ~blocks/breadcrumbs/mixin
+
+block variables
+	- TITLE = 'Корзина'
+	- DESKTOP = true
+
+block page-head
+	+breadcrumbs({
+		items: [
+			{
+				title: 'Главная',
+				href: '/'
+			},
+			{
+				title: 'Корзина',
+			},
+		]
+	})
+	h1 Корзина
+block page-content
+	+l-container
+		include ~desktop/cart/index

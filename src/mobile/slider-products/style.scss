@@ -1,0 +1,38 @@
+@import "~common/styles/mixins/scrollbar";
+@import "~common/styles/mixins/scrollbar-hide";
+
+.slider-products {
+  position: relative;
+
+  &__body {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    overflow-x: auto;
+    margin: 0 -15px;
+    padding: 0 10px;
+    @include scrollbar;
+
+    &.scrollbar-active {
+      @include scrollbar-hide;
+      padding-bottom: 15px;
+    }
+  }
+  &__scrollbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  &__item {
+    flex: 0 0 150px;
+    max-width: 150px;
+    padding: 5px 10px 5px 5px;
+  }
+  @include breakpoint(sm) {
+    &__item {
+      flex: 0 0 220px;
+      max-width: 220px;
+    }
+  }
+}

@@ -2,7 +2,11 @@
 @import "~blocks/breakpoints/mixin";
 
 .l-container {
-  margin: 0 auto;
   padding: 0 $layout-padding;
-  max-width: $layout-width;
+  @include breakpoint(xl) {
+    padding: 0 $layout-padding-xl
+  }
+  @include breakpoint(xxl) {
+    padding: 0 $layout-padding-xxl
+  }
 }

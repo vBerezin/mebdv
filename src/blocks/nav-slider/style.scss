@@ -1,12 +1,23 @@
 @import "~common/styles/variables/fonts";
 
 .nav-slider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0 -5px;
+    li {
+      display: inline-block;
+      padding: 0 5px;
+      margin: 0;
+    }
+  }
 
-  &__prev,
-  &__next {
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: #fff;
     border: 1px solid #F4F4F4;
     border-radius: 15px;
@@ -15,21 +26,11 @@
     position: relative;
     height: 30px;
     min-width: 30px;
-
+    padding: 5px 10px;
     &[disabled] {
       cursor: not-allowed;
       color: #D8D8D8;
     }
-  }
-  &__prev {
-    padding: 0;
-    margin-right: 10px;
-  }
-  &__next {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 10px;
   }
   &__btn-label {
     display: inline-block;

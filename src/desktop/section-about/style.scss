@@ -1,0 +1,35 @@
+.section-about {
+  &__inner {
+    display: flex;
+  }
+  &__main {
+    flex: 0 1 600px;
+    max-width: 600px;
+  }
+  &__features {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &__reviews {
+    flex: 0 1 730px;
+    max-width: 730px;
+    margin-left: 150px;
+  }
+  &__reviews-title {
+    flex: 1 1 auto;
+  }
+  &__reviews-head {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  &__review {
+    margin-bottom: 50px;
+  }
+  &__img {
+    font-size: 0;
+    line-height: 0;
+    margin-bottom: 40px;
+  }
+}

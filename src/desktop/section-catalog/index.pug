@@ -1,0 +1,81 @@
+include ~blocks/section/mixin
+include ~blocks/section-title/mixin
+include ~blocks/section-head/mixin
+include ~blocks/lazy-image/mixin
+
+-
+	items = [
+		{
+			url: '/mebdv/catalog',
+			title: 'Диваны',
+			image: {
+				src: `/images/catalog/catalog-1.png`,
+				srcset: {
+					'2x': `/images/catalog/catalog-1@2x.png`,
+				}
+			}
+		},
+		{
+			url: '/mebdv/catalog',
+			title: 'Шкафы',
+			image: {
+				src: `/images/catalog/catalog-2.png`,
+				srcset: {
+					'2x': `/images/catalog/catalog-2@2x.png`,
+				}
+			}
+		},
+		{
+			url: '/mebdv/catalog',
+			title: 'Кровати',
+			image: {
+				src: `/images/catalog/catalog-3.png`,
+				srcset: {
+					'2x': `/images/catalog/catalog-3@2x.png`,
+				}
+			}
+		},
+		{
+			url: '/mebdv/catalog',
+			title: 'Тумбы',
+			image: {
+				src: `/images/catalog/catalog-4.png`,
+				srcset: {
+					'2x': `/images/catalog/catalog-4@2x.png`,
+				}
+			}
+		},
+		{
+			url: '/mebdv/catalog',
+			title: 'Столы',
+			image: {
+				src: `/images/catalog/catalog-5.png`,
+				srcset: {
+					'2x': `/images/catalog/catalog-5@2x.png`,
+				}
+			}
+		},
+		{
+			url: '/mebdv/catalog',
+			title: 'Стулья',
+			image: {
+				src: `/images/catalog/catalog-6.png`,
+				srcset: {
+					'2x': `/images/catalog/catalog-6@2x.png`,
+				}
+			}
+		},
+	]
+
++section({
+	class: 'section-catalog',
+})
+	+l-container
+		+section-head
+			+section-title({ icon: 'bookmark' }) Популярные товары
+		.section-catalog__body
+			each item in items
+				a.section-catalog__item(href=item.url)
+					.section-catalog__item__image
+						+lazy-image(item.image)
+					.section-catalog__item__title #{item.title}

@@ -8,7 +8,7 @@ class Proto {
 
 Proto.prototype.instances = [];
 
-class Scrollbar extends Proto{
+class Scrollbar extends Proto {
   constructor({ node, container }) {
     super();
     this.el = node;

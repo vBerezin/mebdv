@@ -1,10 +1,9 @@
 @import "~common/styles/variables/fonts";
+@import "~blocks/breakpoints/mixin";
 
 .breadcrumbs {
   color: #898989;
-  font-weight: $font-weight-semi-bold;
-  font-size: 12px;
-  line-height: 20px;
+  font-weight: $font-weight-medium;
 
   &__back,
   &__sep,
@@ -41,5 +40,12 @@
   &__icon {
     display: inline-block;
     font-size: 15px;
+  }
+  @include breakpoint(sm) {
+    color: #BABABA;
+    font-weight: $font-weight-regular;
+    &__back {
+      font-weight: $font-weight-regular;
+    }
   }
 }

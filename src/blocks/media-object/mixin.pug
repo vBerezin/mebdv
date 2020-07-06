@@ -1,0 +1,15 @@
+include ~blocks/image/mixin
+
+mixin media-object(data)
+	- data = data || {};
+	.media-object(
+		class=data.class
+		class=mods('media-object', data.mods)
+	)&attributes(data.attributes)
+		.media-object__head
+			.media-object__title #{data.title}
+		.media-object__body
+			.media-object__img
+				+image(data.image)
+			.media-object__main
+				block

@@ -1,0 +1,41 @@
+include ~layout/l-container/mixin
+include ~blocks/image/mixin
+include ~blocks/icon-box/mixin
+include ~blocks/button-menu/mixin
+include ~blocks/form-search/mixin
+
+header.header.js-header#header
+	.header__sticky
+		.header__overlay(data-rel="header.overlay")
+		.header__top
+			+l-container({ class: 'header__top-inner' })
+				+button-menu({
+					mods: 'white',
+					class: 'header__toggle',
+					attributes: {
+						'data-rel': 'header.toggle'
+					}
+				})
+				.header__logo
+					a(href="/m.mebdv")
+						+image({ src: '/images/logo.svg' })
+				+icon-box({
+					tag: 'a',
+					class: 'header__phone',
+					icon: 'phone',
+					mods: 'white',
+					attributes: {
+						'href': 'tel:+74957963035'
+					}
+				})
+		.header__search
+			+l-container
+				+form-search({
+					placeholder: 'Поиск по сайту...',
+					class: 'header__search-form',
+					attributes: {
+						'data-rel': 'header.search'
+					}
+				})
+		.header__menu
+			include ~mobile/menu-mobile/index

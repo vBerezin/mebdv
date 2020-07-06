@@ -1,0 +1,53 @@
+@import "~common/styles/variables/layout";
+@import "~common/styles/variables/fonts";
+
+.product-card {
+  display: flex;
+  align-items: flex-start;
+  &__main {
+    flex: 0 1 980px;
+    max-width: 980px;
+  }
+  &__aside {
+    flex: 0 0 350px;
+    max-width: 350px;
+    margin-left: 30px;
+  }
+  &__gallery {
+    margin-bottom: 30px;
+  }
+  &__specs,
+  &__desc {
+    margin-bottom: 40px;
+  }
+  &__specs-title {
+    margin: 0 0 15px 0;
+  }
+  &__specs-table {
+    display: table;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px 0;
+    border: none;
+    th,
+    td {
+      text-align: left;
+      padding: 15px 0;
+      border-top: 1px solid #ECECEC;
+      vertical-align: middle;
+    }
+    th {
+      padding-right: 10px;
+      font-weight: $font-weight-bold;
+    }
+    tr:last-child {
+      th,
+      td {
+        border-bottom: 1px solid #ECECEC;
+      }
+    }
+  }
+  &__similar {
+    margin-bottom: 40px;
+  }
+}

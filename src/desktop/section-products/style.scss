@@ -1,0 +1,22 @@
+.section-products {
+  &__head {
+    display: flex;
+    align-items: center;
+  }
+  &__title {
+    flex: 1 1 auto;
+  }
+  &__nav {
+    flex: 0 0 auto;
+    margin-left: 20px;
+  }
+  &__body {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(6, 1fr);
+    margin: -5px 0;
+  }
+  &__item {
+    padding: 5px;
+  }
+}

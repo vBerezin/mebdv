@@ -1,0 +1,40 @@
+include ~layout/l-container/mixin
+include ~blocks/section/mixin
+include ~blocks/section-head/mixin
+include ~blocks/section-title/mixin
+include ~blocks/product-panel/mixin
+include ~blocks/nav-slider/mixin
+
+mixin section-products(data)
+	-
+		data = data || {}
+		data.class = [].concat(data.class, 'section-products', 'js-section-products')
+	+section(data)
+		+l-container
+			+section-head({ class: 'section-products__head' })
+				+section-title({
+					class: 'section-products__title',
+					icon: data.icon
+				}) #{data.title}
+				+nav-slider({
+					class: 'section-products__nav',
+					prev: {
+						attributes: {
+							'data-rel': 'section.products.prev'
+						}
+					},
+					next: {
+						text: 'Показать еще',
+						attributes: {
+							'data-rel': 'section.products.next'
+						}
+					}
+				})
+			.section-products__body(data-rel="section.products.slider")
+				- items = []
+				- items.length = 12
+				each item in items
+					.section-products__item
+						+product-panel({
+							href: '/mebdv/product'
+						})

@@ -1,10 +1,10 @@
 @import "~common/styles/variables/fonts";
+@import "~blocks/breakpoints/mixin";
 
 .review {
   padding: 15px;
   color: #000;
   background: #FFFFFF;
-  font-weight: $font-weight-medium;
   border-radius: 6px;
   box-shadow: 0 0 2px rgba(160, 160, 160, 0.4);
 
@@ -26,5 +26,12 @@
   }
   &__body {
     margin-top: 5px;
+  }
+
+  @include breakpoint(sm) {
+    padding: 20px;
+    &__head {
+      margin-bottom: 10px;
+    }
   }
 }

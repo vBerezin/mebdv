@@ -1,0 +1,35 @@
+extends ~layout/l-desktop/index
+include ~blocks/badge/mixin
+include ~blocks/alert/mixin
+include ~blocks/breadcrumbs/mixin
+
+block variables
+	- TITLE = 'Мягкая мебель'
+	- DESKTOP = true
+
+block page-head
+	+breadcrumbs({
+		items: [
+			{
+				title: 'Главная',
+				href: '/'
+			},
+			{
+				title: 'Мягкая мебель',
+			},
+		]
+	})
+	.p-catalog-head
+		h1.p-catalog-head__title Мягкая мебель
+		+badge({
+			class: 'p-catalog-head__count',
+			mods: ['grey', 'large']
+		}) 500 товаров
+
+block prepend main
+	+alert({
+		icon: 'alert'
+	}) Наши магазины открыты и работают, доставка по городу бесплатная. Мы находимся под “№1” в списке работающих предприятий
+block page-content
+	+l-container
+		include ~desktop/catalog/index

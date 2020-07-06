@@ -1,0 +1,45 @@
+include ~layout/l-container/mixin
+include ~blocks/icon/mixin
+include ~blocks/lazy-image/mixin
+include ~blocks/section/mixin
+include ~blocks/section-head/mixin
+include ~blocks/section-title/mixin
+include ~mobile/grid-catalog/mixin
+
+-
+	items = [
+		{
+			title: 'Собственное производство',
+			icon: {
+				name: 'settings'
+			},
+		},
+		{
+			title: 'Рассрочка 0/0/12',
+			icon: {
+				name: 'money-pig'
+			},
+		},
+		{
+			title: 'Быстрая доставка',
+			icon: {
+				name: 'delivery'
+			},
+		},
+		{
+			title: 'Гарантия возврата',
+			icon: {
+				name: 'payback'
+			},
+		},
+	]
+
++section({
+	class: 'section-features',
+	mods: 'bottom'
+})
+	+l-container
+		+section-head
+			+section-title Почему стоит выбрать нас
+		.section-features__grid
+			+grid-catalog({ items })

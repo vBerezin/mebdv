@@ -4,4 +4,7 @@
   font-size: 18px;
   color: #000;
   font-weight: $font-weight-medium;
+  &.form-title--large {
+    font-size: 25px;
+  }
 }

@@ -1,11 +1,12 @@
 @import "~common/styles/variables/transition";
+@import "~common/styles/mixins/images";
+@import "~blocks/breakpoints/mixin";
 
 .product-gallery {
   &__main {
     border-radius: 10px;
     border: 1px solid #F4F4F4;
     padding: 15px;
-    margin-bottom: 15px;
     position: relative;
   }
   &__badges {
@@ -39,6 +40,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, 50px);
     grid-gap: 10px;
+    margin-top: 15px;
   }
   &__thumb {
     display: flex;
@@ -51,12 +53,10 @@
     outline: none;
     border: 1px solid #F4F4F4;
     cursor: pointer;
-    height: 50px;
-    padding: 9px;
+    padding: 50%;
     transition: box-shadow $transition-time ease-out;
-
     img {
-      max-height: 40px;
+      @include image-contain;
     }
     &:hover,
     &:focus,
@@ -66,6 +66,26 @@
     &.is-active {
       border-color: #F78B3D;
       box-shadow: 0 0 0 1px #F78B3D;
+    }
+  }
+
+  @include breakpoint(md) {
+    &__main {
+      padding: 30px;
+    }
+    &__image {
+      height: 400px;
+      img {
+        max-height: 400px;
+      }
+    }
+    &__thumbs {
+      margin-top: 30px;
+      grid-gap: 30px;
+      grid-template-columns: repeat(auto-fill, 96px);
+    }
+    &__badges {
+      padding: 20px;
     }
   }
 }

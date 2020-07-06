@@ -1,0 +1,66 @@
+include ~blocks/select-color/mixin
+include ~blocks/spoiler/mixin
+include ~blocks/review/mixin
+include ~blocks/button/mixin
+include ~blocks/banner/mixin
+include ~mobile/slider-products/mixin
+
+.product-card.js-product-card
+	.product-card__image
+		include ~blocks/product-gallery/index
+	.product-card__color
+		.product-card__color-head
+			h2 Другие цвета:
+		.product-card__color-body
+			+select-color({ class: 'js-select-color' })
+	.product-card__form
+		include ~blocks/form-product/index
+	.product-card__banner
+		+banner({
+			title: 'Не подходят размеры?',
+			button: {
+				text: 'Указать размеры',
+				attributes: {
+					'data-click': 'popup',
+					'data-popup-id': 'popup-custom',
+				}
+			},
+		}) Мы изготовим по Вашим
+	+spoiler({
+		active: true,
+		class: 'product-card__spoiler',
+		title: 'Сопутствующие товары'
+	})
+		.product-card__products
+			+slider-products({ scrollbar: true })
+	+spoiler({
+		class: 'product-card__spoiler',
+		title: 'Диван Еврокнижка Лиссабон в других цветах (10 шт)'
+	})
+		.product-card__products
+			+slider-products({scrollbar: true})
+	+spoiler({
+		class: 'product-card__spoiler',
+		title: 'Все товары коллекции Лиссабон (8 шт)'
+	})
+		.product-card__products
+			+slider-products({scrollbar: true})
+	+spoiler({
+		active: true,
+		class: 'product-card__spoiler',
+		title: 'Отзывы (3)',
+		attributes: {
+			id: 'reviews'
+		}
+	})
+		.product-card__reviews
+			+review({ class: 'product-card__review', rating: true })
+			+review({ class: 'product-card__review', rating: true })
+			+review({ class: 'product-card__review', rating: true })
+			+button({
+				mods: ['block', 'orange', 'round'],
+				attributes: {
+					'data-click': 'popup',
+					'data-popup-id': 'popup-review',
+				}
+			}) Оставить отзыв

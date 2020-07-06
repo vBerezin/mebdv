@@ -1,13 +1,13 @@
 extends ~layout/l-desktop/index
-include ~blocks-desktop/section-products/mixin
+include ~desktop/section-products/mixin
 
 block variables
 	- TITLE = 'Главная'
 	- DESKTOP = true
 
-block page-content
-	include ~blocks-desktop/section-slider/index
-	include ~blocks-desktop/section-catalog/index
+block main
+	include ~desktop/section-slider/index
+	include ~desktop/section-catalog/index
 	+section-products({
 		title: 'Новинки',
 		icon: 'new',
@@ -33,3 +33,4 @@ block page-content
 		icon: 'home',
 		mods: 'bottom'
 	})
+	include ~desktop/section-about/index

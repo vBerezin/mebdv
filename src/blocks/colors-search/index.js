@@ -1,7 +1,7 @@
 import { Handlers } from '~common/scripts/utils/handlers';
 import { App } from '~common/scripts/app';
 import { ColorItem } from '~blocks/color-item';
-import { ColorPreview } from '~blocks-mobile/color-preview';
+import { ColorPreview } from '~mobile/color-preview';
 
 class Form {
   #base;

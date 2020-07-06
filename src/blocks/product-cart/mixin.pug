@@ -13,7 +13,9 @@ mixin product-cart(data)
 				+lazy-image(data.image)
 		.product-cart__body
 			a.product-cart__title(href=data.href) Диван Еврокнижка Денис
-			.product-cart__price 30 000 <i class="ruble">₽</i>
+			.product-cart__prices
+				span.product-cart__price 30 000 ₽
+				span.product-cart__price-old 31 000 ₽
 			.product-cart__specs
 				dl
 					dt Габариты:
@@ -28,14 +30,12 @@ mixin product-cart(data)
 					dt Ткань компаньон:
 					dd Sontex beige
 		.product-cart__footer
-			+counter({
-				class: 'product-cart__count',
-				min: 1,
-				max: 10,
-				step: 1,
-				value: 10
-			})
-			+button({
-				class: 'product-cart__delete',
-				icon: 'delete'
-			}) Удалить
+			.product-cart__count
+				+counter({
+					min: 1,
+					max: 10,
+					step: 1,
+					value: 10
+				})
+			.product-cart__delete
+				+button({ icon: 'delete', mods: 'block' }) Удалить

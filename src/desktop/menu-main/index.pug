@@ -1,0 +1,37 @@
+-
+	items = [
+		{
+			title: 'О магазине',
+			href: '#'
+		},
+		{
+			title: 'Доставка и оплата',
+			href: '/mebdv/delivery',
+			active: true,
+		},
+		{
+			title: 'Гарантия',
+			href: '#',
+		},
+		{
+			title: 'Производители',
+			href: '#',
+		},
+		{
+			title: 'Отзывы',
+			href: '/mebdv/reviews',
+		},
+		{
+			title: 'Контакты',
+			href: '/mebdv/contacts',
+		},
+	]
+
+nav.menu-main
+	ul
+		each item in items
+			- state = [];
+			- if (item.active) state.push('is-active')
+			li
+				.menu-main__item(class=state)
+					a.menu-main__item-link(href=item.href) #{item.title}

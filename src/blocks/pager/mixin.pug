@@ -4,6 +4,8 @@ mixin pager(data)
 		class=data.class
 		class=mods('pager', data.mods)
 		)&attributes(data.attributes)
+		if (data.title)
+			.pager__title Страницы:
 		ul
 			each item in data.items
 				- tagName = item.href ? 'a' : 'span'

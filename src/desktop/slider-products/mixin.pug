@@ -1,0 +1,34 @@
+include ~layout/l-container/mixin
+include ~blocks/section/mixin
+include ~blocks/section-head/mixin
+include ~blocks/product-panel/mixin
+include ~blocks/nav-slider/mixin
+
+mixin slider-products(data)
+	.slider-products.js-slider-products(
+		class=data.class
+		class=mods('slider-products', data.mods)
+	)&attributes(data.attributes)
+		.slider-products__head
+			h3.slider-products__title #{data.title}
+			+nav-slider({
+				class: 'slider-products__nav',
+				prev: {
+					attributes: {
+						'data-rel': 'slider.products.prev'
+					}
+				},
+				next: {
+					attributes: {
+						'data-rel': 'slider.products.next'
+					}
+				}
+			})
+		.slider-products__body(data-rel="slider.products.body")
+			- items = []
+			- items.length = 10
+			each item in items
+				.slider-products__item
+					+product-panel({
+						href: '/mebdv/product'
+					})

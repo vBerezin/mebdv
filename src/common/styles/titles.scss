@@ -13,14 +13,14 @@ h6,
 .h4,
 .h5,
 .h6 {
-  margin: 0.5em 0;
   color: currentColor;
+  font-weight: $font-weight-medium;
 }
 
 h1,
 .h1 {
   font-size: 18px;
-  font-weight: $font-weight-semi-bold;
+  margin: 10px 0;
   @include breakpoint(sm) {
     font-size: 40px;
   }
@@ -29,7 +29,7 @@ h1,
 h2,
 .h2 {
   font-size: 16px;
-  font-weight: $font-weight-medium;
+  margin: 0.5em 0;
   @include breakpoint(sm) {
     font-size: 32px;
   }
@@ -44,7 +44,7 @@ h6,
 .h5,
 .h6 {
   font-size: 12px;
-  font-weight: $font-weight-semi-bold;
+  margin: 0.5em 0;
   @include breakpoint(sm) {
     font-size: 25px;
     font-weight: $font-weight-thin;

@@ -1,13 +1,13 @@
 extends ~layout/l-mobile/index
 
-include ~blocks-mobile/section-products/mixin
+include ~mobile/section-products/mixin
 
 block variables
 	- TITLE = 'Главная'
 
 block main
-	include ~blocks-mobile/section-slider/index
-	include ~blocks-mobile/section-catalog/index
+	include ~mobile/section-slider/index
+	include ~mobile/section-catalog/index
 	+section-products({
 		title: 'Новинки',
 		icon: 'new',
@@ -33,9 +33,9 @@ block main
 		icon: 'home',
 		mods: 'bottom'
 	})
-	include ~blocks-mobile/section-features/index
-	include ~blocks-mobile/section-about/index
+	include ~mobile/section-features/index
+	include ~mobile/section-about/index
 
 block prepend footer
-	include ~blocks-mobile/section-contact/index
-	include ~blocks-mobile/section-map/index
+	include ~mobile/section-contact/index
+	include ~mobile/section-map/index

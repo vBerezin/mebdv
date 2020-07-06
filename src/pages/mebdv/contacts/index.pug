@@ -1,0 +1,25 @@
+extends ~layout/l-desktop/index
+include ~blocks/breadcrumbs/mixin
+
+block variables
+	- TITLE = 'Контактная информация'
+	- DESKTOP = true
+
+block page-head
+	+breadcrumbs({
+		items: [
+			{
+				title: 'Главная',
+				href: '/'
+			},
+			{
+				title: 'Контакты',
+			},
+		]
+	})
+	h1 Контактная информация
+
+block page-content
+	+l-container
+		include ~desktop/contacts/index
+

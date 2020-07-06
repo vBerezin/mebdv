@@ -1,3 +1,6 @@
 .form-head {
   margin-bottom: 20px;
+  &.form-head--center {
+    text-align: center;
+  }
 }

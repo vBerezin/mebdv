@@ -1,0 +1,34 @@
+@import "~common/styles/mixins/scrollbar";
+
+.slider-products {
+  &__head {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  &__title {
+    flex: 1 1 auto;
+    margin: 0;
+  }
+  &__body {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    overflow: auto;
+    margin: -5px;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    @include scrollbar;
+  }
+  &__item {
+    padding: 5px 10px 5px 5px;
+    flex: 0 0 230px;
+    width: 230px;
+    scroll-snap-align: start;
+  }
+  &.is-active {
+    .slider-products__body {
+      padding-bottom: 25px;
+    }
+  }
+}

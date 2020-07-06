@@ -1,0 +1,46 @@
+@import "~common/styles/variables/animation";
+@import "style/animations";
+
+.product-description {
+  border-top: 1px solid transparent;
+  p {
+    margin: 0 0 2em 0;
+  }
+  &__item {
+    margin-bottom: 30px;
+  }
+  &__body {
+    display: none;
+    animation: product-description $animation-time ease-out;
+  }
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      height: 1px;
+      background: #ECECEC;
+      flex: 1 1 auto;
+    }
+  }
+  &__toggle {
+    position: relative;
+    flex: 0 0 auto;
+    min-width: 220px;
+    margin: 0 20px;
+  }
+  &.is-active {
+    padding-top: 30px;
+    border-color: #ECECEC;
+    .product-description__footer {
+      margin-top: 30px;
+    }
+    .product-description__body {
+      display: block;
+    }
+  }
+}

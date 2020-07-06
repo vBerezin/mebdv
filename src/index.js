@@ -6,4 +6,9 @@ import '~common/scripts/common';
 
 // blocks
 import '~blocks/slider-main';
-import '~blocks-desktop/section-products';
+import '~blocks/counter';
+import '~blocks/product-gallery';
+import '~blocks/product-description';
+
+import '~desktop/section-products';
+import '~desktop/slider-products';

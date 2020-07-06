@@ -1,0 +1,60 @@
+include ~layout/l-container/mixin
+include ~blocks/panel-icon/mixin
+include ~blocks/review/mixin
+include ~blocks/section/mixin
+include ~blocks/section-head/mixin
+include ~blocks/section-title/mixin
+
+-
+	features = [
+		{
+			title: 'Собственное производство',
+			icon: 'settings'
+		},
+		{
+			title: 'Рассрочка 0/0/12',
+			icon: 'money-pig'
+		},
+		{
+			title: 'Быстрая доставка',
+			icon: 'delivery'
+		},
+		{
+			title: 'Гарантия возврата',
+			icon: 'payback'
+		},
+	]
+
++section({
+	class: 'section-about',
+	mods: 'bottom'
+})
+	+l-container
+		.section-about__inner
+			.section-about__main
+				+section-title Мы сами производим мебель и знаем о ней всё
+				.section-about__img
+					+lazy-image({
+						src: '/images/sections/about.png',
+						srcset: {
+							'2x': '/images/sections/about@2x.png'
+						},
+					})
+				.section-about__body
+					p Наша компания была основана в 1993 году, а наш интернет-магазин стал одним из первых магазинов, осуществляющих онлайн продажу мебели в регионе. Компания специализируется на оптовой и розничной продаже мебели как для дома, так и для офиса и производственных помещений, а также различной мебельной фурнитуры.
+			.section-about__reviews
+				.section-about__reviews-head
+					+section-title({
+						class: 'section-about__reviews-title'
+					}) О нас говорят
+					a(href='/mebdev/reviews/') Читать все отзывы
+				+review({ class: 'section-about__review' })
+				h3 Почему стоит выбрать нас
+				.section-about__features
+					each feature in features
+						+panel-icon({
+							class: 'section-about__feature',
+							icon: feature.icon,
+						}) #{feature.title}
+
+

@@ -1,0 +1,34 @@
+include ~desktop/slider-products/mixin
+
+.product-card
+	.product-card__main
+		.product-card__gallery
+			include ~blocks/product-gallery/index
+		.product-card__desc
+			include ~blocks/product-description/index
+		.product-card__specs
+			h3.product-card__specs-title Свойства
+			table.product-card__specs-table
+				tr
+					th Производитель
+					td Массив хвойных пород древесины
+				tr
+					th Гарантия
+					td Имеется
+				tr
+					th Срок службы
+					td 5 лет
+		+slider-products({
+			title: 'Сопутствующие товары',
+			class: 'product-card__similar'
+		})
+		+slider-products({
+			title: 'Диван Еврокнижка Лиссабонв других цветах (10 шт)',
+			class: 'product-card__similar'
+		})
+		+slider-products({
+			title: 'Все товары коллекции Лиссабон (8 шт)',
+			class: 'product-card__similar'
+		})
+
+	.product-card__aside

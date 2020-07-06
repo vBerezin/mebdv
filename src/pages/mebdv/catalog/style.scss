@@ -1,0 +1,10 @@
+.p-catalog-head {
+  &__title {
+    display: inline;
+    margin: 0;
+  }
+  &__count {
+    margin-left: 15px;
+    vertical-align: text-bottom;
+  }
+}

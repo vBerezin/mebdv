@@ -1,0 +1,24 @@
+extends ~layout/l-desktop/index
+include ~blocks/breadcrumbs/mixin
+
+block variables
+	- TITLE = 'Отзывы'
+	- DESKTOP = true
+
+block page-head
+	+breadcrumbs({
+		items: [
+			{
+				title: 'Главная',
+				href: '/'
+			},
+			{
+				title: 'Отзывы',
+			},
+		]
+	})
+	h1 Отзывы
+
+block page-content
+	+l-container
+		include ~desktop/reviews/index

@@ -1,0 +1,25 @@
+@import "~common/styles/variables/fonts";
+
+.media-object {
+  &__body {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  &__img {
+    font-size: 0;
+    line-height: 0;
+    flex: 0 0 100px;
+    max-width: 100px;
+    margin-right: 35px;
+  }
+  &__main {
+    flex: 1 1 auto;
+  }
+  &__title {
+    font-weight: $font-weight-bold;
+  }
+  &__head {
+    margin-bottom: 20px;
+  }
+}

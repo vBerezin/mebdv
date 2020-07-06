@@ -12,11 +12,12 @@ module.exports = {
   alias: {
     '~common': common,
     '~blocks': `${src}/blocks`,
-    '~blocks-desktop': `${src}/blocks-desktop`,
-    '~blocks-mobile': `${src}/blocks-mobile`,
+    '~desktop': `${src}/desktop`,
+    '~mobile': `${src}/mobile`,
     '~layout': `${src}/layout`,
     '~static': `${src}/static`,
     '~vendor': `${src}/vendor`,
+    '~pages': `${src}/pages`,
     '~images': `${build}/images`,
   },
   webpack: {

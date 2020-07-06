@@ -1,0 +1,18 @@
+.alert {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 15px;
+  line-height: 20px;
+  background-color: #F78B3D;
+  background-image: linear-gradient(to right, #F78B3D 70%, #FFC700 100%);
+  color: #fff;
+  padding: 15px 20px;
+
+  &__icon {
+    font-size: 25px;
+    flex: 0 0 auto;
+    margin-right: 10px;
+  }
+}

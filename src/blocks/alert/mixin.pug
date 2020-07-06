@@ -1,0 +1,14 @@
+include ~blocks/icon/mixin
+
+mixin alert(data)
+	- data = data || {};
+	.alert(
+		class=data.class
+		class=mods('alert', data.mods)
+	)&attributes(data.attributes)
+		+icon({
+			class: 'alert__icon',
+			name: data.icon,
+		})
+		.alert__body
+			block

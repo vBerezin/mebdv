@@ -1,0 +1,41 @@
+extends ~layout/l-desktop/index
+include ~blocks/breadcrumbs/mixin
+
+block variables
+	- TITLE = 'Диван-кровать Баден-Баден'
+	- DESKTOP = true
+
+block page-head
+	+breadcrumbs({
+		back: {
+			title: 'Назад',
+			href: '/m.mebdv/catalog/#product-3'
+		},
+		items: [
+			{
+				title: 'Главная',
+				href: '/'
+			},
+			{
+				title: 'Каталог',
+				href: '/m.mebdv/catalog'
+			},
+			{
+				title: 'Мягкая мебель',
+				href: '/m.mebdv/catalog'
+			},
+			{
+				title: 'Диваны Еврокнижка',
+				href: '/m.mebdv/catalog'
+			},
+			{
+				title: 'Лиссабон',
+			},
+		]
+	})
+
+	h1 Диван-кровать Баден-Баден
+
+block page-content
+	+l-container
+		include ~desktop/product-card/index
