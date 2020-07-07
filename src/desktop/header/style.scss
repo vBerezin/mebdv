@@ -1,13 +1,16 @@
 .header {
+  $z-index: 300;
+  position: relative;
   min-height: 80px;
-  &__top {
+  background: #FAFAFA;
+  z-index: $z-index;
+
+  &__bottom {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    background: #FAFAFA;
     padding: 20px 30px;
   }
-  &__bottom {}
   &__logo {
     font-size: 0;
     line-height: 0;
@@ -31,5 +34,12 @@
   &__cart {
     flex: 0 0 auto;
     margin-left: 30px;
+  }
+
+  &.header--sticky {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
   }
 }
