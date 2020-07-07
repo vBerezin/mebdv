@@ -3,6 +3,9 @@ export class HeaderSticky {
   constructor(node) {
     this.#active = false;
     this.el = node;
+    window.addEventListener('resize', () => {
+      this.active = this.#active;
+    });
   }
   close() {
     this.active = false;

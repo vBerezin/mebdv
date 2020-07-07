@@ -68,7 +68,7 @@
     flex: 0 0 auto;
   }
 
-  @include breakpoint(sm) {
+  @include breakpoint(md) {
     display: flex;
     align-items: stretch;
     padding: 30px;

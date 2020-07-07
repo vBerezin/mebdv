@@ -1,0 +1,42 @@
+include ~blocks/popup/mixin
+include ~blocks/button/mixin
+include ~blocks/button-rating/mixin
+include ~blocks/form-title/mixin
+include ~blocks/form-field/mixin
+include ~blocks/form-head/mixin
+include ~blocks/form-footer/mixin
+include ~blocks/form-label/mixin
+include ~blocks/form-success/mixin
+
++popup({
+	title: 'Заказать по Вашим размерам',
+	class: ['popup-feedback','js-form'],
+	attributes: {
+		id: 'popup-custom'
+	}
+})
+	.popup-feedback__inner
+		form(action="?custom")
+			+form-field
+				+form-label Ваше имя:
+				input(type="text" placeholder="Иван")
+			+form-field
+				+form-label Телефон:
+				input(type="tel" placeholder="+7 (XXX) XXX-XX-XX" required)
+			+form-footer
+				.popup-feedback__submit
+					+button({
+						mods: ['block', 'orange', 'round'],
+						attributes: {
+							type: 'submit'
+						}
+					}) Отправить
+		+form-success({
+			button: {
+				text: 'Понятно',
+				mods: ['block','orange','round'],
+				attributes: {
+					'data-click': 'popup.close'
+				}
+			}
+		})

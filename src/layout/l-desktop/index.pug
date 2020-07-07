@@ -21,6 +21,8 @@ block body
 				.l-desktop__footer
 					block footer
 						include ~desktop/footer/index
+	include ~blocks/popup-feedback/index
+	include ~blocks/popup-callback/index
 
 block append stylesheets
 	link(rel="stylesheet" href=`/index.css?${$.version}`)

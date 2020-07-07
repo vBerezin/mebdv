@@ -60,7 +60,7 @@
     padding-right: 30px;
   }
 
-  @include breakpoint(sm) {
+  @include breakpoint(md) {
     font-size: 13px;
     font-weight: $font-weight-medium;
   }

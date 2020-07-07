@@ -1,5 +1,4 @@
 import { App } from '~common/scripts/app';
-import { Popups } from '~common/scripts/popups';
 
 (() => {
   const node = document.querySelector('.js-form-sizes');

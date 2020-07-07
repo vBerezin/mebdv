@@ -31,7 +31,7 @@
     }
   }
 
-  @include breakpoint(sm) {
+  @include breakpoint(md) {
     overflow: hidden;
     &::before,
     &::after {

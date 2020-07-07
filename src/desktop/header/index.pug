@@ -18,7 +18,13 @@ header.header.js-header
 		.header__phone
 			include ~blocks/button-phone/index
 		.header__callback
-			+button({ mods: ['round', 'black', 'block'] }) Заказать звонок
+			+button({
+				mods: ['round', 'black', 'block'],
+				attributes: {
+					'data-click': 'popup',
+					'data-popup-id': 'popup-callback',
+				}
+			}) Заказать звонок
 		.header__cart
 			+button({
 				icon: 'cart',

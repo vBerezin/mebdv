@@ -8,7 +8,7 @@
   &.form--large {
     padding: 40px;
   }
-  @include breakpoint(sm) {
+  @include breakpoint(md) {
     padding: 30px;
   }
 }

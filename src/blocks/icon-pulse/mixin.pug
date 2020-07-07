@@ -1,0 +1,9 @@
+include ~blocks/icon/mixin
+
+mixin icon-pulse(data)
+	- data = data || {};
+	.icon-pulse(
+		class=data.class
+		class=mods('icon-pulse', data.mods)
+	)&attributes(data.attributes)
+		+icon({ name: data.icon, mods: 'center', class: 'icon-pulse__icon' })

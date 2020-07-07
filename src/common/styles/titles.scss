@@ -21,7 +21,7 @@ h1,
 .h1 {
   font-size: 18px;
   margin: 10px 0;
-  @include breakpoint(sm) {
+  @include breakpoint(md) {
     font-size: 40px;
   }
 }
@@ -30,7 +30,7 @@ h2,
 .h2 {
   font-size: 16px;
   margin: 0.5em 0;
-  @include breakpoint(sm) {
+  @include breakpoint(md) {
     font-size: 32px;
   }
 }
@@ -45,7 +45,7 @@ h6,
 .h6 {
   font-size: 12px;
   margin: 0.5em 0;
-  @include breakpoint(sm) {
+  @include breakpoint(md) {
     font-size: 25px;
     font-weight: $font-weight-thin;
   }

@@ -1,0 +1,48 @@
+include ~blocks/popup/mixin
+include ~blocks/button/mixin
+include ~blocks/button-rating/mixin
+include ~blocks/form-title/mixin
+include ~blocks/form-field/mixin
+include ~blocks/form-head/mixin
+include ~blocks/form-footer/mixin
+include ~blocks/form-label/mixin
+include ~blocks/form-success/mixin
+
++popup({
+	title: 'Написать нам',
+	class: ['popup-feedback', 'js-form'],
+	attributes: {
+		id: 'popup-feedback'
+	}
+})
+	.popup-feedback__inner
+		form(action="?feedback")
+			+form-field
+				+form-label Ваше имя:
+				input(type="text" placeholder="Иван")
+			+form-field
+				+form-label Телефон:
+				input(type="tel" placeholder="+7 (XXX) XXX-XX-XX" required)
+			+form-field
+				+form-label Email:
+				input(type="email" placeholder="example@mail.ru")
+			+form-field
+				+form-label Вопрос:
+				textarea(placeholder="Текст вопроса")
+			+form-footer
+				.popup-feedback__submit
+					+button({
+						mods: ['block', 'orange', 'round'],
+						attributes: {
+							type: 'submit'
+						}
+					}) Отправить
+		+form-success({
+			button: {
+				text: 'Понятно',
+				mods: ['block', 'orange', 'round'],
+				attributes: {
+					'data-click': 'popup.close'
+				}
+			}
+		})

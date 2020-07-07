@@ -1,0 +1,22 @@
+include ~blocks/icon-pulse/mixin
+include ~blocks/button/mixin
+
+mixin form-success(data)
+	- data = data || {};
+	.form-success(
+		style="display:none;"
+		data-rel="form.success"
+		class=data.class
+		class=mods('form-success', data.mods)
+	)&attributes(data.attributes)
+		.form-success__icon
+			+icon-pulse({
+				mods: data.mods,
+				icon: 'success'
+			})
+		.form-success__title Ваша заявка</br>успешно отправлена
+		p Мы свяжемся с вами согласно рабочему времени ежедневно с 9:00 до 20:00
+		if (data.button)
+			.form-success__footer
+				.form-success__button
+					+button(data.button)

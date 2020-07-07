@@ -1,0 +1,31 @@
+@import "styles/animations";
+
+.icon-pulse {
+  display: inline-block;
+  position: relative;
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+  font-size: 80px;
+  background: #F78B3D;
+  color: #fff;
+
+  &__icon {
+    font-size: 0.5em;
+  }
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    border-radius: inherit;
+    background: inherit;
+    animation: icon-pulse 1s ease-out infinite;
+  }
+  &.icon-pulse--black {
+    background: #4F4F4F;
+  }
+}

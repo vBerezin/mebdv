@@ -32,7 +32,7 @@
   &.section-title--thin {
     font-weight: $font-weight-thin;
   }
-  @include breakpoint(sm) {
+  @include breakpoint(md) {
     font-size: 32px;
     .section-title__icon {
       font-size: 30px;

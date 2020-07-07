@@ -29,7 +29,7 @@
     max-width: 150px;
     padding: 5px 10px 5px 5px;
   }
-  @include breakpoint(sm) {
+  @include breakpoint(md) {
     &__item {
       flex: 0 0 220px;
       max-width: 220px;

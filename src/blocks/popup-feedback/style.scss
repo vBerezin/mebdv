@@ -1,0 +1,16 @@
+@import "~blocks/breakpoints/mixin";
+
+.popup-feedback {
+  &__inner {
+    padding: 15px;
+  }
+  @include breakpoint(md) {
+    &__inner {
+      padding: 20px 25px;
+    }
+    &__submit {
+      display: inline-block;
+      min-width: 160px;
+    }
+  }
+}

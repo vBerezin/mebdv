@@ -6,10 +6,10 @@
   $z-index: 300;
   position: relative;
   width: 260px;
-  min-height: 100%;
   background: #fff;
   z-index: $z-index;
   border-right: 1px solid #F2F2F2;
+  overflow: auto;
 
   ul,
   li {

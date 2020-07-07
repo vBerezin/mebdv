@@ -78,13 +78,13 @@
     margin-left: 5px;
   }
 
-  @include breakpoint(sm) {
+  @include breakpoint(md) {
     min-height: 350px;
     font-size: 15px;
     padding: 40px 15px 15px 15px;
 
     &__title {
-      font-weight: $font-weight-regular;
+      font-weight: $font-weight-medium;
     }
     &__badges {
       padding: 15px;

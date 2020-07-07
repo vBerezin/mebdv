@@ -9,7 +9,7 @@ mixin button(data)
 	#{tagName}.button(
 		class=data.class
 		class=mods('button', data.mods)
-		)&attributes(data.attributes)
+		)&attributes(data.attributes) #{data.text}
 		if (data.icon)
 			+icon({ name: data.icon, class: 'button__icon' })
 		block

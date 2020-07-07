@@ -142,7 +142,7 @@
   &__banner {
     margin: 20px 0;
   }
-  @include breakpoint(sm) {
+  @include breakpoint(md) {
     &__price {
       font-size: 26px;
     }

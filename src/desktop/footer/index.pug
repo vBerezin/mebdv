@@ -71,7 +71,11 @@ footer.footer
 							a(href="mailto:mail@mebdv.ru") mail@mebdv.ru
 				+button({
 					class: 'footer__info-btn',
-					mods: ['black', 'block', 'large', 'round']
+					mods: ['black', 'block', 'large', 'round'],
+					attributes: {
+						'data-click': 'popup',
+						'data-popup-id': 'popup-feedback',
+					}
 				}) Написать нам
 		.footer__bottom
 			.footer__dev

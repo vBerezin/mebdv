@@ -28,7 +28,7 @@
     margin-top: 5px;
   }
 
-  @include breakpoint(sm) {
+  @include breakpoint(md) {
     padding: 20px;
     &__head {
       margin-bottom: 10px;

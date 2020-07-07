@@ -28,7 +28,16 @@ input[type="tel"] {
   &:focus {
     border-color: #F78B3D;
   }
-  @include breakpoint(sm) {
+  &.theme-black {
+    color: #fff;
+    background: #3F3F3F;
+    border-color: #696969;
+    &:active,
+    &:focus {
+      border-color: #F78B3D;
+    }
+  }
+  @include breakpoint(md) {
     font-size: 14px;
   }
 }

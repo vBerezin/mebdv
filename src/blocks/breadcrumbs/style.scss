@@ -41,7 +41,7 @@
     display: inline-block;
     font-size: 15px;
   }
-  @include breakpoint(sm) {
+  @include breakpoint(md) {
     color: #BABABA;
     font-weight: $font-weight-regular;
     &__back {

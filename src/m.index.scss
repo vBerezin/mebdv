@@ -6,6 +6,7 @@
 @import "~blocks/icon/style";
 @import "~blocks/icon-box/style";
 @import "~blocks/icon-block/style";
+@import "~blocks/icon-pulse/style";
 @import "~blocks/image/style";
 @import "~blocks/lazy-image/style";
 @import "~blocks/owl-carousel/style";
@@ -26,6 +27,9 @@
 @import "~blocks/section-head/style";
 @import "~blocks/section-footer/style";
 @import "~blocks/popup/style";
+@import "~blocks/popup-review/style";
+@import "~blocks/popup-feedback/style";
+@import "~blocks/popup-callback/style";
 @import "~blocks/counter/style";
 @import "~blocks/spoiler/style";
 @import "~blocks/order-info/style";
@@ -63,6 +67,8 @@
 @import "~blocks/form-product/style";
 @import "~blocks/form-color/style";
 @import "~blocks/form-checkout/style";
+@import "~blocks/form-success/style";
+@import "~blocks/form-sizes/style";
 
 @import "~mobile/header/style";
 @import "~mobile/footer/style";
@@ -78,7 +84,6 @@
 @import "~mobile/product-card/style";
 @import "~mobile/color-preview/style";
 @import "~mobile/form-review/style";
-@import "~mobile/form-sizes/style";
 @import "~mobile/form-filter/style";
 @import "~mobile/form-feedback/style";
 @import "~mobile/section-map/style";
@@ -89,7 +94,6 @@
 @import "~mobile/section-about/style";
 @import "~mobile/section-slider/style";
 @import "~mobile/slider-products/style";
-@import "~mobile/popup-review/style";
 @import "~mobile/popup-color/style";
 @import "~mobile/popup-filter/style";
 

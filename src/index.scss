@@ -13,7 +13,11 @@
 @import "~blocks/badge/style";
 @import "~blocks/banner/style";
 @import "~blocks/review/style";
+@import "~blocks/icon-pulse/style";
 @import "~blocks/preloader/style";
+@import "~blocks/popup/style";
+@import "~blocks/popup-feedback/style";
+@import "~blocks/popup-callback/style";
 @import "~blocks/text-block/style";
 @import "~blocks/rating/style";
 @import "~blocks/pager/style";
@@ -23,23 +27,31 @@
 @import "~blocks/button/style";
 @import "~blocks/button-phone/style";
 @import "~blocks/button-rating/style";
+
 @import "~blocks/product-panel/style";
 @import "~blocks/product-cart/style";
-@import "~blocks/slider-main/style";
 @import "~blocks/menu-catalog/style";
+
 @import "~blocks/section/style";
 @import "~blocks/section-title/style";
 @import "~blocks/section-head/style";
 @import "~blocks/section-footer/style";
+
 @import "~blocks/slider-range/style";
+@import "~blocks/slider-main/style";
+
 @import "~blocks/nav-slider/style";
 @import "~blocks/map-box/style";
 @import "~blocks/panel-icon/style";
 @import "~blocks/cart-total/style";
 @import "~blocks/order-info/style";
+@import "~blocks/media-object/style";
+
 @import "~blocks/form-checkout/style";
 @import "~blocks/form-search/style";
 @import "~blocks/form-product/style";
+@import "~blocks/form-success/style";
+@import "~blocks/form-sizes/style";
 @import "~blocks/form/style";
 @import "~blocks/form-title/style";
 @import "~blocks/form-field/style";
@@ -47,28 +59,35 @@
 @import "~blocks/form-footer/style";
 @import "~blocks/form-label/style";
 @import "~blocks/form-range/style";
+
 @import "~blocks/option/style";
 @import "~blocks/option-order/style";
 @import "~blocks/option-filter/style";
 @import "~blocks/option-color/style";
 @import "~blocks/option-button/style";
+
 @import "~blocks/product-gallery/style";
-@import "~blocks/media-object/style";
 @import "~blocks/product-description/style";
 
 @import "~desktop/header/style";
 @import "~desktop/footer/style";
+
 @import "~desktop/menu-main/style";
 @import "~desktop/menu-filter/style";
+
 @import "~desktop/reviews/style";
 @import "~desktop/cart/style";
 @import "~desktop/catalog/style";
 @import "~desktop/contacts/style";
 @import "~desktop/checkout/style";
-@import "~desktop/form-filter/style";
 @import "~desktop/product-card/style";
+
+@import "~desktop/popup-color/style";
+
+@import "~desktop/form-filter/style";
 @import "~desktop/form-feedback/style";
 @import "~desktop/form-review/style";
+
 @import "~desktop/section-slider/style";
 @import "~desktop/section-catalog/style";
 @import "~desktop/section-products/style";

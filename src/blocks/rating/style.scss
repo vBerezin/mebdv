@@ -12,7 +12,7 @@
       color: #FFC700;
     }
   }
-  @include breakpoint(sm) {
+  @include breakpoint(md) {
     font-size: 20px;
   }
 }

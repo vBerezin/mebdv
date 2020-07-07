@@ -1,0 +1,48 @@
+include ~blocks/popup/mixin
+include ~blocks/button/mixin
+include ~blocks/button-rating/mixin
+include ~blocks/form-title/mixin
+include ~blocks/form-field/mixin
+include ~blocks/form-head/mixin
+include ~blocks/form-footer/mixin
+include ~blocks/form-label/mixin
+include ~blocks/form-success/mixin
+include ~blocks/icon-pulse/mixin
+
++popup({
+	title: 'Заказать звонок',
+	mods: 'black',
+	class: ['popup-callback', 'js-form'],
+	attributes: {
+		id: 'popup-callback'
+	}
+})
+	.popup-callback__inner
+		form(action="?callback")
+			.popup-callback__icon
+				+icon-pulse({
+					mods: 'black',
+					icon: 'callback'
+				})
+			+form-field
+				input(type="text" placeholder="Иван").theme-black
+			+form-field
+				input(type="tel" placeholder="Номер телефона" required).theme-black
+			+form-footer
+				.popup-callback___submit
+					+button({
+						mods: ['block', 'black', 'round'],
+						attributes: {
+							type: 'submit'
+						}
+					}) Заказать обратный звонок
+		+form-success({
+			mods: 'black',
+			button: {
+				text: 'Понятно',
+				mods: ['block', 'black', 'round'],
+				attributes: {
+					'data-click': 'popup.close'
+				}
+			}
+		})
