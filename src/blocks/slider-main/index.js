@@ -1,10 +1,12 @@
 import { OwlCarousel } from "~blocks/owl-carousel";
+import {Handlers} from "~common/scripts/utils/handlers";
 
 (() => {
   const node = document.querySelector('.js-slider-main');
   if (!node) return false;
+  const slider = node.querySelector('[data-rel="slider.main.carousel"]');
   const carousel = new OwlCarousel({
-    node: node,
+    node: slider,
     options: {
       items: 2,
       autoWidth: true,
@@ -14,7 +16,7 @@ import { OwlCarousel } from "~blocks/owl-carousel";
       responsive: {
         [App.breakpoints.points.sm]: {
           center: true,
-          nav: true,
+          nav: false,
           dots: false,
           loop: true,
         }
@@ -29,5 +31,9 @@ import { OwlCarousel } from "~blocks/owl-carousel";
       },
     },
   });
+  node.addEventListener('click', new Handlers.Click({
+    'slider.main.prev': carousel.prev,
+    'slider.main.next': carousel.next,
+  }));
   carousel.init();
 })();

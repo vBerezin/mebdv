@@ -1,4 +1,5 @@
 include ~blocks/lazy-image/mixin
+include ~blocks/icon/mixin
 
 mixin slider-main(data)
 	- data = data || {};
@@ -7,7 +8,20 @@ mixin slider-main(data)
 		class=data.class
 		class=mods('slider-main', data.mods)
 	)&attributes(data.attributes)
-		each item in [1,2,3,4]
+		.slider-main__nav
+			.slider-main__prev(data-click="slider.main.prev")
+				.slider-main__button
+					+icon({
+						name: 'left',
+						mods: 'center'
+					})
+			.slider-main__next(data-click="slider.main.next")
+				.slider-main__button
+					+icon({
+						name: 'right',
+						mods: 'center'
+					})
+		.slider-main__body(data-rel="slider.main.carousel")
 			a.slider-main__item(href="#")
 				+lazy-image({
 					src: '/images/slider/slide-1.jpg',
@@ -15,3 +29,18 @@ mixin slider-main(data)
 						'2x': '/images/slider/slide-1@2x.jpg',
 					}
 				})
+			a.slider-main__item(href="#")
+				+lazy-image({
+					src: '/images/slider/slide-2.jpg',
+					srcset: {
+						'2x': '/images/slider/slide-2@2x.jpg',
+					}
+				})
+			a.slider-main__item(href="#")
+				+lazy-image({
+					src: '/images/slider/slide-3.jpg',
+					srcset: {
+						'2x': '/images/slider/slide-3@2x.jpg',
+					}
+				})
+

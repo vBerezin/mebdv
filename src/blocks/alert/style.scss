@@ -1,3 +1,5 @@
+@import "~common/styles/variables/fonts";
+
 .alert {
   display: flex;
   align-items: center;
@@ -9,6 +11,7 @@
   background-image: linear-gradient(to right, #F78B3D 70%, #FFC700 100%);
   color: #fff;
   padding: 15px 20px;
+  font-weight: $font-weight-bold;
 
   &__icon {
     font-size: 25px;

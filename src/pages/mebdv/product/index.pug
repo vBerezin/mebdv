@@ -1,5 +1,8 @@
 extends ~layout/l-desktop/index
 include ~blocks/breadcrumbs/mixin
+include ~desktop/form-review/mixin
+include ~desktop/section-reviews/mixin
+include ~desktop/section-similar/mixin
 
 block variables
 	- TITLE = 'Диван-кровать Баден-Баден'
@@ -37,9 +40,24 @@ block page-head
 	h1 Диван-кровать Баден-Баден
 
 block page-content
-	+l-container
-		include ~desktop/product-card/index
-
+	.p-product
+		+l-container
+			include ~desktop/product-card/index
+		+section-similar({
+			mods: 'top',
+			title: 'Сопутствующие товары',
+		})
+		+section-similar({
+			mods: 'top',
+			title: 'Диван Еврокнижка Лиссабон в других цветах (10 шт)',
+		})
+		+section-similar({
+			mods: 'top',
+			title: 'Все товары коллекции Лиссабон (8 шт)',
+		})
+		+section-reviews({
+			mods: ['top']
+		})
 block append body
 		include ~blocks/popup-custom/index
 		include ~blocks/popup-sizes/index

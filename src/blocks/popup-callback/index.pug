@@ -12,7 +12,6 @@ include ~blocks/input-phone/mixin
 
 +popup({
 	title: 'Заказать звонок',
-	mods: 'black',
 	class: ['popup-callback', 'js-form'],
 	attributes: {
 		id: 'popup-callback'
@@ -22,26 +21,24 @@ include ~blocks/input-phone/mixin
 		form(action="?callback")
 			.popup-callback__icon
 				+icon-pulse({
-					mods: 'black',
 					icon: 'callback'
 				})
 			+form-field
-				input(type="text" placeholder="Иван").theme-black
+				input(type="text" placeholder="Иван")
 			+form-field
-				+input-phone({ class: 'theme-black' })
+				+input-phone
 			+form-footer
 				.popup-callback___submit
 					+button({
-						mods: ['block', 'black', 'round'],
+						mods: ['block', 'orange', 'round'],
 						attributes: {
 							type: 'submit'
 						}
 					}) Заказать обратный звонок
 		+form-success({
-			mods: 'black',
 			button: {
 				text: 'Понятно',
-				mods: ['block', 'black', 'round'],
+				mods: ['block','orange', 'round'],
 				attributes: {
 					'data-click': 'popup.close'
 				}

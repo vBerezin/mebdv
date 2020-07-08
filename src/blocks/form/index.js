@@ -1,6 +1,5 @@
 import {App} from "~common/scripts/app";
 import {documentReady} from "~common/scripts/utils/document-ready";
-import { SliderRange } from '~blocks/slider-range';
 
 class Instance {
   #form;
@@ -9,10 +8,12 @@ class Instance {
     this.el = node;
     this.#form = this.el.querySelector('form');
     this.#success = this.el.querySelector('[data-rel="form.success"]');
-    this.#form.addEventListener('submit', () => {
+    this.#form.addEventListener('submit', (event) => {
+      event.preventDefault();
       this.#form.parentNode.removeChild(this.#form);
       this.#success.style.display = '';
       App.stream.trigger('form.submit', {
+        event,
         form: this.#form
       });
     });

@@ -1,7 +1,3 @@
-include ~desktop/section-similar/mixin
-include ~desktop/section-reviews/mixin
-include ~desktop/form-review/mixin
-
 .product-card
 	.product-card__main
 		.product-card__gallery
@@ -21,23 +17,5 @@ include ~desktop/form-review/mixin
 				tr
 					th Срок службы
 					td 5 лет
-		+section-similar({
-			mods: 'bottom',
-			title: 'Сопутствующие товары',
-		})
-		+section-similar({
-			mods: 'bottom',
-			title: 'Диван Еврокнижка Лиссабонв других цветах (10 шт)',
-		})
-		+section-similar({
-			mods: 'bottom',
-			title: 'Все товары коллекции Лиссабон (8 шт)',
-		})
-		+section-reviews({
-			mods: 'bottom'
-		})
-		+form-review({
-			rating: true,
-		})
 	.product-card__aside
 		include ~blocks/form-product/index

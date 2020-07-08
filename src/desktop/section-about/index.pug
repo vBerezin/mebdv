@@ -32,7 +32,7 @@ include ~blocks/section-title/mixin
 	+l-container
 		.section-about__inner
 			.section-about__main
-				+section-title Мы сами производим мебель и знаем о ней всё
+				+section-title({ class: 'section-about__title' }) Мы сами производим мебель и знаем о ней всё
 				.section-about__img
 					+lazy-image({
 						src: '/images/sections/about.png',

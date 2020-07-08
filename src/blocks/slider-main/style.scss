@@ -1,3 +1,4 @@
+@import "~common/styles/variables/transition";
 @import "~common/styles/mixins/images";
 
 .slider-main {
@@ -6,6 +7,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   overflow: auto;
+  position: relative;
   z-index: $z-index;
 
   &.owl-carousel {
@@ -30,45 +32,70 @@
       @include image-cover;
     }
   }
+  &__nav {
+    display: none;
+  }
+  &__button {
+    position: relative;
+    width: 2em;
+    height: 2em;
+    color: #fff;
+    background: #3A3A3A;
+    border-radius: 50%;
+  }
+  &__prev,
+  &__next {
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    font-size: 15px;
+    user-select: none;
+    opacity: 0;
+    transition: opacity $transition-time ease-out;
+    z-index: $z-index;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &__next {
+    justify-content: flex-start;
+    left: 50%;
+    right: 0;
+    background: linear-gradient(to left, rgba(#fff, 0.5), rgba(#fff, 0.001));
+  }
+  &__prev {
+    justify-content: flex-end;
+    right: 50%;
+    left: 0;
+    background: linear-gradient(to right, rgba(#fff, 0.5), rgba(#fff, 0.001));
+  }
 
   @include breakpoint(md) {
     overflow: hidden;
-    &::before,
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 5%;
-      pointer-events: none;
-      z-index: $z-index;
-    }
-    &::before {
-      left: 0;
-      background: linear-gradient(to right, #fff, rgba(#fff, 0.0001));
-    }
-    &::after {
-      right: 0;
-      background: linear-gradient(to left, #fff, rgba(#fff, 0.0001));
+    .owl-item {
+      opacity: 0.5;
+      transition: opacity $transition-time ease-out;
+      &.center {
+        opacity: 1;
+      }
     }
     &__item {
       margin: 0 15px;
-      border-radius: 10px;
       height: 290px;
       width: 980px;
     }
-    .owl-nav {
-      button.owl-prev {
-        left: auto;
-        right: 50%;
-        margin-right: (980 / 2) + 15px;
-      }
-      button.owl-next {
-        right: auto;
-        left: 50%;
-        margin-left: (980 / 2) + 15px;
-      }
+    &__prev {
+      margin-right: 520px;
+    }
+    &__next {
+      margin-left: 520px;
+    }
+    &__nav {
+      display: block;
     }
   }
 }

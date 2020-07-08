@@ -1,4 +1,7 @@
 .section-about {
+  &__title {
+    max-width: 480px;
+  }
   &__inner {
     display: flex;
   }

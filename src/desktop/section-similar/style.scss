@@ -1,3 +1,4 @@
+@import "~common/styles/variables/layout";
 @import "~common/styles/mixins/scrollbar";
 
 .section-similar {
@@ -14,7 +15,6 @@
     align-items: stretch;
     justify-content: flex-start;
     overflow: auto;
-    margin: -5px;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
     @include scrollbar;

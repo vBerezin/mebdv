@@ -8,29 +8,30 @@ mixin section-similar(data)
 	- data = data || {}
 	- data.class = [].concat(data.class, 'section-similar', 'js-section-similar')
 	+section(data)
-		+section-head({ class: 'section-similar__head' })
-			+section-title({
-				mods: ['thin', 'small'],
-				class: 'section-similar__title'
-			}) #{data.title}
-			+nav-slider({
-				class: 'section-similar__nav',
-				prev: {
-					attributes: {
-						'data-rel': 'section.similar.prev'
+		+l-container
+			+section-head({ class: 'section-similar__head' })
+				+section-title({
+					mods: ['thin', 'small'],
+					class: 'section-similar__title'
+				}) #{data.title}
+				+nav-slider({
+					class: 'section-similar__nav',
+					prev: {
+						attributes: {
+							'data-rel': 'section.similar.prev'
+						}
+					},
+					next: {
+						attributes: {
+							'data-rel': 'section.similar.next'
+						}
 					}
-				},
-				next: {
-					attributes: {
-						'data-rel': 'section.similar.next'
-					}
-				}
-			})
-		.section-similar__body(data-rel="section.similar.body")
-			- items = []
-			- items.length = 10
-			each item in items
-				.section-similar__item
-					+product-panel({
-						href: '/mebdv/product'
-					})
+				})
+			.section-similar__body(data-rel="section.similar.body")
+				- items = []
+				- items.length = 10
+				each item in items
+					.section-similar__item
+						+product-panel({
+							href: '/mebdv/product'
+						})
