@@ -8,6 +8,7 @@ include ~blocks/form-footer/mixin
 include ~blocks/form-label/mixin
 include ~blocks/form-success/mixin
 include ~blocks/icon-pulse/mixin
+include ~blocks/input-phone/mixin
 
 +popup({
 	title: 'Заказать звонок',
@@ -27,7 +28,7 @@ include ~blocks/icon-pulse/mixin
 			+form-field
 				input(type="text" placeholder="Иван").theme-black
 			+form-field
-				input(type="tel" placeholder="Номер телефона" required).theme-black
+				+input-phone({ class: 'theme-black' })
 			+form-footer
 				.popup-callback___submit
 					+button({

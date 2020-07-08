@@ -1,4 +1,5 @@
 include ~blocks/image/mixin
+include ~blocks/icon/mixin
 
 mixin color-item(data)
 	- data = data || {};
@@ -11,4 +12,9 @@ mixin color-item(data)
 		)&attributes(data.attributes)
 		.color-item__image
 			+image(data.image)
+			+icon({
+				name: 'check',
+				mods: 'center',
+				class: 'color-item__icon'
+			})
 		.color-item__title&attributes(data.title.attributes) #{data.title.text}

@@ -2,6 +2,7 @@
 @import "~common/styles/variables/fonts";
 @import "~common/styles/variables/animation";
 @import "~common/styles/mixins/images";
+@import "~blocks/breakpoints/mixin";
 @import "styles/animations";
 
 .color-preview {
@@ -16,7 +17,10 @@
   animation: color-preview $animation-time ease-out;
   z-index: 300;
 
-  &__body {
+  &__head {
+    margin-bottom: 15px;
+  }
+  &__main {
     padding: 15px;
     position: absolute;
     bottom: 0;
@@ -59,5 +63,29 @@
 
   &.is-active {
     display: block;
+  }
+
+  @include breakpoint(md) {
+    position: static;
+    background: none;
+    &__head {
+      margin-bottom: 20px;
+    }
+    &__main {
+      position: static;
+      padding: 0;
+      background: none;
+      animation: none;
+    }
+    &__image {
+      margin-top: 0;
+      border: none;
+      width: 130px;
+      height: 130px;
+    }
+    &__title {
+      font-weight: $font-weight-regular;
+      font-size: 1em;
+    }
   }
 }

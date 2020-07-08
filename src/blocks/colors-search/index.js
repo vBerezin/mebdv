@@ -1,7 +1,7 @@
 import { Handlers } from '~common/scripts/utils/handlers';
 import { App } from '~common/scripts/app';
 import { ColorItem } from '~blocks/color-item';
-import { ColorPreview } from '~mobile/color-preview';
+import { ColorPreview } from '~blocks/color-preview';
 
 class Form {
   #base;
@@ -10,12 +10,16 @@ class Form {
     this.el = node;
     this.selected = null;
     this.el.addEventListener('click', new Handlers.Click({
-      'colors.search.option': ({ event, target }) => {
+      'colors.search.color': ({ event, target }) => {
         const { image, title } = target.dataset;
         ColorPreview.image = image;
         ColorPreview.title = title;
         ColorPreview.open();
+        if (this.selected) {
+          this.selected.checked = false;
+        }
         this.selected = new ColorItem(target);
+        this.selected.checked = true;
       }
     }));
     this.el.addEventListener('change', ({ target }) => {
@@ -38,6 +42,7 @@ export const FormColors = (() => {
     }
     form.selected.active = true;
     form.selected.primary = true;
+    form.selected.checked = false;
     form.base = form.selected;
   });
   App.stream.on('color.preview.select.partner', () => {
@@ -46,6 +51,7 @@ export const FormColors = (() => {
     }
     form.selected.active = true;
     form.selected.primary = false;
+    form.selected.checked = false;
     form.partner = form.selected;
   });
   return form;

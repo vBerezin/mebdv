@@ -1,0 +1,10 @@
+mixin input-phone(data)
+	- data = data || {};
+	input.js-input-phone(
+		required
+		type="tel"
+		data-inputmask="'mask': '+7 (999)-999-99-99'"
+		placeholder="Номер телефона"
+		class=data.class
+		class=mods('input-phone', data.mods)
+	)&attributes(data.attributes)

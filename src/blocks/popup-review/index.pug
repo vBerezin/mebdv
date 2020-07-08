@@ -6,6 +6,7 @@ include ~blocks/form-field/mixin
 include ~blocks/form-head/mixin
 include ~blocks/form-footer/mixin
 include ~blocks/form-label/mixin
+include ~blocks/input-phone/mixin
 
 +popup({
 	title: 'Оставить отзыв',
@@ -20,7 +21,7 @@ include ~blocks/form-label/mixin
 			input(type="text" placeholder="Иван")
 		+form-field
 			+form-label Телефон:
-			input(type="tel" placeholder="+7 (XXX) XXX-XX-XX" required)
+			+input-phone
 		+form-field
 			+form-label Email:
 			input(type="email" placeholder="example@mail.ru")

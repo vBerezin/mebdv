@@ -1,10 +1,11 @@
 @import "~common/styles/variables/fonts";
+@import "~common/styles/variables/transition";
 @import "~common/styles/mixins/images";
 
 .color-item {
   display: block;
   text-align: center;
-  font-weight: $font-weight-medium;
+  cursor: pointer;
 
   &__image {
     display: block;
@@ -31,6 +32,19 @@
       @include image-cover;
     }
   }
+  &__title {
+    font-size: 12px;
+    font-weight: $font-weight-medium;
+  }
+  &__icon {
+    color: #fff;
+    font-size: 30px;
+    transition:
+      transform $transition-time ease-out,
+      opacity $transition-time ease-out;
+    opacity: 0;
+    transform: scale(0.5);
+  }
 
   &.is-active {
     .color-item__image {
@@ -38,6 +52,12 @@
       &::after {
         display: block;
       }
+    }
+  }
+  &.is-checked {
+    .color-item__icon {
+      opacity: 1;
+      transform: scale(1);
     }
   }
 

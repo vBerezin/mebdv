@@ -7,6 +7,7 @@ include ~blocks/form-head/mixin
 include ~blocks/form-footer/mixin
 include ~blocks/form-label/mixin
 include ~blocks/form-success/mixin
+include ~blocks/input-phone/mixin
 
 +popup({
 	title: 'Заказать по Вашим размерам',
@@ -22,7 +23,7 @@ include ~blocks/form-success/mixin
 				input(type="text" placeholder="Иван")
 			+form-field
 				+form-label Телефон:
-				input(type="tel" placeholder="+7 (XXX) XXX-XX-XX" required)
+				+input-phone
 			+form-footer
 				.popup-feedback__submit
 					+button({

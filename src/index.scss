@@ -15,15 +15,13 @@
 @import "~blocks/review/style";
 @import "~blocks/icon-pulse/style";
 @import "~blocks/preloader/style";
-@import "~blocks/popup/style";
-@import "~blocks/popup-feedback/style";
-@import "~blocks/popup-callback/style";
 @import "~blocks/text-block/style";
 @import "~blocks/rating/style";
 @import "~blocks/pager/style";
 @import "~blocks/breadcrumbs/style";
 @import "~blocks/counter/style";
 @import "~blocks/input-price/style";
+@import "~blocks/color-item/style";
 @import "~blocks/button/style";
 @import "~blocks/button-phone/style";
 @import "~blocks/button-rating/style";
@@ -59,6 +57,9 @@
 @import "~blocks/form-footer/style";
 @import "~blocks/form-label/style";
 @import "~blocks/form-range/style";
+@import "~blocks/form-color/style";
+@import "~blocks/color-preview/style";
+@import "~blocks/colors-search/style";
 
 @import "~blocks/option/style";
 @import "~blocks/option-order/style";
@@ -68,6 +69,11 @@
 
 @import "~blocks/product-gallery/style";
 @import "~blocks/product-description/style";
+
+@import "~blocks/popup/style";
+@import "~blocks/popup-feedback/style";
+@import "~blocks/popup-callback/style";
+@import "~blocks/popup-color/style";
 
 @import "~desktop/header/style";
 @import "~desktop/footer/style";
@@ -81,8 +87,6 @@
 @import "~desktop/contacts/style";
 @import "~desktop/checkout/style";
 @import "~desktop/product-card/style";
-
-@import "~desktop/popup-color/style";
 
 @import "~desktop/form-filter/style";
 @import "~desktop/form-feedback/style";

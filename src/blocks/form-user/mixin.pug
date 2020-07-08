@@ -3,6 +3,7 @@ include ~blocks/form-title/mixin
 include ~blocks/form-head/mixin
 include ~blocks/form-field/mixin
 include ~blocks/form-label/mixin
+include ~blocks/input-phone/mixin
 
 mixin form-user(data)
 	- data = data || {};
@@ -18,7 +19,7 @@ mixin form-user(data)
 			input(type="text" placeholder="Не обязательно")
 		+form-field
 			+form-label Телефон:
-			input(type="tel" placeholder="+7 (XXX) XXX-XX-XX" required)
+			+input-phone
 		+form-field({ mods: 'bottom' })
 			+form-label Email:
 			input(type="email" placeholder="example@mail.ru")

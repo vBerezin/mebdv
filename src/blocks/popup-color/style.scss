@@ -1,0 +1,45 @@
+@import "~blocks/breakpoints/mixin";
+
+.popup-color {
+
+  &__inner {
+    padding: 20px 15px;
+  }
+  &__head {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #F5F5F5;
+  }
+
+  @include breakpoint(md) {
+    &__inner {
+      display: flex;
+      align-items: stretch;
+      justify-content: flex-start;
+      flex-direction: row-reverse;
+      padding: 0;
+    }
+    &__main,
+    &__aside {
+      padding: 20px 25px;
+    }
+    &__main {
+      flex: 1 1 auto;
+    }
+    &__aside {
+      flex: 0 0 285px;
+      max-width: 285px;
+      box-shadow: 0 0 1px rgba(#000, 0.25);
+    }
+    &__head {
+      padding-bottom: 0;
+      margin-bottom: 20px;
+      border-bottom: none;
+    }
+    &__preview {
+      padding-top: 20px;
+      margin-top: 20px;
+      border-top: 1px solid #F5F5F5;
+    }
+  }
+}

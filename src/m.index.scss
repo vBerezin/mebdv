@@ -16,20 +16,6 @@
 @import "~blocks/pager/style";
 @import "~blocks/rating/style";
 @import "~blocks/map-box/style";
-@import "~blocks/form/style";
-@import "~blocks/form-title/style";
-@import "~blocks/form-head/style";
-@import "~blocks/form-footer/style";
-@import "~blocks/form-field/style";
-@import "~blocks/form-label/style";
-@import "~blocks/section/style";
-@import "~blocks/section-title/style";
-@import "~blocks/section-head/style";
-@import "~blocks/section-footer/style";
-@import "~blocks/popup/style";
-@import "~blocks/popup-review/style";
-@import "~blocks/popup-feedback/style";
-@import "~blocks/popup-callback/style";
 @import "~blocks/counter/style";
 @import "~blocks/spoiler/style";
 @import "~blocks/order-info/style";
@@ -38,26 +24,40 @@
 @import "~blocks/text-block/style";
 @import "~blocks/brand/style";
 @import "~blocks/review/style";
-@import "~blocks/color-item/style";
 @import "~blocks/input-price/style";
+@import "~blocks/select-color/style";
+@import "~blocks/scrollbar/style";
+@import "~blocks/preloader/style";
+@import "~blocks/color-item/style";
+
 @import "~blocks/option/style";
 @import "~blocks/option-order/style";
 @import "~blocks/option-filter/style";
 @import "~blocks/option-spoiler/style";
 @import "~blocks/option-button/style";
 @import "~blocks/option-color/style";
+
 @import "~blocks/button-rating/style";
 @import "~blocks/button-menu/style";
+
 @import "~blocks/menu-app/style";
-@import "~blocks/select-color/style";
+
 @import "~blocks/slider-main/style";
-@import "~blocks/scrollbar/style";
-@import "~blocks/preloader/style";
 @import "~blocks/slider-range/style";
+
 @import "~blocks/colors-search/style";
+@import "~blocks/color-preview/style";
+
 @import "~blocks/product-panel/style";
 @import "~blocks/product-gallery/style";
 @import "~blocks/product-cart/style";
+
+@import "~blocks/form/style";
+@import "~blocks/form-title/style";
+@import "~blocks/form-head/style";
+@import "~blocks/form-footer/style";
+@import "~blocks/form-field/style";
+@import "~blocks/form-label/style";
 @import "~blocks/form-user/style";
 @import "~blocks/form-range/style";
 @import "~blocks/form-delivery/style";
@@ -69,6 +69,17 @@
 @import "~blocks/form-checkout/style";
 @import "~blocks/form-success/style";
 @import "~blocks/form-sizes/style";
+
+@import "~blocks/section/style";
+@import "~blocks/section-title/style";
+@import "~blocks/section-head/style";
+@import "~blocks/section-footer/style";
+
+@import "~blocks/popup/style";
+@import "~blocks/popup-review/style";
+@import "~blocks/popup-feedback/style";
+@import "~blocks/popup-callback/style";
+@import "~blocks/popup-color/style";
 
 @import "~mobile/header/style";
 @import "~mobile/footer/style";
@@ -82,7 +93,6 @@
 @import "~mobile/cart/style";
 @import "~mobile/checkout/style";
 @import "~mobile/product-card/style";
-@import "~mobile/color-preview/style";
 @import "~mobile/form-review/style";
 @import "~mobile/form-filter/style";
 @import "~mobile/form-feedback/style";
@@ -94,6 +104,5 @@
 @import "~mobile/section-about/style";
 @import "~mobile/section-slider/style";
 @import "~mobile/slider-products/style";
-@import "~mobile/popup-color/style";
 @import "~mobile/popup-filter/style";
 

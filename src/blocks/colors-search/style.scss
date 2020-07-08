@@ -1,5 +1,7 @@
 @import "~common/styles/variables/fonts";
 @import "~common/styles/mixins/images";
+@import "~common/styles/mixins/scrollbar";
+@import "~blocks/breakpoints/mixin";
 
 .colors-search {
   &__head {
@@ -14,6 +16,7 @@
     padding-bottom: 15px;
     margin-bottom: 15px;
     border-bottom: 1px solid #E7E7E7;
+    scroll-snap-align: start;
     &:last-child {
       padding-bottom: 0;
       margin-bottom: 0;
@@ -32,9 +35,30 @@
     font-size: 12px;
     font-weight: $font-weight-medium;
   }
-  &__options {
+  &__colors {
     display: grid;
     grid-gap: 15px;
     grid-template-columns: repeat(auto-fit, 60px);
+  }
+  &__options {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  &__option {
+    margin: 0 10px 15px 0;
+  }
+
+  @include breakpoint(md) {
+    &__body {
+      padding-right: 30px;
+      max-height: 550px;
+      overflow-y: auto;
+      scroll-snap-type: y mandatory;
+      overflow-scrolling: touch;
+      -webkit-overflow-scrolling: touch;
+      @include scrollbar;
+    }
   }
 }

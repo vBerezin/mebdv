@@ -5,6 +5,7 @@ include ~blocks/form-field/mixin
 include ~blocks/form-head/mixin
 include ~blocks/form-footer/mixin
 include ~blocks/form-label/mixin
+include ~blocks/input-phone/mixin
 
 +form({
 	mods: 'large',
@@ -19,7 +20,7 @@ include ~blocks/form-label/mixin
 			+form-field
 				input(type="email" placeholder="example@mail.ru")
 			+form-field
-				input(type="tel" placeholder="+7 (XXX) XXX-XX-XX" required)
+				+input-phone
 			+form-field({
 				class: 'form-feedback__message'
 			})
