@@ -111,5 +111,8 @@
   }
   &.button--round {
     border-radius: 20px;
+    &.button--large {
+      border-radius: 22px;
+    }
   }
 }

@@ -2,8 +2,8 @@
   $z-index: 300;
   position: relative;
   min-height: 80px;
-  background: #FAFAFA;
   z-index: $z-index;
+  background: #FAFAFA;
 
   &__bottom {
     display: flex;
@@ -41,5 +41,10 @@
     left: 0;
     right: 0;
     top: 0;
+  }
+  &.header--blurred {
+    background: rgba(#FAFAFA, 0.8);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
   }
 }
