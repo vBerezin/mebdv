@@ -10,12 +10,18 @@
   position: relative;
   z-index: $z-index;
 
-  &.owl-carousel {
+  .owl-carousel {
     display: block;
     overflow: hidden;
   }
   .owl-stage-outer {
     overflow: visible;
+  }
+  &__body {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow: auto;
   }
   &__item {
     display: block;
