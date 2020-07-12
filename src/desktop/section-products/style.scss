@@ -1,4 +1,13 @@
 .section-products {
+  .owl-stage,
+  .owl-item {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+  }
+  .owl-item {
+    flex-direction: column;
+  }
   &__head {
     display: flex;
     align-items: center;
@@ -18,5 +27,13 @@
   }
   &__item {
     padding: 5px;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex: 1 0 auto;
+    & > * {
+      flex: 1 0 auto;
+    }
   }
 }

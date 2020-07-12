@@ -14,7 +14,7 @@
   border-right: 1px solid #F2F2F2;
   position: relative;
   max-width: 90px;
-  width: 260px;
+  width: 270px;
   z-index: $z-index;
   &:hover {
     max-width: none;
@@ -41,6 +41,7 @@
 
   &__head {
     font-size: 11px;
+    line-height: 15px;
     color: #000;
     font-weight: $font-weight-semi-bold;
     flex: 0 0 auto;
@@ -52,7 +53,8 @@
   &__title {
     display: none;
     font-size: 20px;
-    padding: 30px 30px 10px 30px;
+    line-height: 30px;
+    padding: 20px 30px 10px 30px;
   }
   &__toggle {
     text-align: center;
