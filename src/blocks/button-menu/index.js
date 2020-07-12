@@ -1,3 +1,5 @@
+import './style.scss';
+
 export class ButtonMenu {
   #active;
   constructor(node) {

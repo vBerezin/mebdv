@@ -1,3 +1,5 @@
+import './style.scss';
+
 import { ButtonMenu } from '~blocks/button-menu';
 import { MenuSticky } from '~mobile/menu-sticky';
 import { HeaderMenu } from './scripts/header-menu';

@@ -1,3 +1,5 @@
+import './style.scss';
+
 import { App } from '~common/scripts/app';
 import { fakeAjax } from '~common/scripts/utils/fake-ajax';
 import { appPreloader } from '~blocks/app-preloader';

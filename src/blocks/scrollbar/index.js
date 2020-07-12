@@ -1,4 +1,5 @@
 // TODO: touch drag
+import './style.scss';
 
 class Proto {
   constructor() {

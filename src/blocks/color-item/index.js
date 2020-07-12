@@ -1,3 +1,5 @@
+import './style.scss';
+
 export class ColorItem {
   #active;
   #primary;

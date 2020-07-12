@@ -7,7 +7,7 @@ export class HeaderSearch {
     this.#active = false;
     this.el = header;
     this.callback = callback;
-    this.#search = header.querySelector('[data-rel="header.search"]');
+    this.#search = header.querySelector('[data-rel="header.search.form"]');
     this.search = new FormSearch(this.#search);
   }
   close() {

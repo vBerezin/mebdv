@@ -1,3 +1,5 @@
+import './style.scss';
+
 import { App } from '~common/scripts/app';
 import { documentReady } from '~common/scripts/utils/document-ready';
 

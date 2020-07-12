@@ -1,3 +1,5 @@
+import './style.scss';
+
 import { Icon } from '~blocks/icon';
 import { Handlers } from '~common/scripts/utils/handlers';
 

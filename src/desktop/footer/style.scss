@@ -1,19 +1,14 @@
+@import "~blocks/breakpoints/mixin";
 @import "~common/styles/variables/fonts";
 
 .footer {
   &__top {
-    display: flex;
-    align-items: stretch;
-    justify-content: flex-start;
     border-radius: 15px 15px 0 0;
     background: #FAFAFA;
   }
   &__bottom {
     font-size: 12px;
     line-height: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
     padding: 15px 30px;
     margin-top: 1px;
     background: #FAFAFA;
@@ -163,6 +158,19 @@
         padding: 0 10px;
         margin: 0;
       }
+    }
+  }
+
+  @include breakpoint(lg) {
+    &__top {
+      display: flex;
+      align-items: stretch;
+      justify-content: flex-start;
+    }
+    &__bottom {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
     }
   }
 }

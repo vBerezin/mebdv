@@ -68,6 +68,9 @@
   @include breakpoint(md) {
     position: static;
     background: none;
+    &__close {
+      display: none;
+    }
     &__head {
       margin-bottom: 20px;
     }

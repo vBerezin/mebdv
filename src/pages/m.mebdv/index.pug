@@ -39,3 +39,8 @@ block main
 block prepend footer
 	include ~mobile/section-contact/index
 	include ~mobile/section-map/index
+
+block stylesheets
+	link(rel="stylesheet" href=`/m.index.css?${$.version}`)
+block scripts
+	script(src=`/m.index.js?${$.version}`)

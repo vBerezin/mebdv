@@ -1,5 +1,6 @@
 @import "~common/styles/variables/fonts";
 @import "~common/styles/variables/transition";
+@import "~blocks/breakpoints/mixin";
 
 .option-order {
   display: inline-flex;

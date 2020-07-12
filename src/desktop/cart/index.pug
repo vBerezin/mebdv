@@ -6,7 +6,7 @@ include ~blocks/cart-total/mixin
 		.cart__list
 			each i in [1,2,3]
 				+product-cart({
-					href: '/m.mebdv/product',
+					href: '/mebdv/product',
 					class: 'cart__item',
 					image: {
 						src: `/images/product/cart-${i}.png`,
@@ -21,7 +21,7 @@ include ~blocks/cart-total/mixin
 			button: {
 				text: 'Оформить заказ',
 				attributes: {
-					href: '/m.mebdv/checkout'
+					href: '/mebdv/checkout'
 				}
 			}
 		})

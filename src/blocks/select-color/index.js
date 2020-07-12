@@ -1,3 +1,5 @@
+import './style.scss';
+
 import { Handlers } from '~common/scripts/utils/handlers';
 
 class SelectColor {

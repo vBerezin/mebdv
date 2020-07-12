@@ -1,6 +1,7 @@
+import './style.scss';
+
 import { Scrollbar } from '~blocks/scrollbar';
 import {documentReady} from "~common/scripts/utils/document-ready";
-
 
 class Instance {
   #container;

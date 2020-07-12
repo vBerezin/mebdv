@@ -24,7 +24,9 @@ module.exports = {
     context: src,
     src: {
       index: 'index.js',
+      main: 'main.js',
       'm.index': 'm.index.js',
+      'm.main': 'm.main.js',
     },
     dest: build,
   },

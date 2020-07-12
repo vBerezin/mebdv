@@ -34,3 +34,8 @@ block main
 		mods: 'bottom'
 	})
 	include ~desktop/section-about/index
+
+block stylesheets
+	link(rel="stylesheet" href=`/index.css?${$.version}`)
+block scripts
+	script(src=`/index.js?${$.version}`)

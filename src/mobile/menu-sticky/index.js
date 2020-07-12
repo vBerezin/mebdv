@@ -1,3 +1,5 @@
+import './style.scss';
+
 import { Header } from '~mobile/header';
 import { MenuMobile } from '~mobile/menu-mobile';
 import { Handlers } from '~common/scripts/utils/handlers';
