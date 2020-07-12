@@ -1,4 +1,5 @@
 @import "~common/styles/variables/fonts";
+@import "~blocks/breakpoints/mixin";
 
 .contacts {
   &__map {
@@ -23,18 +24,26 @@
       flex: 1 1 auto;
     }
   }
-  &__body {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
   &__list {
     display: grid;
     grid-gap: 20px 40px;
     grid-template-columns: repeat(2, 1fr);
-    flex: 0 0 600px;
   }
   &__form {
-    flex: 1 1 auto;
+    margin-top: 30px;
+  }
+  @include breakpoint(lg) {
+    &__body {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+    &__list {
+      flex: 0 0 600px;
+    }
+    &__form {
+      flex: 1 1 auto;
+      margin-top: 0;
+    }
   }
 }
