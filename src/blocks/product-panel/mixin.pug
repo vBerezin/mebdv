@@ -5,7 +5,7 @@ include ~blocks/rating/mixin
 
 mixin product-panel(data)
 	- data = data || {};
-	.product-panel(
+	.product-panel.js-product-panel(
 		class=data.class
 		class=mods('product-panel', data.mods)
 	)&attributes(data.attributes)
@@ -39,9 +39,11 @@ mixin product-panel(data)
 					+badge({mods: 'small', class: 'product-panel__reviews-count'}) 15
 		.product-panel__footer
 			if (DESKTOP)
-				+button({
-					icon: 'cart',
-					mods: ['block', 'round', 'orange']
-				}) Добавить в коризну
+				form(action="?add" data-url="/mebdv/ajax/product-panel-button.html")
+					+button({
+						icon: 'cart',
+						mods: ['block', 'round', 'orange']
+					}) Добавить в коризну
 			else
-				+button({ mods: ['block', 'small', 'round', 'orange'] }) В корзину
+				form(action="?add" data-url="/m.mebdv/ajax/product-panel-button.html")
+					+button({ mods: ['block', 'small', 'round', 'orange'] }) В корзину

@@ -5,8 +5,11 @@ mixin button(data)
 	-
 		data = data || {};
 		url = data.attributes && data.attributes.href;
+		state = [];
+		if (data.active) state.push('is-active');
 		tagName = url ? 'a' : 'button';
 	#{tagName}.button(
+		class=state
 		class=data.class
 		class=mods('button', data.mods)
 		)&attributes(data.attributes) #{data.text}

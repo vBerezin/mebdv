@@ -13,6 +13,8 @@
   align-items: center;
   justify-content: center;
   background: $color-overlay;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
   animation: preloader-show $animation-time ease-out;
   z-index: 1000;
 

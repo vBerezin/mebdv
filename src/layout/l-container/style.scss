@@ -3,10 +3,10 @@
 
 .l-container {
   padding: 0 $layout-padding;
-  @include breakpoint(xl) {
-    padding: 0 $layout-padding-xl
+  @include breakpoint(md) {
+    padding: 0 $layout-padding-md;
   }
   @include breakpoint(xxl) {
-    padding: 0 $layout-padding-xxl
+    padding: 0 $layout-padding-xxl;
   }
 }

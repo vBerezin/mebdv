@@ -1,3 +1,5 @@
+import './style.scss';
+
 /**
  * @function { icon }
  * @returns { HTMLElement }

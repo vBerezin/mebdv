@@ -1,0 +1,15 @@
+extends ~common/templates/layout/ajax
+
+include ~blocks/button/mixin
+
+block body
+	.header__cart.is-animated#js-cart
+		+button({
+			icon: 'cart',
+			badge: '99',
+			mods: ['round', 'orange', 'block'],
+			attributes: {
+				href: '/mebdv/cart',
+			}
+		})
+			span.header__cart-label Корзина

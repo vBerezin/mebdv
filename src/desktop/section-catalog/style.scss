@@ -1,3 +1,6 @@
+@import "~common/styles/variables/fonts";
+@import "~common/styles/variables/transition";
+
 .section-catalog {
   &__body {
     display: grid;
@@ -14,6 +17,10 @@
     font-weight: $font-weight-medium;
     color: #312E76;
     background: #F4F4F4;
+    transition: transform $transition-time ease-out;
+    &:hover {
+      transform: scale(1.1);
+    }
 
     &__image {
       display: flex;

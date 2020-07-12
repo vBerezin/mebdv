@@ -1,0 +1,34 @@
+@keyframes header-cart {
+  0%,
+  20%,
+  40% {
+    transform: translateX(2px);
+  }
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
+  10%,
+  30%,
+  50% {
+    transform: translateX(-2px);
+  }
+  70%,
+  90% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes header-search {
+  0% {
+    opacity: 0;
+    max-width: 0;
+  }
+  100% {
+    max-width: 100%;
+    opacity: 1;
+  }
+}

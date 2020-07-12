@@ -1,3 +1,7 @@
+@import "~common/styles/variables/animation";
+@import "~blocks/breakpoints/mixin";
+@import "styles/animations";
+
 .header {
   $z-index: 300;
   position: relative;
@@ -5,35 +9,50 @@
   z-index: $z-index;
   background: #FAFAFA;
 
+  &__top {
+    padding: 10px 30px;
+    background: #F4F4F4;
+  }
   &__bottom {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     padding: 20px 30px;
   }
+  &__bottom-left {
+    flex: 1 1 auto;
+    margin-right: 20px;
+    position: relative;
+  }
   &__logo {
     font-size: 0;
     line-height: 0;
     flex: 0 0 110px;
     max-width: 110px;
-    margin-right: 30px;
+    margin-right: 20px;
   }
-  &__search {
-    flex: 0 1 260px;
-    max-width: 260px;
+  &__search-toggle {
+    display: none;
   }
   &__menu {
+    display: none;
     flex: 1 1 auto;
-    margin: 0 30px;
+    margin: 0 20px;
   }
   &__callback {
     flex: 0 0 auto;
     min-width: 160px;
-    margin-left: 30px;
+    margin-left: 20px;
   }
   &__cart {
     flex: 0 0 auto;
-    margin-left: 30px;
+    margin-left: 20px;
+    &.is-animated {
+      animation: header-cart 1s ease-in-out;
+    }
+  }
+  &__cart-label {
+    display: none;
   }
 
   &.header--sticky {
@@ -42,9 +61,58 @@
     right: 0;
     top: 0;
   }
-  &.header--blurred {
+  &.header--search-active {
+    .header__search-body {
+      display: block;
+    }
+  }
+  .supports-backdrop-filter & {
     background: rgba(#FAFAFA, 0.8);
     -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
+  }
+
+  @include breakpoint(md) {
+    &__cart-label {
+      display: inline;
+    }
+  }
+  @include breakpoint(xl) {
+    &__top {
+      display: none;
+    }
+    &__menu {
+      display: block;
+    }
+    &__bottom-left {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    &__search-toggle {
+      display: block;
+    }
+    &__search-body {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      animation: header-search $animation-time ease-out;
+    }
+  }
+  @include breakpoint(xxl) {
+    &__search {
+      flex: 1 1 auto;
+    }
+    &__search-toggle {
+      display: none;
+    }
+    &__search-body {
+      display: block;
+      position: relative;
+      width: auto;
+      animation: none;
+    }
   }
 }

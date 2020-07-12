@@ -1,0 +1,11 @@
+extends ~common/templates/layout/ajax
+
+include ~blocks/icon/mixin
+include ~blocks/badge/mixin
+
+block body
+	a.menu-sticky__item#js-cart(href="/m.mebdv/cart")
+		span.menu-sticky__item__icon
+			+icon({name: 'cart'})
+			+badge({mods: ['orange', 'small']}) 99
+		span.menu-sticky__item__name Корзина

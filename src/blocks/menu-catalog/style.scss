@@ -1,15 +1,36 @@
 @import "~common/styles/variables/fonts";
 @import "~common/styles/variables/animation";
+@import "~common/styles/variables/transition";
+@import "~blocks/breakpoints/mixin";
 @import "styles/animations";
 
 .menu-catalog {
   $z-index: 300;
-  position: relative;
-  width: 260px;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-direction: column;
   background: #fff;
-  z-index: $z-index;
   border-right: 1px solid #F2F2F2;
-  overflow: auto;
+  position: relative;
+  max-width: 90px;
+  width: 260px;
+  z-index: $z-index;
+  &:hover {
+    max-width: none;
+    .menu-catalog__title {
+      display: block;
+    }
+    .menu-catalog__toggle {
+      display: none;
+    }
+    .menu-catalog__item {
+      &__title,
+      &__icon {
+        display: block;
+      }
+    }
+  }
 
   ul,
   li {
@@ -17,22 +38,26 @@
     padding: 0;
     margin: 0;
   }
-  li:hover {
-    > .menu-catalog__item {
-      background: #FAFAFA;
-    }
-    > .menu-catalog__dropdown {
-      display: grid;
-    }
-  }
 
   &__head {
-    padding: 30px 30px 10px 30px;
-  }
-  &__title {
-    font-size: 20px;
+    font-size: 11px;
     color: #000;
     font-weight: $font-weight-semi-bold;
+    flex: 0 0 auto;
+  }
+  &__body {
+    flex: 1 1 auto;
+    overflow: auto;
+  }
+  &__title {
+    display: none;
+    font-size: 20px;
+    padding: 30px 30px 10px 30px;
+  }
+  &__toggle {
+    text-align: center;
+    background: #F4F4F4;
+    padding: 15px 20px;
   }
   &__item {
     display: flex;
@@ -46,6 +71,11 @@
     text-decoration: none;
     font-weight: $font-weight-bold;
     padding: 10px 15px 10px 30px;
+
+    &__title,
+    &__icon {
+      display: none;
+    }
     &__title {
       flex: 1 1 auto;
     }
@@ -64,10 +94,11 @@
       height: 1em;
       margin-left: 15px;
     }
-    &:hover {
+    &:hover,
+    &.is-active {
       background: #FAFAFA;
     }
-    &.is-active {
+    &.is-highlighted {
       color: #F78B3D;
     }
   }
@@ -105,6 +136,9 @@
     border-left: 1px solid #F2F2F2;
     animation: menu-catalog-dropdown $animation-time ease-out;
     overflow: auto;
+    &.is-active {
+      display: grid;
+    }
   }
   &__dropdown-sub {
     display: none;
@@ -161,5 +195,29 @@
     left: 0;
     bottom: 0;
     top: 80px;
+  }
+  .supports-backdrop-filter & {
+    .menu-catalog__dropdown {
+      background: rgba(#FAFAFA, 0.8);
+      -webkit-backdrop-filter: blur(15px);
+      backdrop-filter: blur(15px);
+    }
+  }
+
+  @include breakpoint(xl) {
+    max-width: none;
+
+    &__title {
+      display: block;
+    }
+    &__toggle {
+      display: none;
+    }
+    &__item {
+      &__title,
+      &__icon {
+        display: block;
+      }
+    }
   }
 }

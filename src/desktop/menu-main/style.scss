@@ -1,3 +1,5 @@
+@import "~common/styles/variables/fonts";
+
 .menu-main {
   color: #202020;
   font-size: 14px;
@@ -17,6 +19,8 @@
     }
   }
   &__item {
+    white-space: nowrap;
+
     &.is-active,
     &:hover {
       color: #F78B3D;
@@ -25,5 +29,10 @@
   &__item-link {
     color: currentColor;
     text-decoration: none;
+  }
+  &.menu-main--center {
+    ul {
+      justify-content: center;
+    }
   }
 }

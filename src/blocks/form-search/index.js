@@ -1,3 +1,5 @@
+import './style.scss';
+
 export class FormSearch {
   constructor(node) {
     this.el = node;

@@ -1,5 +1,6 @@
 @import "~common/styles/variables/transition";
 @import "~common/styles/mixins/images";
+@import "~blocks/breakpoints/mixin";
 
 .slider-main {
   $z-index: 10;
@@ -17,6 +18,7 @@
   .owl-stage-outer {
     overflow: visible;
   }
+
   &__body {
     display: flex;
     align-items: flex-start;
@@ -36,6 +38,7 @@
     border-radius: 10px;
     img {
       @include image-cover;
+      min-width: 100%;
     }
   }
   &__nav {
@@ -53,7 +56,6 @@
   &__next {
     display: flex;
     align-items: center;
-    padding: 25px;
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -69,19 +71,27 @@
   }
   &__next {
     justify-content: flex-start;
-    left: 50%;
     right: 0;
     background: linear-gradient(to left, rgba(#fff, 0.5), rgba(#fff, 0.001));
   }
   &__prev {
     justify-content: flex-end;
-    right: 50%;
     left: 0;
     background: linear-gradient(to right, rgba(#fff, 0.5), rgba(#fff, 0.001));
   }
 
   @include breakpoint(md) {
     overflow: hidden;
+    &__item {
+      margin: 0 15px;
+      height: 290px;
+      width: auto;
+    }
+    &__nav {
+      display: block;
+    }
+  }
+  @include breakpoint(lg) {
     .owl-item {
       opacity: 0.5;
       transition: opacity $transition-time ease-out;
@@ -95,13 +105,22 @@
       width: 980px;
     }
     &__prev {
-      margin-right: 520px;
+      right: 50%;
+      margin-right: 490px;
+      padding-right: 20px;
     }
     &__next {
-      margin-left: 520px;
+      left: 50%;
+      margin-left: 490px;
+      padding-left: 20px;
     }
-    &__nav {
-      display: block;
+  }
+  @include breakpoint(xl) {
+    &__prev {
+      padding-right: 50px;
+    }
+    &__next {
+      padding-left: 50px;
     }
   }
 }

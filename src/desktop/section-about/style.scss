@@ -1,13 +1,8 @@
+@import '~blocks/breakpoints/mixin';
+
 .section-about {
   &__title {
     max-width: 480px;
-  }
-  &__inner {
-    display: flex;
-  }
-  &__main {
-    flex: 0 1 600px;
-    max-width: 600px;
   }
   &__features {
     display: grid;
@@ -15,9 +10,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
   &__reviews {
-    flex: 0 1 730px;
-    max-width: 730px;
-    margin-left: 150px;
+    margin-top: 50px;
   }
   &__reviews-title {
     flex: 1 1 auto;
@@ -34,5 +27,26 @@
     font-size: 0;
     line-height: 0;
     margin-bottom: 40px;
+  }
+
+  @include breakpoint(lg) {
+    &__inner {
+      display: flex;
+    }
+    &__main {
+      flex: 0 1 600px;
+      max-width: 600px;
+    }
+    &__reviews {
+      flex: 0 1 730px;
+      max-width: 730px;
+      margin-top: 0;
+      margin-left: 50px;
+    }
+  }
+  @include breakpoint(xl) {
+    &__reviews {
+      margin-left: 150px;
+    }
   }
 }

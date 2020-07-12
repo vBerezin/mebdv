@@ -1,0 +1,13 @@
+extends ~common/templates/layout/ajax
+
+include ~blocks/button/mixin
+
+block body
+	+button({
+		active: true,
+		icon: 'check',
+		mods: ['block', 'round'],
+		attributes: {
+			href: '/mebdv/cart'
+		}
+	}) Товар в корзине

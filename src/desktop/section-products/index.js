@@ -1,3 +1,5 @@
+import './style.scss';
+
 import {documentReady} from "~common/scripts/utils/document-ready";
 import {OwlCarousel} from "~blocks/owl-carousel";
 import {App} from "~common/scripts/app";
@@ -23,8 +25,8 @@ class Instance {
     this.carousel = new OwlCarousel({
       node: this.#slider,
       options: {
-        items: 4,
-        slideBy: 4,
+        items: 3,
+        slideBy: 3,
         dots: false,
         margin: 20,
         onResized: (event) => this.onchange(event),
@@ -32,13 +34,17 @@ class Instance {
         onInitialized: (event) => this.onchange(event),
         responsive: {
           [App.breakpoints.points.xl]: {
+            items: 4,
+            slideBy: 4,
+          },
+          [App.breakpoints.points.xxl]: {
             items: 5,
             slideBy: 5,
           },
-          [App.breakpoints.points.xxl]: {
+          [App.breakpoints.points.large]: {
             items: 6,
             slideBy: 6,
-          }
+          },
         }
       }
     });

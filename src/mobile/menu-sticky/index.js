@@ -1,6 +1,7 @@
 import { Header } from '~mobile/header';
 import { MenuMobile } from '~mobile/menu-mobile';
 import { Handlers } from '~common/scripts/utils/handlers';
+import { App } from '~common/scripts/app';
 
 class Menu {
   #active;
@@ -17,6 +18,21 @@ class Menu {
     return this.#active;
   }
 }
+
+App.stream.on('cart.change', async () => {
+  const cart = document.getElementById('js-cart');
+  try {
+    const response = await fetch(
+      '/m.mebdv/ajax/cart.html',
+      {
+        method: 'GET',
+      });
+    const html = await response.text();
+    cart.outerHTML = html;
+  } catch (e) {
+    App.debug(e);
+  }
+});
 
 export const MenuSticky = (() => {
   const node = document.querySelector('.js-menu-sticky');

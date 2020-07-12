@@ -1,5 +1,5 @@
 $layout-padding: 15px;
-$layout-padding-xl: 40px;
+$layout-padding-md: 30px;
 $layout-padding-xxl: 80px;
 $layout-columns: 12;
 $layout-gutter: 40px;
@@ -10,5 +10,6 @@ $layout-breakpoints: (
   md: 1024px,
   lg: 1280px,
   xl: 1440px,
-  xxl: 1920px,
+  xxl: 1680px,
+  large: 1920px,
 );

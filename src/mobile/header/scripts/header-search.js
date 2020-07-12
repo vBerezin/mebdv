@@ -2,12 +2,13 @@ import { FormSearch } from '~blocks/form-search';
 
 export class HeaderSearch {
   #active;
+  #search;
   constructor(header, callback) {
     this.#active = false;
     this.el = header;
     this.callback = callback;
-    const search = header.querySelector('[data-rel="header.search"]');
-    this.search = new FormSearch(search);
+    this.#search = header.querySelector('[data-rel="header.search"]');
+    this.search = new FormSearch(this.#search);
   }
   close() {
     this.active = false;

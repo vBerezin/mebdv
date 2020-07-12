@@ -1,3 +1,5 @@
+import './style.scss';
+
 import { OwlCarousel } from "~blocks/owl-carousel";
 import {Handlers} from "~common/scripts/utils/handlers";
 
@@ -14,10 +16,17 @@ import {Handlers} from "~common/scripts/utils/handlers";
       nav: false,
       margin: 0,
       responsive: {
-        [App.breakpoints.points.sm]: {
+        [App.breakpoints.points.md]: {
+          autoWidth: false,
+          items: 1,
+          dots: true,
+          loop: true,
+        },
+        [App.breakpoints.points.lg]: {
           center: true,
-          nav: false,
+          items: 2,
           dots: false,
+          autoWidth: true,
           loop: true,
         }
       },

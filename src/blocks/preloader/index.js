@@ -1,3 +1,5 @@
+import './style.scss';
+
 export class Preloader {
   constructor(node) {
     this.el = node;

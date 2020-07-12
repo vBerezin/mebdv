@@ -1,0 +1,12 @@
+extends ~common/templates/layout/ajax
+
+include ~blocks/button/mixin
+
+block body
+	+button({
+		active: true,
+		mods: ['block', 'small', 'round'],
+		attributes: {
+			href: '/m.mebdv/cart'
+		}
+	}) Товар в корзине

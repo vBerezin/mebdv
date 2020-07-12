@@ -1,20 +1,65 @@
 include ~blocks/image/mixin
 include ~blocks/button/mixin
 include ~blocks/form-search/mixin
+include ~blocks/icon-box/mixin
+include ~desktop/menu-main/mixin
+
+-
+	menu = [
+		{
+			title: 'О магазине',
+			href: '#'
+		},
+		{
+			title: 'Доставка и оплата',
+			href: '/mebdv/delivery',
+			active: true,
+		},
+		{
+			title: 'Гарантия',
+			href: '#',
+		},
+		{
+			title: 'Производители',
+			href: '#',
+		},
+		{
+			title: 'Отзывы',
+			href: '/mebdv/reviews',
+		},
+		{
+			title: 'Контакты',
+			href: '/mebdv/contacts',
+		},
+	]
 
 header.header.js-header
 	.header__top
+		+menu-main({ items: menu })
 	.header__bottom
 		.header__logo
 			a(href="/mebdv")
 				+image({ src: '/images/logo.svg' })
-		.header__search
-			+form-search({
-				mods: 'round',
-				placeholder: 'Поиск среди 10 000 товаров...'
-			})
-		.header__menu
-			include ~desktop/menu-main/index
+		.header__bottom-left
+			.header__search
+				+icon-box({
+					class: 'header__search-toggle',
+					icon: 'search',
+					mods: ['round', 'button'],
+					attributes: {
+						'data-click': 'header.search.toggle',
+					}
+				})
+				.header__search-body
+					+form-search({
+						mods: 'round',
+						placeholder: 'Поиск среди 10 000 товаров...',
+						attributes: {
+							'data-rel': 'header.search.form',
+						}
+					})
+			.header__menu
+				+menu-main({ items: menu, mods: 'center' })
 		.header__phone
 			include ~blocks/button-phone/index
 		.header__callback
@@ -25,12 +70,13 @@ header.header.js-header
 					'data-popup-id': 'popup-callback',
 				}
 			}) Заказать звонок
-		.header__cart
+		.header__cart#js-cart
 			+button({
 				icon: 'cart',
-				badge: '12',
+				badge: '10',
 				mods: ['round', 'orange', 'block'],
 				attributes: {
 					href: '/mebdv/cart'
 				}
-			}) Корзина
+			})
+				span.header__cart-label Корзина

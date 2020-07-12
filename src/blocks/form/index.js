@@ -1,5 +1,6 @@
 import {App} from "~common/scripts/app";
 import {documentReady} from "~common/scripts/utils/document-ready";
+import './style.scss';
 
 class Instance {
   #form;

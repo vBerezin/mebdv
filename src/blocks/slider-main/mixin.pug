@@ -22,25 +22,12 @@ mixin slider-main(data)
 						mods: 'center'
 					})
 		.slider-main__body(data-rel="slider.main.carousel")
-			a.slider-main__item(href="#")
-				+lazy-image({
-					src: '/images/slider/slide-1.jpg',
-					srcset: {
-						'2x': '/images/slider/slide-1@2x.jpg',
-					}
-				})
-			a.slider-main__item(href="#")
-				+lazy-image({
-					src: '/images/slider/slide-2.jpg',
-					srcset: {
-						'2x': '/images/slider/slide-2@2x.jpg',
-					}
-				})
-			a.slider-main__item(href="#")
-				+lazy-image({
-					src: '/images/slider/slide-3.jpg',
-					srcset: {
-						'2x': '/images/slider/slide-3@2x.jpg',
-					}
-				})
+			each slide in [1,2,3]
+				a.slider-main__item(href="#")
+					+lazy-image({
+						src: `/images/slider/slide-${slide}.png`,
+						srcset: {
+							'2x': `/images/slider/slide-${slide}@2x.png`,
+						}
+					})
 

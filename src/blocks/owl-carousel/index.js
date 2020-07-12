@@ -1,3 +1,5 @@
+import './style.scss';
+
 import 'owl.carousel';
 import { Icon } from '~blocks/icon';
 

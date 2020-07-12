@@ -1,0 +1,12 @@
+mixin menu-main(data)
+	nav.menu-main(
+		class=data.class
+		class=mods('menu-main', data.mods)
+	)&attributes(data.attributes)
+		ul
+			each item in data.items
+				- state = [];
+				- if (item.active) state.push('is-active')
+				li
+					.menu-main__item(class=state)
+						a.menu-main__item-link(href=item.href) #{item.title}
