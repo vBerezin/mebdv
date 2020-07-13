@@ -22,6 +22,7 @@ import '~blocks/section-head';
 import '~blocks/section-footer';
 
 import '~blocks/form';
+import '~blocks/form-ajax';
 import '~blocks/form-title';
 import '~blocks/form-head';
 import '~blocks/form-footer';

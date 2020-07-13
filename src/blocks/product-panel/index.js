@@ -1,35 +1,15 @@
 import './style.scss';
 import {App} from "~common/scripts/app";
 import {documentReady} from "~common/scripts/utils/document-ready";
-import {appPreloader} from "~blocks/app-preloader";
+import {FormAjax} from "~blocks/form-ajax";
 
 class Instance {
   #loading;
   constructor(node) {
     this.el = node;
     this.#loading = false;
-    this.el.addEventListener('submit', (event) => this.submit(event));
-  }
-  async submit(event) {
-    if (this.#loading) return false;
-    this.#loading = true;
-    event.preventDefault();
-    const form = event.target;
-    const { url } = form.dataset;
-    appPreloader.show();
-    try {
-      const response = await fetch(url, {
-        method: 'GET'
-      });
-      const html = await response.text();
-      form.outerHTML = html;
-      this.el.classList.add('is-checked');
-      App.stream.trigger('cart.change', { event });
-    } catch (e) {
-      App.debug(e);
-    }
-    this.#loading = false;
-    appPreloader.hide();
+    this.form = new FormAjax.Instance(this.el);
+    this.form.onsubmit = () => App.stream.trigger('cart.change');
   }
 }
 

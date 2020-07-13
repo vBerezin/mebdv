@@ -7,6 +7,9 @@ include ~blocks/form-label/mixin
 
 +form({
 	class: ['js-form-product', 'form-product'],
+	attributes: {
+		action: '?buy',
+	}
 })
 	.form-product__rating
 		+rating
@@ -31,6 +34,15 @@ include ~blocks/form-label/mixin
 				type: 'submit'
 			}
 		}) Добавить в корзину
+		+button({
+			active: true,
+			icon: 'check',
+			class: 'form-product__submit',
+			mods: ['block', 'round'],
+			attributes: {
+				href: '/mebdv/cart'
+			}
+		}) Товар в корзине
 		+button({
 			mods: ['block', 'round'],
 			class: 'form-product__credit',
@@ -129,11 +141,11 @@ include ~blocks/form-label/mixin
 		}) Изменить ткань
 	.form-product__specs
 		dl
-			dt Механизм:
+			dt Механизм:&nbsp;
 			dd Пантограф
 		dl
-			dt Мягкий элемент:
+			dt Мягкий элемент:&nbsp;
 			dd ППУ
 		dl
-			dt Производство:
+			dt Производство:&nbsp;
 			dd Россия

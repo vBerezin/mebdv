@@ -1,6 +1,6 @@
 import './style.scss';
 
-import { App } from "~common/scripts/app";
+import { App } from '~common/scripts/app';
 
 (() => {
   const node = document.querySelector('.js-form-product');

@@ -24,6 +24,13 @@
     flex: 0 0 auto;
     width: 240px;
     scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    & > * {
+      flex: 1 0 auto;
+    }
   }
   &.is-active {
     .section-similar__body {
