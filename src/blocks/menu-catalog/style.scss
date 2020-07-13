@@ -1,6 +1,7 @@
 @import "~common/styles/variables/fonts";
 @import "~common/styles/variables/animation";
 @import "~common/styles/variables/transition";
+@import "~common/styles/mixins/scrollbar-hide";
 @import "~blocks/breakpoints/mixin";
 @import "styles/animations";
 
@@ -16,8 +17,22 @@
   max-width: 90px;
   width: 270px;
   z-index: $z-index;
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: linear-gradient(to top, #fff, rgba(#fff, 0.001) 90%);
+    pointer-events: none;
+  }
   &:hover {
     max-width: none;
+    &::after {
+      display: none;
+    }
     .menu-catalog__title {
       display: block;
     }
@@ -49,6 +64,7 @@
   &__body {
     flex: 1 1 auto;
     overflow: auto;
+    @include scrollbar-hide;
   }
   &__title {
     display: none;

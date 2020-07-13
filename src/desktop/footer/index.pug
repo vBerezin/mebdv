@@ -50,8 +50,6 @@ footer.footer
 								a(href="#") Спальня
 							li
 								a(href="#") Прихожая
-			.footer__map
-				+lazy-iframe({src: 'https://yandex.ru/map-widget/v1/-/CCQdRXVvcD'})
 			.footer__info
 				.footer__info-item
 					.footer__info-item__icon
@@ -77,34 +75,40 @@ footer.footer
 						'data-popup-id': 'popup-feedback',
 					}
 				}) Написать нам
+			.footer__map
+				+lazy-iframe({src: 'https://yandex.ru/map-widget/v1/-/CCQdRXVvcD'})
 		.footer__bottom
-			.footer__dev
-				+icon({name: 'd-inside'})
-			.footer__privacy
-				p © 2011-2020. Все права защищены.
-				p
-					a(href="/privacy") Политика конфиденциальности
-			.footer__copyright Копирование, распространение информации с сайта разрешается только с письменного согласия владельца.
-			.footer__location
-				.footer__location__icon
-					+icon({ name: 'map' })
-				.footer__location__text
-					.footer__location__title Адрес:
-					p г. Москва, Федеративный проспект, д. 9, корп. 2, офис 1
-			.footer__payment
-				ul
-					li
-						+image({
-							src: '/images/payment-mir.png',
-							srcset: {
-								'2x': '/images/payment-mir@2x.png'
-							},
-						})
-					li
-						+image({
-							src: '/images/payment-mastercard.svg',
-						})
-					li
-						+image({
-							src: '/images/payment-visa.svg',
-						})
+			.footer__bottom-right
+				.footer__location
+					.footer__location__icon
+						+icon({name: 'map'})
+					.footer__location__text
+						.footer__location__title Адрес:
+						p г. Москва, Федеративный проспект, д. 9, корп. 2, офис 1
+				.footer__payment
+					ul
+						li
+							+image({
+								src: '/images/payment-mir.png',
+								srcset: {
+									'2x': '/images/payment-mir@2x.png'
+								},
+							})
+						li
+							+image({
+								src: '/images/payment-mastercard.svg',
+							})
+						li
+							+image({
+								src: '/images/payment-visa.svg',
+							})
+
+			.footer__bottom-left
+				.footer__privacy
+					.footer__privacy-icon
+						+icon({name: 'd-inside'})
+					.footer__privacy-body
+						p © 2011-2020. Все права защищены.
+						p
+							a(href="/privacy") Политика конфиденциальности
+				.footer__copyright Копирование, распространение информации с сайта разрешается только с письменного согласия владельца.
