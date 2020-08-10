@@ -32,6 +32,10 @@ export const Header = (() => {
   document.addEventListener('click', () => {
     search.close();
   });
-  sticky.active = true;
+  App.breakpoints.once(
+    ['xxs', 'xs', 'sm'],
+    () => sticky.active = false,
+    () => sticky.active = true,
+  );
   return { sticky, search };
 })();

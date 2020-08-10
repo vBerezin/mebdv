@@ -1,3 +1,5 @@
+@import "~blocks/breakpoints/mixin";
+
 .catalog {
   &__grid {
     display: grid;
@@ -12,5 +14,10 @@
   }
   &__pager {
     margin-top: 20px;
+  }
+  @include breakpoint(sm) {
+    &__grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 }

@@ -4,11 +4,25 @@ include ~blocks/lazy-image/mixin
 include ~blocks/rating/mixin
 
 mixin product-panel(data)
-	- data = data || {};
+	-
+		data = data || {};
+		state = [];
+		if (DESKTOP) state.push('has-gallery')
 	.product-panel.js-product-panel(
+		class=state
 		class=data.class
 		class=mods('product-panel', data.mods)
 	)&attributes(data.attributes)
+		if (DESKTOP)
+			.product-panel__thumbs
+				each index in [0,1,2,3,4]
+					.product-panel__thumb(data-click="product.panel.thumb" data-index=index)
+						+lazy-image({
+							src: `https://via.placeholder.com/100x50?text=Диван ${index}`,
+							srcset: {
+								'2x': `https://via.placeholder.com/200x100?text=Диван ${index}`,
+							}
+						})
 		.product-panel__head
 			.product-panel__badges
 				if (DESKTOP)
@@ -19,13 +33,27 @@ mixin product-panel(data)
 					+badge({class: 'product-panel__badge'}) -15%
 					+badge({class: 'product-panel__badge', mods: 'red'}) HIT
 					+badge({class: 'product-panel__badge', mods: 'yellow'}) NEW
-			a.product-panel__image(href=data.href)
-				+lazy-image({
-					src: '/images/product/panel-1.png',
-					srcset: {
-						'2x': '/images/product/panel-1@2x.png',
-					}
-				})
+			if (DESKTOP)
+				each index in [0,1,2,3,4]
+					.product-panel__slide(
+						class= !index && 'is-active'
+						data-rel="product.panel.slide"
+						data-index=index)
+						a.product-panel__image(href=data.href)
+							+lazy-image({
+								src: `https://via.placeholder.com/250x150?text=Диван ${index}`,
+								srcset: {
+									'2x': `https://via.placeholder.com/500x300?text=Диван ${index}`,
+								}
+							})
+			else
+				a.product-panel__image(href=data.href)
+					+lazy-image({
+						src: '/images/product/panel-1.png',
+						srcset: {
+							'2x': '/images/product/panel-1@2x.png',
+						}
+					})
 			a.product-panel__title(href=data.href) Диван Еврокнижка Атлант с барной стойкой
 		.product-panel__body
 			.product-panel__prices

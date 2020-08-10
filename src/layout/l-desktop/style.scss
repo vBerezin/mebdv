@@ -1,31 +1,14 @@
+@import "~blocks/breakpoints/mixin";
+
 .l-desktop {
   display: flex;
   align-items: stretch;
   justify-content: flex-start;
   flex-direction: column;
+  padding-left: 90px;
   min-height: 100vh;
   min-width: 1024px;
 
-  &__header {
-    flex: 0 0 auto;
-  }
-  &__inner {
-    flex: 1 1 auto;
-    display: flex;
-    align-items: stretch;
-    justify-content: flex-start;
-  }
-  &__aside {
-    flex: 0 0 auto;
-  }
-  &__body {
-    flex: 1 1 auto;
-    overflow: hidden;
-    display: flex;
-    align-items: stretch;
-    justify-content: flex-start;
-    flex-direction: column;
-  }
   &__content {
     padding-bottom: 50px;
   }
@@ -38,5 +21,8 @@
   &__head {
     margin-top: 20px;
     margin-bottom: 20px;
+  }
+  @include breakpoint(xl) {
+    padding-left: 270px;
   }
 }

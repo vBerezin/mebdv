@@ -3,7 +3,7 @@
 @import "styles/animations";
 
 .header {
-  $z-index: 300;
+  $z-index: 200;
   position: relative;
   min-height: 80px;
   z-index: $z-index;
@@ -60,6 +60,7 @@
     left: 0;
     right: 0;
     top: 0;
+    z-index: 300;
   }
   &.header--search-active {
     .header__search-body {

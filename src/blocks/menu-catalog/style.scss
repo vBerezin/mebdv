@@ -6,7 +6,7 @@
 @import "styles/animations";
 
 .menu-catalog {
-  $z-index: 300;
+  $z-index: 200;
   display: flex;
   align-items: stretch;
   justify-content: flex-start;
@@ -14,9 +14,10 @@
   background: #fff;
   border-right: 1px solid #F2F2F2;
   position: relative;
-  max-width: 90px;
   width: 270px;
+  max-width: 90px;
   z-index: $z-index;
+
   &::after {
     content: '';
     display: block;
@@ -30,6 +31,7 @@
   }
   &:hover {
     max-width: none;
+
     &::after {
       display: none;
     }
@@ -212,7 +214,7 @@
     position: fixed;
     left: 0;
     bottom: 0;
-    top: 80px;
+    top: 0;
   }
   .supports-backdrop-filter & {
     .menu-catalog__dropdown {
@@ -222,6 +224,11 @@
     }
   }
 
+  @include breakpoint(md) {
+    &.menu-catalog--sticky {
+      top: 80px;
+    }
+  }
   @include breakpoint(xl) {
     max-width: none;
 

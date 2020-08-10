@@ -6,21 +6,19 @@ block body
 		.l-desktop__header
 			block header
 				include ~desktop/header/index
-		.l-desktop__inner
-			aside.l-desktop__aside
-				block aside
-					include ~blocks/menu-catalog/index
-			.l-desktop__body
-				main.l-desktop__main
-					block main
-						.l-desktop__head
-							+l-container
-								block page-head
-						.l-desktop__content
-							block page-content
-				.l-desktop__footer
-					block footer
-						include ~desktop/footer/index
+		aside.l-desktop__aside
+			block aside
+				include ~blocks/menu-catalog/index
+		main.l-desktop__main
+			block main
+				.l-desktop__head
+					+l-container
+						block page-head
+				.l-desktop__content
+					block page-content
+		.l-desktop__footer
+			block footer
+				include ~desktop/footer/index
 	include ~blocks/popup-feedback/index
 	include ~blocks/popup-callback/index
 
