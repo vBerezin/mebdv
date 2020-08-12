@@ -136,6 +136,11 @@
     font-size: 15px;
     padding: 40px 15px 15px 15px;
 
+    &:hover {
+      .product-panel__footer {
+        opacity: 1;
+      }
+    }
     &__title {
       font-weight: $font-weight-medium;
     }
@@ -150,6 +155,10 @@
       img {
         max-height: 120px;
       }
+    }
+    &__footer {
+      opacity: 0;
+      transition: opacity $transition-time ease-out;
     }
   }
 }
