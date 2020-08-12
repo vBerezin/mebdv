@@ -31,10 +31,9 @@ export class MenuCatalogScroll {
       this.stop();
       this.#nav.scrollTop = this.#nav.scrollHeight - this.#nav.offsetHeight;
     });
-    this.#nav.addEventListener('scroll', () => {
-      this.onScroll();
-    });
-    this.onScroll();
+    this.#nav.addEventListener('scroll', () => this.checkScroll());
+    window.addEventListener('resize', () => this.checkScroll());
+    this.checkScroll();
   }
   stop() {
     window.cancelAnimationFrame(this.#request);
@@ -52,7 +51,7 @@ export class MenuCatalogScroll {
       this.scrollDown();
     });
   }
-  onScroll() {
+  checkScroll() {
     const top = this.#nav.scrollTop === 0;
     const bottom = this.#nav.scrollHeight - this.#nav.scrollTop === this.#nav.offsetHeight;
     this.#up.disabled = top;
