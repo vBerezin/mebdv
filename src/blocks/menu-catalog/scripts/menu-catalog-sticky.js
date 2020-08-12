@@ -22,8 +22,6 @@ export class MenuCatalogSticky {
     return this.active;
   }
   set active(state) {
-    const parent = this.el.parentNode;
-    parent.style.minWidth = state ? `${this.el.offsetWidth}px` : '';
     this.el.style.top = state && Header.sticky.active ? `${Header.sticky.el.offsetHeight}px` : '';
     this.el.classList.toggle('menu-catalog--sticky', state);
     this.#active = state;

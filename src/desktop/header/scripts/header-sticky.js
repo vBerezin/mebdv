@@ -21,8 +21,8 @@ export class HeaderSticky {
   }
   set active(state) {
     const parent = this.el.parentNode;
-    parent.style.minHeight = state ? `${this.el.offsetHeight}px` : '';
     this.el.classList.toggle('header--sticky', state);
+    parent.style.minHeight = state ? `${this.el.offsetHeight}px` : '';
     this.#active = state;
   }
   get active() {

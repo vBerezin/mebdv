@@ -18,9 +18,9 @@ mixin product-panel(data)
 				each index in [0,1,2,3,4]
 					.product-panel__thumb(data-click="product.panel.thumb" data-index=index)
 						+lazy-image({
-							src: `https://via.placeholder.com/100x50?text=Диван ${index}`,
+							src: `https://via.placeholder.com/100x50?text=Диван_${index}`,
 							srcset: {
-								'2x': `https://via.placeholder.com/200x100?text=Диван ${index}`,
+								'2x': `https://via.placeholder.com/200x100?text=Диван_${index}`,
 							}
 						})
 		.product-panel__head
@@ -41,9 +41,9 @@ mixin product-panel(data)
 						data-index=index)
 						a.product-panel__image(href=data.href)
 							+lazy-image({
-								src: `https://via.placeholder.com/250x150?text=Диван ${index}`,
+								src: `https://via.placeholder.com/250x150?text=Диван_${index}`,
 								srcset: {
-									'2x': `https://via.placeholder.com/500x300?text=Диван ${index}`,
+									'2x': `https://via.placeholder.com/500x300?text=Диван_${index}`,
 								}
 							})
 			else

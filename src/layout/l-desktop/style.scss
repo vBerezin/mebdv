@@ -5,10 +5,14 @@
   align-items: stretch;
   justify-content: flex-start;
   flex-direction: column;
-  padding-left: 90px;
   min-height: 100vh;
   min-width: 1024px;
+  padding-left: 90px;
 
+  &__head {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
   &__content {
     padding-bottom: 50px;
   }
@@ -18,10 +22,7 @@
   &__footer {
     margin-top: auto;
   }
-  &__head {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
+
   @include breakpoint(xl) {
     padding-left: 270px;
   }

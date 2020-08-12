@@ -160,26 +160,31 @@ include ~blocks/icon/mixin
 		},
 	]
 
-nav.menu-catalog.js-menu-catalog
+nav.menu-catalog.menu-catalog--sticky.js-menu-catalog
 	.menu-catalog__head
 		.menu-catalog__title Каталог мебели
 		.menu-catalog__toggle Открыть каталог
 	.menu-catalog__body
-		ul
-			each item in menu
-				- icon = item.dropdown ? 'sub' : 'right'
-				- state = []
-				- if (item.highlighted) state.push('is-highlighted')
-				li
-					a.menu-catalog__item(
-						data-dropdown=item.dropdown
-						href=item.href
-						class=state)
-						.menu-catalog__item__img
-							+image(item.image)
-						.menu-catalog__item__title #{item.title}
-						.menu-catalog__item__icon
-							+icon({name: icon, mods: 'center'})
+		button.menu-catalog__up(data-rel="menu.catalog.up")
+			+icon({ name: 'up', mods: 'center' })
+		button.menu-catalog__down(data-rel="menu.catalog.down")
+			+icon({name: 'down', mods: 'center'})
+		.menu-catalog__nav(data-rel="menu.catalog.nav")
+			ul
+				each item in menu
+					- icon = item.dropdown ? 'sub' : 'right'
+					- state = []
+					- if (item.highlighted) state.push('is-highlighted')
+					li
+						a.menu-catalog__item(
+							data-dropdown=item.dropdown
+							href=item.href
+							class=state)
+							.menu-catalog__item__img
+								+image(item.image)
+							.menu-catalog__item__title #{item.title}
+							.menu-catalog__item__icon
+								+icon({name: icon, mods: 'center'})
 	each index in [1,2,3]
 		.menu-catalog__dropdown(data-dropdown=index)
 			each column in dropdown
