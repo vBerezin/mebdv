@@ -13,7 +13,6 @@
   border-radius: 6px;
   padding: 40px 10px 10px 10px;
   min-height: 260px;
-  transition: border-color $transition-time ease-out;
 
   &.has-gallery:hover {
     border-bottom-left-radius: 0;
@@ -27,7 +26,7 @@
   &__head {
     margin-bottom: 5px;
   }
-  &__body {
+  &__inner {
     flex: 1 1 auto;
   }
   &__footer {
@@ -134,12 +133,26 @@
   @include breakpoint(md) {
     min-height: 350px;
     font-size: 15px;
-    padding: 40px 15px 15px 15px;
+    box-shadow: none;
+    padding: 0;
+    background: none;
 
     &:hover {
+      background: #fff;
+      box-shadow: 0 0 2px rgba(#A0A0A0, 0.4);
+
+      .product-panel__inner {
+        box-shadow: none;
+      }
       .product-panel__footer {
         opacity: 1;
       }
+    }
+    &__inner {
+      padding: 40px 15px 15px 15px;
+      box-shadow: 0 0 2px rgba(#A0A0A0, 0.4);
+      background: #fff;
+      border-radius: 6px;
     }
     &__title {
       font-weight: $font-weight-medium;
@@ -157,6 +170,7 @@
       }
     }
     &__footer {
+      padding: 0 15px 15px 15px;
       opacity: 0;
       transition: opacity $transition-time ease-out;
     }
