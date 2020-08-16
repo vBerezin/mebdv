@@ -56,7 +56,10 @@ block page-content
 			title: 'Все товары коллекции Лиссабон (8 шт)',
 		})
 		+section-reviews({
-			mods: ['top']
+			mods: ['top'],
+			attributes: {
+				id: 'reviews'
+			}
 		})
 block append body
 		include ~blocks/popup-custom/index
