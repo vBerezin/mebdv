@@ -1,0 +1,10 @@
+.product-panel__footer
+	if (DESKTOP)
+		form(action="?add" data-url="/mebdv/ajax/product-panel-button.html")
+			+button({
+				icon: 'cart',
+				mods: ['block', 'round', 'orange']
+			}) Добавить в коризну
+	else
+		form(action="?add" data-url="/m.mebdv/ajax/product-panel-button.html")
+			+button({ mods: ['block', 'small', 'round', 'orange'] }) В корзину

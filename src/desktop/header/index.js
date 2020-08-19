@@ -1,8 +1,6 @@
 import './style.scss';
 
 import { HeaderSticky } from './scripts/header-sticky';
-import { HeaderSearch } from './scripts/header-search';
-import {Handlers} from "~common/scripts/utils/handlers";
 
 App.stream.on('cart.change', async () => {
   const cart = document.getElementById('js-cart');
@@ -22,20 +20,10 @@ App.stream.on('cart.change', async () => {
 export const Header = (() => {
   const header = document.querySelector('.js-header');
   const sticky = new HeaderSticky(header);
-  const search = new HeaderSearch(header);
-  header.addEventListener('click', new Handlers.Click({
-    'header.search.toggle': ({ event }) => {
-      event.stopPropagation();
-      return search.toggle();
-    }
-  }));
-  document.addEventListener('click', () => {
-    search.close();
-  });
   App.breakpoints.once(
     ['xxs', 'xs', 'sm'],
     () => sticky.active = false,
     () => sticky.active = true,
   );
-  return { sticky, search };
+  return { sticky };
 })();

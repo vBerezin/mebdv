@@ -1,0 +1,11 @@
+.product-panel__overlay
+	.product-panel__thumbs
+		each index in [0,1,2,3,4]
+			.product-panel__thumb(data-click="product.panel.thumb" data-index=index)
+				+lazy-image({
+					src: `https://via.placeholder.com/100x50?text=Диван_${index}`,
+					srcset: {
+						'2x': `https://via.placeholder.com/200x100?text=Диван_${index}`,
+					}
+				})
+	include footer

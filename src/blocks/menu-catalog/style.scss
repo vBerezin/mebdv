@@ -20,6 +20,7 @@
 
   &:hover {
     max-width: none;
+    z-index: 350;
     .menu-catalog__title {
       display: block;
     }
@@ -42,8 +43,6 @@
   }
 
   &__head {
-    font-size: 11px;
-    line-height: 15px;
     color: #000;
     font-weight: $font-weight-semi-bold;
     flex: 0 0 auto;
@@ -70,9 +69,11 @@
     padding: 20px 30px 10px 30px;
   }
   &__toggle {
+    font-size: 11px;
+    line-height: 20px;
     text-align: center;
     background: #F4F4F4;
-    padding: 15px 20px;
+    padding: 10px 20px;
   }
   &__item {
     display: flex;
@@ -244,14 +245,13 @@
     }
   }
 
-  @include breakpoint(md) {
-    &.menu-catalog--sticky {
-      top: 80px;
-    }
-  }
+
   @include breakpoint(xl) {
     max-width: none;
 
+    &.menu-catalog--sticky {
+      top: 80px;
+    }
     &__title {
       display: block;
     }

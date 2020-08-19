@@ -1,0 +1,9 @@
+.product-panel__badges
+	if (DESKTOP)
+		+badge({class: 'product-panel__badge'}) -15%
+		+badge({class: 'product-panel__badge', mods: 'red'}) ХИТ ПРОДАЖ
+		+badge({class: 'product-panel__badge', mods: 'yellow'}) НОВИНКА
+	else
+		+badge({class: 'product-panel__badge'}) -15%
+		+badge({class: 'product-panel__badge', mods: 'red'}) HIT
+		+badge({class: 'product-panel__badge', mods: 'yellow'}) NEW

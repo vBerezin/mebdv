@@ -7,72 +7,39 @@ mixin product-panel(data)
 	-
 		data = data || {};
 		state = [];
-		if (DESKTOP) state.push('has-gallery')
+		data.mods = [].concat(data.mods);
+		if (data.gallery) data.mods.push('overlay')
 	.product-panel.js-product-panel(
 		class=state
 		class=data.class
 		class=mods('product-panel', data.mods)
 	)&attributes(data.attributes)
-		.product-panel__inner
-			if (DESKTOP)
-				.product-panel__thumbs
-					each index in [0,1,2,3,4]
-						.product-panel__thumb(data-click="product.panel.thumb" data-index=index)
+		if (data.gallery)
+			include templates/overlay
+		.product-panel__head
+			include templates/badges
+			if (data.gallery)
+				each index in [0,1,2,3,4]
+					.product-panel__slide(
+						class= !index && 'is-active'
+						data-rel="product.panel.slide"
+						data-index=index)
+						a.product-panel__image(href=data.href)
 							+lazy-image({
-								src: `https://via.placeholder.com/100x50?text=Диван_${index}`,
+								src: `https://via.placeholder.com/250x150?text=Диван_${index}`,
 								srcset: {
-									'2x': `https://via.placeholder.com/200x100?text=Диван_${index}`,
+									'2x': `https://via.placeholder.com/500x300?text=Диван_${index}`,
 								}
 							})
-			.product-panel__head
-				.product-panel__badges
-					if (DESKTOP)
-						+badge({class: 'product-panel__badge'}) -15%
-						+badge({class: 'product-panel__badge', mods: 'red'}) ХИТ ПРОДАЖ
-						+badge({class: 'product-panel__badge', mods: 'yellow'}) НОВИНКА
-					else
-						+badge({class: 'product-panel__badge'}) -15%
-						+badge({class: 'product-panel__badge', mods: 'red'}) HIT
-						+badge({class: 'product-panel__badge', mods: 'yellow'}) NEW
-				if (DESKTOP)
-					each index in [0,1,2,3,4]
-						.product-panel__slide(
-							class= !index && 'is-active'
-							data-rel="product.panel.slide"
-							data-index=index)
-							a.product-panel__image(href=data.href)
-								+lazy-image({
-									src: `https://via.placeholder.com/250x150?text=Диван_${index}`,
-									srcset: {
-										'2x': `https://via.placeholder.com/500x300?text=Диван_${index}`,
-									}
-								})
-				else
-					a.product-panel__image(href=data.href)
-						+lazy-image({
-							src: '/images/product/panel-1.png',
-							srcset: {
-								'2x': '/images/product/panel-1@2x.png',
-							}
-						})
-				a.product-panel__title(href=data.href) Диван Еврокнижка Атлант с барной стойкой
-			.product-panel__body
-				.product-panel__prices
-					span.product-panel__price 20 090 ₽
-					span.product-panel__price-old 20 090 ₽
-				.product-panel__reviews
-					+rating({ value: 3, class: 'product-panel__rating' })
-					if (DESKTOP)
-						+badge({ mods: 'grey', class: 'product-panel__reviews-count' }) 15
-					else
-						+badge({mods: 'small', class: 'product-panel__reviews-count'}) 15
-		.product-panel__footer
-			if (DESKTOP)
-				form(action="?add" data-url="/mebdv/ajax/product-panel-button.html")
-					+button({
-						icon: 'cart',
-						mods: ['block', 'round', 'orange']
-					}) Добавить в коризну
 			else
-				form(action="?add" data-url="/m.mebdv/ajax/product-panel-button.html")
-					+button({ mods: ['block', 'small', 'round', 'orange'] }) В корзину
+				a.product-panel__image(href=data.href)
+					+lazy-image({
+						src: '/images/product/panel-1.png',
+						srcset: {
+							'2x': '/images/product/panel-1@2x.png',
+						}
+					})
+			a.product-panel__title(href=data.href) Диван Еврокнижка Атлант с барной стойкой
+		include templates/body
+		if (!data.gallery)
+			include templates/footer

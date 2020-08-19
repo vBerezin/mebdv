@@ -12,6 +12,7 @@ include ~blocks/product-panel/mixin
 			- items.length = 24;
 			each item, index in items
 				+product-panel({
+					gallery: true,
 					href: '/mebdv/product',
 					attributes: {
 						id: `product-${index}`

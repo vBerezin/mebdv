@@ -8,25 +8,16 @@
   flex-direction: column;
   align-items: stretch;
   position: relative;
-  background: #FFFFFF;
+  background: #fff;
   box-shadow: 0 0 2px rgba(#A0A0A0, 0.4);
   border-radius: 6px;
   padding: 40px 10px 10px 10px;
   min-height: 260px;
 
-  &.has-gallery:hover {
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-    z-index: 300;
-    .product-panel__thumbs {
-      display: block;
-    }
-  }
-
   &__head {
     margin-bottom: 5px;
   }
-  &__inner {
+  &__body {
     flex: 1 1 auto;
   }
   &__footer {
@@ -92,14 +83,13 @@
     margin-left: 5px;
   }
   &__thumbs {
-    display: none;
     position: absolute;
     right: 100%;
     top: 0;
-    bottom: 0;
+    height: 100%;
     width: 100px;
-    background: #fff;
     padding: 20px 15px;
+    background: #fff;
     box-shadow: 0 0 2px rgba(#A0A0A0, 0.4);
     border-radius: 6px 0 0 6px;
   }
@@ -129,31 +119,45 @@
       display: block;
     }
   }
+  &__overlay {
+    display: none;
+    background: #fff;
+    box-shadow: 0 0 2px rgba(#A0A0A0, 0.4);
+    border-radius: 0 6px 6px 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: -50px;
+    z-index: -1;
+  }
+
+  &.product-panel--overlay {
+    min-height: 290px;
+    z-index: 100;
+
+    .product-panel__footer {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      right: 15px;
+      margin-top: 0;
+    }
+    &:hover {
+      box-shadow: none;
+      border-radius: 0;
+      z-index: 300;
+      .product-panel__overlay {
+        display: block;
+      }
+    }
+  }
 
   @include breakpoint(md) {
     min-height: 350px;
     font-size: 15px;
-    box-shadow: none;
-    padding: 0;
-    background: none;
+    padding: 40px 15px 15px 15px;
 
-    &:hover {
-      background: #fff;
-      box-shadow: 0 0 2px rgba(#A0A0A0, 0.4);
-
-      .product-panel__inner {
-        box-shadow: none;
-      }
-      .product-panel__footer {
-        opacity: 1;
-      }
-    }
-    &__inner {
-      padding: 40px 15px 15px 15px;
-      box-shadow: 0 0 2px rgba(#A0A0A0, 0.4);
-      background: #fff;
-      border-radius: 6px;
-    }
     &__title {
       font-weight: $font-weight-medium;
     }
@@ -168,11 +172,6 @@
       img {
         max-height: 120px;
       }
-    }
-    &__footer {
-      padding: 0 15px 15px 15px;
-      opacity: 0;
-      transition: opacity $transition-time ease-out;
     }
   }
 }

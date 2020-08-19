@@ -54,18 +54,19 @@
   &__cart-label {
     display: none;
   }
+  &__search {
+    flex: 1 1 auto;
+  }
+  &__phone {
+    flex: 0 0 auto;
+  }
 
   &.header--sticky {
     position: fixed;
-    left: 0;
+    left: 90px;
     right: 0;
     top: 0;
     z-index: 350;
-  }
-  &.header--search-active {
-    .header__search-body {
-      display: block;
-    }
   }
   .supports-backdrop-filter & {
     background: rgba(#FAFAFA, 0.8);
@@ -79,6 +80,11 @@
     }
   }
   @include breakpoint(xl) {
+    &.header--sticky {
+      left: 0;
+    }
+  }
+  @include breakpoint(xxl) {
     &__top {
       display: none;
     }
@@ -89,31 +95,6 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
-    }
-    &__search-toggle {
-      display: block;
-    }
-    &__search-body {
-      display: none;
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      animation: header-search $animation-time ease-out;
-    }
-  }
-  @include breakpoint(xxl) {
-    &__search {
-      flex: 1 1 auto;
-    }
-    &__search-toggle {
-      display: none;
-    }
-    &__search-body {
-      display: block;
-      position: relative;
-      width: auto;
-      animation: none;
     }
   }
 }

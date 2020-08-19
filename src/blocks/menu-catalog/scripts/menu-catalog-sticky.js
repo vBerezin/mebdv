@@ -1,4 +1,5 @@
 import { Header} from '~desktop/header';
+import { App} from '~common/scripts/app';
 
 export class MenuCatalogSticky {
   #active;
@@ -8,6 +9,15 @@ export class MenuCatalogSticky {
     window.addEventListener('resize', () => {
       this.active = this.#active;
     });
+    App.breakpoints.on(
+      ['xl', 'xxl'],
+      () => {
+        this.el.style.top = Header.sticky.active ? `${Header.sticky.el.offsetHeight}px` : '';
+      },
+      () => {
+        this.el.style.top = '';
+      }
+    )
   }
   close() {
     this.active = false;
@@ -22,7 +32,6 @@ export class MenuCatalogSticky {
     return this.active;
   }
   set active(state) {
-    this.el.style.top = state && Header.sticky.active ? `${Header.sticky.el.offsetHeight}px` : '';
     this.el.classList.toggle('menu-catalog--sticky', state);
     this.#active = state;
   }

@@ -1,0 +1,10 @@
+.product-panel__body
+	.product-panel__prices
+		span.product-panel__price 20 090 ₽
+		span.product-panel__price-old 20 090 ₽
+	.product-panel__reviews
+		+rating({ value: 3, class: 'product-panel__rating' })
+		if (DESKTOP)
+			+badge({ mods: 'grey', class: 'product-panel__reviews-count' }) 15
+		else
+			+badge({mods: 'small', class: 'product-panel__reviews-count'}) 15
