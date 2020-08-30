@@ -1,0 +1,19 @@
+include ~blocks/icon/mixin
+
+mixin notify(data)
+	- data = data || {};
+	.notify.js-notify(
+		class=data.class
+		class=mods('notify', data.mods)
+	)&attributes(data.attributes)
+		each item, index in data.items
+			.notify__item
+				if (item.icon)
+					+icon-box({
+						class: 'notify__item-icon',
+						icon: item.icon.name,
+						mods: item.icon.mods
+					})
+				.notify__item-body #{item.text}
+					if (block)
+						block

@@ -36,6 +36,7 @@ import '~blocks/preloader';
 import '~blocks/badge';
 import '~blocks/rating';
 import '~blocks/review';
+import '~blocks/notify';
 import '~blocks/panel-icon';
 import '~blocks/input-phone';
 import '~blocks/product-panel';

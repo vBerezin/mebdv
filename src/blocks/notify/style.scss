@@ -1,0 +1,52 @@
+@import "~blocks/breakpoints/mixin";
+@import "~common/styles/variables/fonts";
+@import "~common/styles/variables/animation";
+@import "~common/styles/variables/transition";
+@import "styles/animations";
+
+.notify {
+  position: fixed;
+  z-index: 300;
+  left: 100px;
+  bottom: 0;
+  transition:
+    opacity $transition-time ease-out,
+    visibility $transition-time ease-out,
+    transform $transition-time ease-out;
+
+  &__item {
+    display: none;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: $font-weight-medium;
+    color: #fff;
+    background: rgba(#000, 0.75);
+    animation: notify-item $animation-time ease-out;
+
+    &.is-active {
+      display: flex;
+    }
+  }
+  &__item-icon {
+    flex: 0 0 auto;
+    margin-right: 20px;
+  }
+  &__item-body {
+    flex: 1 1 auto;
+  }
+
+  &.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  @include breakpoint(lg) {
+    left: 320px;
+  }
+}

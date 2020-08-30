@@ -21,6 +21,10 @@
     font-size: 0.5em;
   }
 
+  &.icon-box--green {
+    background: #40AE52;
+    color: #fff;
+  }
   &.icon-box--orange {
     color: #fff;
     background: #F78B3D linear-gradient(to bottom, rgba(#fff, 0.2), #F78B3D);
