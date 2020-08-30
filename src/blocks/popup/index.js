@@ -1,6 +1,7 @@
 import './style.scss';
 
 import { Handlers } from '~common/scripts/utils/handlers';
+import {App} from '~common/scripts/app';
 
 export class Popup {
   #active;

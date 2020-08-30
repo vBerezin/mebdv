@@ -1,6 +1,7 @@
 import './style.scss';
 
 import { HeaderSticky } from './scripts/header-sticky';
+import { App } from '~common/scripts/app';
 
 App.stream.on('cart.change', async () => {
   const cart = document.getElementById('js-cart');
