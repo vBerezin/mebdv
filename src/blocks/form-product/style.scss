@@ -3,10 +3,12 @@
 @import "~blocks/breakpoints/mixin";
 
 .form-product {
+  --divider: #F1F1F1;
+
   &__main {
     padding-bottom: 20px;
     margin-bottom: 15px;
-    border-bottom: 1px solid #F1F1F1;
+    border-bottom: 1px solid var(--divider);
   }
   &__rating {
     display: flex;
@@ -14,7 +16,7 @@
     justify-content: flex-start;
     padding-bottom: 15px;
     margin-bottom: 15px;
-    border-bottom: 1px solid #F1F1F1;
+    border-bottom: 1px solid var(--divider);
   }
   &__rating-title {
     color: #312E76;
@@ -47,7 +49,7 @@
       font-weight: $font-weight-semi-bold;
       padding-top: 15px;
       margin-top: 15px;
-      border-top: 1px solid #F1F1F1;
+      border-top: 1px solid var(--divider);
     }
     dt,
     dd {
@@ -142,6 +144,11 @@
   &__banner {
     margin: 20px 0;
   }
+
+  &.form-product--grey {
+    --divider: #E4E4E4;
+  }
+
   @include breakpoint(md) {
     &__price {
       font-size: 26px;

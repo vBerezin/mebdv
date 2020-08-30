@@ -6,8 +6,8 @@ include ~blocks/image/mixin
 include ~blocks/form-label/mixin
 
 +form({
-	class: ['js-form-product', 'form-product'],
-	mods: DESKTOP ? 'blue' : '',
+	class: ['js-form-product', 'form-product', DESKTOP && 'form-product--grey'],
+	mods: DESKTOP ? 'grey' : '',
 	attributes: {
 		action: '?buy',
 	}
@@ -15,7 +15,9 @@ include ~blocks/form-label/mixin
 	.form-product__rating
 		+rating
 		a.form-product__rating-title(href="#reviews") Отзывы
-		+badge({mods: 'small'}) 15
+		+badge({
+			mods: ['small', DESKTOP && 'white-blue'],
+		}) 15
 	.form-product__main
 		.form-product__pricing
 			.form-product__price
@@ -23,6 +25,7 @@ include ~blocks/form-label/mixin
 			.form-product__price-old
 				span(data-rel="product.price.old") 20 890 ₽
 			+badge({
+				mods: DESKTOP ? 'white-blue' : '',
 				attributes: {
 					'data-rel': 'product.discount'
 				}

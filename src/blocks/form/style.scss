@@ -7,8 +7,9 @@
   border-radius: 6px;
   background: #FFFFFF;
   box-shadow: 0 0 2px rgba(160, 160, 160, 0.4);
-  &.form--blue {
-    background: #F7F6FF;
+  &.form--grey{
+    background: #F4F3F5;
+    box-shadow: none;
   }
   &.form--large {
     padding: 40px;
